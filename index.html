@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Sports Consulting — Shaping Champions Beyond The Game</title>
+  <meta name="description" content="Dubai-based sports business advisory firm operating at the intersection of sport, media, and commercial intelligence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="content.js"></script>
+  <script src="animations.js" defer></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #04081A;
+      --blue:   #1E3A8A;
+      --accent: #3B82F6;
+      --gold:   #D4AF37;
+      --white:  #F5F5F5;
+      --mid:    #8892A4;
+      --border: rgba(59,130,246,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAVIGATION ─────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(4,8,26,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-img { height: 48px; width: auto; display: block; }
+    .footer-logo-img { height: 42px; width: auto; display: block; margin-bottom: 12px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links li { position: relative; }
+
+    .nav-links a {
+      display: block;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(245,245,245,0.75);
+      border-radius: 2px;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    /* Services dropdown */
+    .nav-links .has-dropdown > a::after {
+      content: " ▾";
+      font-size: 10px;
+      opacity: 0.6;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; padding-top: 8px;
+      left: 0;
+      background: #0D1833;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      min-width: 260px;
+      padding: 8px 0;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .has-dropdown:hover .dropdown { display: block; }
+    .has-dropdown.open .dropdown { display: block; }
+    @media (max-width: 768px) {
+      .has-dropdown.open .dropdown {
+        position: static; border: none; box-shadow: none;
+        background: transparent; padding: 4px 0 4px 14px; min-width: 0;
+      }
+    }
+
+    .dropdown a {
+      padding: 10px 20px;
+      font-size: 13px;
+      color: rgba(245,245,245,0.7);
+      border-radius: 0;
+    }
+
+    .dropdown a:hover {
+      background: rgba(59,130,246,0.1);
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 9px 22px !important;
+      background: var(--blue);
+      color: var(--white) !important;
+      border-radius: 2px !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--accent) !important; }
+
+    /* Mobile menu */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: 0.3s;
+    }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    /* Cinematic gradient layers */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-bg-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(30,58,138,0.45) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 70%, rgba(59,130,246,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(212,175,55,0.06) 0%, transparent 50%),
+        linear-gradient(170deg, #04081A 0%, #060d24 50%, #04081A 100%);
+    }
+
+    /* Animated sweep beam */
+    .hero-beam {
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 50%;
+      height: 140%;
+      background: linear-gradient(105deg,
+        transparent 0%,
+        rgba(59,130,246,0.04) 40%,
+        rgba(59,130,246,0.08) 50%,
+        rgba(59,130,246,0.04) 60%,
+        transparent 100%);
+      transform: skewX(-12deg);
+      animation: beamSweep 8s ease-in-out infinite;
+    }
+
+    @keyframes beamSweep {
+      0%, 100% { transform: skewX(-12deg) translateX(-20%); opacity: 0; }
+      20% { opacity: 1; }
+      50% { transform: skewX(-12deg) translateX(220%); opacity: 0.6; }
+      80% { opacity: 0; }
+    }
+
+    /* Pulsing rings */
+    .hero-rings {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 520px;
+    }
+
+    .hero-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(59,130,246,0.12);
+      animation: ringPulse 4s ease-in-out infinite;
+    }
+
+    .hero-ring:nth-child(1) { animation-delay: 0s; transform: scale(0.4); }
+    .hero-ring:nth-child(2) { animation-delay: 0.8s; transform: scale(0.6); }
+    .hero-ring:nth-child(3) { animation-delay: 1.6s; transform: scale(0.8); }
+    .hero-ring:nth-child(4) { animation-delay: 2.4s; transform: scale(1.0); }
+
+    @keyframes ringPulse {
+      0%, 100% { opacity: 0.3; transform: scale(var(--s, 1)); }
+      50% { opacity: 0.7; transform: scale(calc(var(--s, 1) * 1.04)); }
+    }
+
+    .hero-ring:nth-child(1) { --s: 0.4; }
+    .hero-ring:nth-child(2) { --s: 0.6; }
+    .hero-ring:nth-child(3) { --s: 0.8; }
+    .hero-ring:nth-child(4) { --s: 1.0; }
+
+    /* Gold centre dot */
+    .hero-ring-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 20px var(--gold), 0 0 60px rgba(212,175,55,0.3);
+      animation: centerPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes centerPulse {
+      0%, 100% { box-shadow: 0 0 20px var(--gold), 0 0 60px rgba(212,175,55,0.3); }
+      50% { box-shadow: 0 0 30px var(--gold), 0 0 100px rgba(212,175,55,0.5); }
+    }
+
+    /* Floating deal cards */
+    .hero-float-cards {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .float-card {
+      position: absolute;
+      background: rgba(8,14,36,0.85);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 6px;
+      padding: 14px 18px;
+      backdrop-filter: blur(12px);
+      white-space: nowrap;
+      animation: floatUp linear infinite;
+    }
+
+    .float-card-value {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .float-card-value.gold { color: var(--gold); }
+
+    .float-card-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.45);
+      margin-top: 3px;
+    }
+
+    .float-card-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 2px;
+      margin-top: 6px;
+    }
+
+    .float-card-tag.blue { background: rgba(59,130,246,0.2); color: var(--accent); }
+    .float-card-tag.gold { background: rgba(212,175,55,0.15); color: var(--gold); }
+    .float-card-tag.green { background: rgba(34,197,94,0.15); color: #4ade80; }
+
+    @keyframes floatUp {
+      0%   { transform: translateY(0)   opacity(0); opacity: 0; }
+      8%   { opacity: 1; }
+      88%  { opacity: 0.85; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    /* Individual card positions & timings */
+    .float-card:nth-child(1) { right: 18%; bottom: -80px;  animation-duration: 18s; animation-delay: 0s; }
+    .float-card:nth-child(2) { right: 6%;  bottom: -160px; animation-duration: 22s; animation-delay: 3s; }
+    .float-card:nth-child(3) { right: 30%; bottom: -120px; animation-duration: 20s; animation-delay: 7s; }
+    .float-card:nth-child(4) { right: 42%; bottom: -200px; animation-duration: 24s; animation-delay: 1s; }
+    .float-card:nth-child(5) { right: 56%; bottom: -100px; animation-duration: 19s; animation-delay: 5s; }
+    .float-card:nth-child(6) { right: 70%; bottom: -140px; animation-duration: 21s; animation-delay: 10s; }
+    .float-card:nth-child(7) { right: 82%; bottom: -180px; animation-duration: 23s; animation-delay: 4s; }
+    .float-card:nth-child(8) { right: 48%; bottom: -240px; animation-duration: 25s; animation-delay: 8s; }
+    .float-card:nth-child(9) { right: 62%; bottom: -60px;  animation-duration: 17s; animation-delay: 12s; }
+
+    /* Grid lines overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 70%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(4,8,26,0.7) 0%,
+        rgba(4,8,26,0.2) 60%,
+        transparent 100%
+      );
+    }
+
+    #hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.25;
+      display: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    .hero-eyebrow::before {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-size: clamp(44px, 6vw, 84px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      max-width: 780px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.9s ease 0.4s forwards;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-subhead {
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: 300;
+      color: rgba(245,245,245,0.75);
+      max-width: 540px;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+
+    .hero-support {
+      margin-top: 12px;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(245,245,245,0.5);
+      max-width: 500px;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 0.75s forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      margin-top: 48px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 0.9s forwards;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid rgba(245,245,245,0.3);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 2px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.4);
+      opacity: 0;
+      animation: fadeUp 1s ease 1.2s forwards;
+    }
+
+    .hero-scroll::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 48px;
+      background: rgba(245,245,245,0.2);
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── TICKER ──────────────────────────────────────────── */
+    .ticker-wrap {
+      overflow: hidden;
+      background: rgba(30,58,138,0.15);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 48px;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+
+    .ticker-track:hover { animation-play-state: paused; }
+
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.5);
+      white-space: nowrap;
+    }
+
+    .ticker-item::after {
+      content: "·";
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ────────────────────────────────────────── */
+    section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-eyebrow::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-heading {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(245,245,245,0.7);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    /* ── ABOUT ───────────────────────────────────────────── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #about-globe-canvas {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-left, .about-right {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-right {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(245,245,245,0.65);
+      line-height: 1.85;
+    }
+
+    .about-right p + p { margin-top: 20px; }
+
+    /* ── SERVICES ────────────────────────────────────────── */
+    #services { border-bottom: 1px solid var(--border); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      border: 1px solid var(--border);
+    }
+
+    .service-card {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.3s ease;
+    }
+
+    .service-card:hover { background: rgba(30,58,138,0.12); }
+    .service-card:hover::before { height: 100%; }
+
+    .service-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .service-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: rgba(245,245,245,0.55);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .service-link {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .service-card:hover .service-link { gap: 10px; }
+
+    /* ── EXPERTISE ───────────────────────────────────────── */
+    #expertise { border-bottom: 1px solid var(--border); }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      border: 1px solid var(--border);
+    }
+
+    .expertise-card {
+      padding: 36px 40px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.25s;
+    }
+
+    .expertise-card:hover { background: rgba(30,58,138,0.08); }
+
+    .expertise-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+
+    .expertise-text {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(245,245,245,0.6);
+      line-height: 1.75;
+    }
+
+    /* ── APEX INSIGHTS PREVIEW ───────────────────────────── */
+    #insights-preview { border-bottom: 1px solid var(--border); }
+
+    .insights-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .insights-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .insights-link:hover { gap: 10px; }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .insight-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,130,246,0.4);
+    }
+
+    .insight-cover {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(135deg, var(--blue) 0%, #0d1433 100%);
+      overflow: hidden;
+    }
+
+    .insight-cover img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      opacity: 1;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .insight-card:hover .insight-cover img {
+      transform: scale(1.04);
+    }
+
+    .insight-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(4,8,26,0.7) 100%);
+      pointer-events: none;
+    }
+
+    .insight-category {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(4,8,26,0.85);
+      padding: 5px 10px;
+      border-radius: 2px;
+      z-index: 2;
+      backdrop-filter: blur(4px);
+    }
+
+    .insight-body { padding: 24px; }
+
+    .insight-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .insight-summary {
+      font-size: 13px;
+      color: rgba(245,245,245,0.55);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .insight-stats {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .insight-stat-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .insight-stat-label {
+      font-size: 11px;
+      color: rgba(245,245,245,0.45);
+      margin-top: 2px;
+    }
+
+    .insight-read-more {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .insight-card:hover .insight-read-more { gap: 10px; }
+
+    /* ── PARTNERS ────────────────────────────────────────── */
+    #partners { border-bottom: 1px solid var(--border); }
+
+    .partners-heading-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+      border: 1px solid var(--border);
+    }
+
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 20px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      filter: grayscale(1) brightness(0.6);
+      transition: filter 0.3s;
+      min-height: 80px;
+    }
+
+    .partner-logo:hover { filter: none; }
+
+    .partner-logo img { max-height: 36px; max-width: 100px; object-fit: contain; }
+
+    .partner-name-fallback {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.4);
+      text-align: center;
+    }
+
+    /* ── NEWSLETTER ──────────────────────────────────────── */
+    #newsletter {
+      background: linear-gradient(135deg, rgba(30,58,138,0.3) 0%, rgba(4,8,26,0) 100%);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 60px 64px;
+      max-width: 1200px;
+      margin: 0 auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .newsletter-heading {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .newsletter-body {
+      font-size: 15px;
+      color: rgba(245,245,245,0.6);
+      line-height: 1.7;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-right: none;
+      border-radius: 2px 0 0 2px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(245,245,245,0.35); }
+    .newsletter-form input:focus { border-color: var(--accent); }
+
+    .newsletter-form button {
+      padding: 14px 28px;
+      background: var(--blue);
+      border: none;
+      border-radius: 0 2px 2px 0;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .newsletter-form button:hover { background: var(--accent); }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 64px 48px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .footer-brand-name { margin-bottom: 0; }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: rgba(245,245,245,0.5);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 280px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-link {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: rgba(245,245,245,0.5);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .footer-social-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    .footer-col-heading {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.4);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(245,245,245,0.55);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-contact p {
+      font-size: 13px;
+      color: rgba(245,245,245,0.55);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .footer-contact a { color: var(--accent); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 28px;
+      font-size: 12px;
+      color: rgba(245,245,245,0.3);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      nav { padding: 0 24px; }
+      section { padding: 72px 24px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .insights-grid { grid-template-columns: repeat(2, 1fr); }
+      .partners-grid { grid-template-columns: repeat(4, 1fr); }
+      #about { grid-template-columns: 1fr; gap: 40px; }
+      #newsletter { grid-template-columns: 1fr; gap: 32px; padding: 40px 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-content { padding: 100px 24px 60px; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; border-radius: 2px 2px 0 0; }
+      .newsletter-form button { border-radius: 0 0 2px 2px; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ───────────────────────────────────────── -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="assets/apex-logo.png" alt="Apex Sports" class="nav-logo-img" /></a>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li class="has-dropdown">
+      <a href="#">Our Services</a>
+      <ul class="dropdown">
+        <li><a href="media-rights.html">Media Rights</a></li>
+        <li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li>
+        <li><a href="strategy-advisory-services.html">Strategy &amp; Advisory Services</a></li>
+        <li><a href="event-delivery.html">Event Delivery, Operations &amp; League Planning</a></li>
+        <li><a href="athlete-management.html">Athlete Management</a></li>
+        <li><a href="production.html">Production</a></li>
+      </ul>
+    </li>
+    <li><a href="our-team.html">Our Team</a></li>
+    <li><a href="our-partners.html">Partners</a></li>
+    <li><a href="our-roster.html">Roster</a></li>
+    <li><a href="apex-insights.html">Apex Insights</a></li>
+    <li><a href="mailto:office@apex-sports.org" class="nav-cta">Contact Us</a></li>
+  </ul>
+
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <!-- Cinematic background layers -->
+  <div class="hero-bg">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-beam"></div>
+    <div class="hero-grid"></div>
+    <!-- Pulsing rings (right side) -->
+    <div class="hero-rings">
+      <div class="hero-ring"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-ring-center"></div>
+    </div>
+    <!-- Floating deal data cards -->
+    <div class="hero-float-cards" id="hero-float-cards">
+      <div class="float-card">
+        <div class="float-card-value">$385M</div>
+        <div class="float-card-label">Ten Sports</div>
+        <div class="float-card-tag gold">M&amp;A</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value">200M+</div>
+        <div class="float-card-label">Digital Views</div>
+        <div class="float-card-tag blue">DP World Dressing Room Show</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value gold">Jazz 5G</div>
+        <div class="float-card-label">Sponsorship Consultant</div>
+        <div class="float-card-tag green">Commercial</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value">162M+</div>
+        <div class="float-card-label">YouTube MCN</div>
+        <div class="float-card-tag blue">Media Rights</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value gold">90M+</div>
+        <div class="float-card-label">TV Views</div>
+        <div class="float-card-tag gold">DP World</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value">Sony</div>
+        <div class="float-card-label">Official Advisor</div>
+        <div class="float-card-tag blue">Consulting</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value gold">MASL</div>
+        <div class="float-card-label">Distribution</div>
+        <div class="float-card-tag gold">Media Rights</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value">Remitly</div>
+        <div class="float-card-label">Sponsorship Deal</div>
+        <div class="float-card-tag green">Commercial</div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-value gold">Asia Cup</div>
+        <div class="float-card-label">Distribution</div>
+        <div class="float-card-tag blue">Media Rights</div>
+      </div>
+    </div>
+  </div>
+  <!-- Optional video layer (add assets/hero-video.mp4 to activate) -->
+  <video id="hero-video" autoplay muted loop playsinline>
+    <source src="assets/hero-video.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Dubai Based · Global Sport · Commercial Intelligence</div>
+    <h1 class="hero-headline">Shaping <em>Champions</em><br>Beyond The Game</h1>
+    <p class="hero-subhead">We do not just manage sport, we transform it.</p>
+    <p class="hero-support">Through strategy, innovation, and execution, we create lasting global impact.</p>
+    <div class="hero-ctas">
+      <a href="apex-insights.html" class="btn-primary">Our Work</a>
+      <a href="mailto:office@apex-sports.org" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ── TICKER ────────────────────────────────────────────── -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker-track">
+    <!-- populated by JS -->
+  </div>
+</div>
+
+<!-- ── ABOUT ─────────────────────────────────────────────── -->
+<section id="about">
+  <canvas id="about-globe-canvas" width="560" height="560"></canvas>
+  <div class="about-left">
+    <div class="section-eyebrow">About Us</div>
+    <h2 class="section-heading">Empowering Global Sport Beyond the Game</h2>
+    <p class="section-body">Apex Sports brings together a team with over 30 years of combined experience. We have worked with leading sports organizations and world-class athletes across the globe, delivering strategic solutions at the highest level of the game.</p>
+  </div>
+  <div class="about-right">
+    <p>Our team has successfully navigated the complexities of global franchise leagues, structured high-value commercial and media rights deals, managed top-tier talent, and executed integrated marketing campaigns that drive fan engagement and brand growth.</p>
+    <p>In addition, we advise on financial transactions — including private equity investments, acquisitions, and strategic partnerships — bridging the worlds of sports, capital, and long-term commercial success.</p>
+  </div>
+</section>
+
+<!-- ── SERVICES ──────────────────────────────────────────── -->
+<section id="services">
+  <div class="section-eyebrow">What We Do</div>
+  <h2 class="section-heading">Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-number">01</div>
+      <div class="service-name">Media Rights</div>
+      <div class="service-desc">Global broadcast distribution, OTT strategy, and YouTube-first content monetisation.</div>
+      <a href="media-rights.html" class="service-link">Learn More →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-number">02</div>
+      <div class="service-name">Commercial Rights &amp; Sales</div>
+      <div class="service-desc">Sponsorship packaging, deal structuring, naming rights, and brand activations.</div>
+      <a href="commercial-rights-sales.html" class="service-link">Learn More →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-number">03</div>
+      <div class="service-name">Strategy &amp; Advisory Services</div>
+      <div class="service-desc">Market entry, regulatory advisory, asset valuation, and PE/investment advisory.</div>
+      <a href="strategy-advisory-services.html" class="service-link">Learn More →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-number">04</div>
+      <div class="service-name">Event Delivery, Operations &amp; League Planning</div>
+      <div class="service-desc">Concept to execution, league governance, and expert stakeholder management.</div>
+      <a href="event-delivery.html" class="service-link">Learn More →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-number">05</div>
+      <div class="service-name">Athlete Management</div>
+      <div class="service-desc">Elite representation, contracts, endorsements, PR and digital strategy.</div>
+      <a href="athlete-management.html" class="service-link">Learn More →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-number">06</div>
+      <div class="service-name">Production</div>
+      <div class="service-desc">Concept to final cut, broadcast infrastructure, content packaging and distribution.</div>
+      <a href="production.html" class="service-link">Learn More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERTISE ─────────────────────────────────────────── -->
+<section id="expertise">
+  <div class="section-eyebrow">Track Record</div>
+  <h2 class="section-heading">Our Work</h2>
+  <div class="expertise-grid" id="expertise-grid">
+    <!-- populated by JS -->
+  </div>
+</section>
+
+<!-- ── APEX INSIGHTS PREVIEW ─────────────────────────────── -->
+<section id="insights-preview">
+  <div class="insights-header">
+    <div>
+      <div class="section-eyebrow">Case Studies</div>
+      <h2 class="section-heading">Apex Insights</h2>
+    </div>
+    <a href="apex-insights.html" class="insights-link">View All Insights →</a>
+  </div>
+  <div class="insights-grid" id="insights-grid">
+    <!-- populated by JS -->
+  </div>
+</section>
+
+<!-- ── PARTNERS ───────────────────────────────────────────── -->
+<section id="partners">
+  <div class="partners-heading-row">
+    <div>
+      <div class="section-eyebrow">Trusted By</div>
+      <h2 class="section-heading">Our Partners</h2>
+    </div>
+    <a href="our-partners.html" class="insights-link">View All Partners →</a>
+  </div>
+  <div class="partners-grid" id="partners-grid">
+    <!-- populated by JS -->
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ─────────────────────────────────────────── -->
+<div style="padding: 0 48px 100px; max-width:1296px; margin:0 auto;">
+  <div id="newsletter">
+    <div>
+      <div class="section-eyebrow">Stay Informed</div>
+      <h2 class="newsletter-heading">Stay Ahead<br>of the Game</h2>
+      <p class="newsletter-body">Get Apex insights, deal intelligence, and industry updates straight to your inbox.</p>
+    </div>
+    <div>
+      <form class="newsletter-form" id="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p style="font-size:11px;color:rgba(245,245,245,0.3);margin-top:12px;">No spam. Unsubscribe at any time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name"><img src="assets/apex-logo.png" alt="Apex Sports" class="footer-logo-img" /></div>
+        <p class="footer-tagline">End-to-end solutions that drive success across the global sports ecosystem. Decades of experience. Deals that matter.</p>
+        <div class="footer-socials" id="footer-socials">
+          <!-- populated by JS -->
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="our-partners.html">Our Partners</a></li>
+          <li><a href="our-roster.html">Our Roster</a></li>
+          <li><a href="apex-insights.html">Apex Insights</a></li>
+          <li><a href="mailto:office@apex-sports.org">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-heading">Our Services</div>
+        <ul class="footer-links">
+          <li><a href="media-rights.html">Media Rights</a></li>
+          <li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li>
+          <li><a href="strategy-advisory-services.html">Strategy &amp; Advisory</a></li>
+          <li><a href="event-delivery.html">Event Delivery</a></li>
+          <li><a href="athlete-management.html">Athlete Management</a></li>
+          <li><a href="production.html">Production</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <div class="footer-col-heading">Contact</div>
+        <p><a href="mailto:office@apex-sports.org">office@apex-sports.org</a></p>
+        <p>Business Center 1, M Floor,<br>The Meydan Hotel,<br>Nad Al Sheba, Dubai, U.A.E.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Apex Sports Consulting LLC FZ. All Rights Reserved.</span>
+      <span>Dubai, U.A.E.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── HERO VIDEO (shows on top of CSS animation if file exists) ──
+(function() {
+  const vid = document.getElementById('hero-video');
+  if (vid) vid.addEventListener('loadeddata', () => { vid.style.display = 'block'; });
+})();
+
+// ── TICKER ───────────────────────────────────────────────
+(function() {
+  const names = ["Sony","PCB","DP World","Geo Super","Myco","SA20","Jazz 5G","Walee Tech","Multan Sultans","Fancode"];
+  const track = document.getElementById('ticker-track');
+  const doubled = [...names, ...names];
+  track.innerHTML = doubled.map(n => `<span class="ticker-item">${n}</span>`).join('');
+})();
+
+// ── EXPERTISE ────────────────────────────────────────────
+(function() {
+  const items = [
+    { title: "Mergers & Acquisitions", text: "Negotiated the shareholding sale in Ten Sports to Sony Group at a significant premium to initial investment value. The company was valued at over $385 million against an initial investment of $20 million." },
+    { title: "Commercial Rights Management", text: "Negotiated and structured multi-million dollar commercial rights deals for Pakistan Cricket, Pakistan Super League, ILT20, CPL." },
+    { title: "Setting Up a Successful Sports League", text: "Played pivotal leadership and operational roles in setting up and running the Pakistan Super League, Caribbean Premier League, ILT20." },
+    { title: "Athlete Management", text: "Manage some of the biggest names in international sports." },
+    { title: "Private Sector Investment in Sports", text: "Structured and negotiated franchise agreements to bring the single largest private sector investment into Pakistan cricket valued at over $150m. Managed commercial programs for CPL, ILT20." },
+    { title: "Legal and Governance Advisory", text: "Designed and conducted bidding processes as well as SOPs for various international sporting events." },
+    { title: "Rights & Production", text: "Closed multi-million dollar media rights deals and delivered live production for major international and league sports events." },
+    { title: "Event and Operations Planning", text: "Led the successful return and growth of domestic and international cricket through expert planning, oversight, and tournament management." },
+  ];
+  const grid = document.getElementById('expertise-grid');
+  grid.innerHTML = items.map(i => `
+    <div class="expertise-card">
+      <div class="expertise-title">${i.title}</div>
+      <div class="expertise-text">${i.text}</div>
+    </div>
+  `).join('');
+})();
+
+// ── APEX INSIGHTS PREVIEW ────────────────────────────────
+(function() {
+  const grid = document.getElementById('insights-grid');
+  const featured = APEX.insights.slice(0, 3);
+  grid.innerHTML = featured.map(ins => `
+    <a href="apex-insights.html#${ins.id}" class="insight-card" style="display:block;text-decoration:none;color:inherit;">
+      <div class="insight-cover">
+        ${ins.coverImage ? `<img src="assets/${ins.coverImage}" alt="${ins.title}" />` : ''}
+        <span class="insight-category">${ins.category}</span>
+      </div>
+      <div class="insight-body">
+        ${ins.stats.length ? `<div class="insight-stats">${ins.stats.map(s => `
+          <div><div class="insight-stat-value">${s.value}</div><div class="insight-stat-label">${s.label}</div></div>
+        `).join('')}</div>` : ''}
+        <div class="insight-title">${ins.title}</div>
+        <div class="insight-summary">${ins.summary}</div>
+        <div class="insight-read-more">Read Case Study →</div>
+      </div>
+    </a>
+  `).join('');
+
+  if (featured.length === 0) {
+    grid.innerHTML = '<p style="color:rgba(245,245,245,0.4);font-size:14px;">Case studies coming soon.</p>';
+  }
+})();
+
+// ── PARTNERS ─────────────────────────────────────────────
+(function() {
+  const grid = document.getElementById('partners-grid');
+  const visible = APEX.partners.filter(p => p.show);
+  grid.innerHTML = visible.map(p => `
+    <div class="partner-logo" title="${p.name}">
+      ${p.logo ? `<img src="assets/logos/${p.logo}" alt="${p.name}" />` : `<span class="partner-name-fallback">${p.name}</span>`}
+    </div>
+  `).join('');
+})();
+
+// ── FOOTER SOCIALS ───────────────────────────────────────
+(function() {
+  const s = APEX.meta.social;
+  const icons = [
+    { key: 'instagram', src: 'assets/icons/instagram.svg' },
+    { key: 'twitter',   src: 'assets/icons/x.svg' },
+    { key: 'youtube',   src: 'assets/icons/youtube.svg' },
+    { key: 'linkedin',  src: 'assets/icons/linkedin.svg' },
+  ];
+  document.getElementById('footer-socials').innerHTML = icons.map(i =>
+    `<a href="${s[i.key]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${i.src}" alt="${i.key}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`
+  ).join('');
+})();
+
+// ── NEWSLETTER ───────────────────────────────────────────
+function handleNewsletter(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('input');
+  const action = APEX.meta.newsletter.formAction;
+  if (action && action !== '#') {
+    // Submit to configured platform
+    e.target.submit();
+  } else {
+    // Fallback
+    window.location.href = `mailto:${APEX.meta.email}?subject=Newsletter Subscription&body=Please add me to the Apex Sports newsletter: ${input.value}`;
+  }
+}
+
+// ── MOBILE MENU ──────────────────────────────────────────
+function toggleMenu() {
+  const links = document.getElementById('nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = '';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';
+  }
+}
+document.querySelectorAll('.has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      this.parentElement.classList.toggle('open');
+    }
+  });
+});
+
+// ── SCROLL NAV ───────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').style.background =
+    window.scrollY > 40 ? 'rgba(4,8,26,0.98)' : 'rgba(4,8,26,0.92)';
+});
+
+// Scroll reveal + card tilt + counters handled by animations.js
+
+// ── ABOUT GLOBE ──────────────────────────────────────────
+(function(){
+  var canvas = document.getElementById('about-globe-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var cx = W / 2, cy = H / 2, R = 240;
+  var PI = Math.PI, PI2 = PI * 2;
+  var offset = 0;
+  var raf;
+
+  function toRad(d){ return d * PI / 180; }
+
+  function drawFrame(){
+    ctx.clearRect(0, 0, W, H);
+
+    // Sphere fill
+    var grad = ctx.createRadialGradient(cx - R * 0.3, cy - R * 0.3, R * 0.05, cx, cy, R);
+    grad.addColorStop(0,   'rgba(59,130,246,0.25)');
+    grad.addColorStop(0.5, 'rgba(30,58,138,0.15)');
+    grad.addColorStop(1,   'rgba(4,8,26,0.60)');
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, PI2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Sphere rim
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, PI2);
+    ctx.strokeStyle = 'rgba(59,130,246,0.30)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Latitude rings
+    ctx.strokeStyle = 'rgba(59,130,246,0.14)';
+    ctx.lineWidth = 0.8;
+    for (var latD = -60; latD <= 60; latD += 30) {
+      var latR = toRad(latD);
+      var ringR = Math.cos(latR) * R;
+      var ringY = cy - Math.sin(latR) * R;
+      ctx.beginPath();
+      ctx.ellipse(cx, ringY, ringR, ringR * 0.18, 0, 0, PI2);
+      ctx.stroke();
+    }
+
+    // Longitude arcs (front half only)
+    ctx.strokeStyle = 'rgba(59,130,246,0.14)';
+    ctx.lineWidth = 0.8;
+    for (var lonD = 0; lonD < 360; lonD += 30) {
+      var lonR = toRad(lonD) + offset;
+      var pts = [];
+      for (var laD = -80; laD <= 80; laD += 4) {
+        var laR = toRad(laD);
+        var z3 = Math.cos(laR) * Math.cos(lonR);
+        if (z3 < 0) { if (pts.length) { drawPath(pts); pts = []; } continue; }
+        pts.push({ x: cx + Math.cos(laR) * Math.sin(lonR) * R, y: cy - Math.sin(laR) * R });
+      }
+      if (pts.length) drawPath(pts);
+    }
+
+    // Territory dots
+    var dots = [[25,45],[20,78],[51,-1],[50,10],[-25,135],[40,-100],[5,0]];
+    dots.forEach(function(d){
+      var lat = toRad(d[0]), lon = toRad(d[1]) + offset;
+      var x = Math.cos(lat) * Math.sin(lon);
+      var y = Math.sin(lat);
+      var z = Math.cos(lat) * Math.cos(lon);
+      if (z < -0.15) return;
+      var alpha = Math.min(1, (z + 0.15) / 1.0);
+      var isFront = z > 0.6;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      if (isFront) { ctx.shadowBlur = 20; ctx.shadowColor = '#D4AF37'; }
+      else         { ctx.shadowBlur = 12; ctx.shadowColor = '#3B82F6'; }
+      ctx.beginPath();
+      ctx.arc(cx + x * R, cy - y * R, isFront ? 6 : 4, 0, PI2);
+      ctx.fillStyle = isFront ? '#D4AF37' : '#3B82F6';
+      ctx.fill();
+      if (isFront) {
+        ctx.beginPath();
+        ctx.arc(cx + x * R, cy - y * R, 11, 0, PI2);
+        ctx.strokeStyle = 'rgba(212,175,55,0.35)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+      }
+      ctx.restore();
+    });
+
+    offset += 0.003;
+    raf = requestAnimationFrame(drawFrame);
+  }
+
+  function drawPath(pts){
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+    ctx.stroke();
+  }
+
+  // Start only when section is in view, pause when off screen
+  var started = false;
+  var visObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        if (!started) { started = true; drawFrame(); }
+        else if (!raf) drawFrame();
+      } else {
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+      }
+    });
+  }, { threshold: 0 });
+  visObs.observe(canvas);
+})();
+</script>
+</body>
+</html>

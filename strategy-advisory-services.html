@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategy &amp; Advisory Services | Apex Sports Consulting</title>
+  <meta name="description" content="Market entry, asset valuation, regulatory advisory and PE investment advisory for sports organisations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="content.js"></script>
+  <script src="animations.js" defer></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}:root{--navy:#04081A;--blue:#1E3A8A;--accent:#3B82F6;--gold:#D4AF37;--white:#F5F5F5;--border:rgba(59,130,246,0.15);}html{scroll-behavior:smooth;}body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(4,8,26,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    .nav-logo{display:flex;align-items:center;}.nav-logo-img{height:48px;width:auto;display:block;}.footer-logo-img{height:42px;width:auto;display:block;margin-bottom:12px;}
+    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}.nav-links li{position:relative;}.nav-links a{display:block;padding:8px 14px;font-size:13px;font-weight:500;color:rgba(245,245,245,0.75);border-radius:2px;transition:color 0.2s;white-space:nowrap;}.nav-links a:hover{color:var(--white);}
+    .has-dropdown>a::after{content:" ▾";font-size:10px;opacity:0.6;}.dropdown{display:none;position:absolute;top:100%;padding-top:8px;left:0;background:#0D1833;border:1px solid var(--border);border-radius:4px;min-width:260px;padding:8px 0;box-shadow:0 20px 40px rgba(0,0,0,0.5);}.has-dropdown:hover .dropdown{display:block;}.has-dropdown.open .dropdown{display:block;}@media(max-width:768px){.has-dropdown.open .dropdown{position:static;border:none;box-shadow:none;background:transparent;padding:4px 0 4px 14px;min-width:0;}}.dropdown a{padding:10px 20px;font-size:13px;color:rgba(245,245,245,0.7);border-radius:0;}.dropdown a:hover{background:rgba(59,130,246,0.1);color:var(--accent);}
+    .nav-cta{padding:9px 22px !important;background:var(--blue) !important;color:var(--white) !important;border-radius:2px !important;font-weight:600 !important;}.nav-cta:hover{background:var(--accent) !important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}.nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);}
+    .page-hero{padding:160px 48px 80px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;}.eyebrow::before{content:"";display:block;width:24px;height:1px;background:var(--gold);}
+    .page-headline{font-size:clamp(36px,5vw,72px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;}.page-subhead{font-size:20px;font-weight:300;color:rgba(245,245,245,0.6);max-width:600px;line-height:1.7;}
+    section{padding:80px 48px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+    .section-heading{font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:20px;}.section-body{font-size:15px;font-weight:300;color:rgba(245,245,245,0.7);line-height:1.85;max-width:680px;}
+    .capabilities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:48px;border:1px solid var(--border);}
+    .cap-card{padding:32px 36px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.25s;}.cap-card:hover{background:rgba(30,58,138,0.1);}
+    .cap-title{font-size:15px;font-weight:700;margin-bottom:8px;}.cap-text{font-size:13px;font-weight:300;color:rgba(245,245,245,0.6);line-height:1.75;}
+    .cta-strip{background:linear-gradient(135deg,rgba(30,58,138,0.3),rgba(4,8,26,0));border:1px solid var(--border);border-radius:2px;padding:60px 64px;display:flex;align-items:center;justify-content:space-between;gap:40px;margin:0 auto 80px;max-width:1200px;}
+    .cta-strip h2{font-size:32px;font-weight:800;letter-spacing:-1px;max-width:480px;}
+    .btn-primary{display:inline-block;padding:14px 32px;background:var(--blue);color:var(--white);font-size:14px;font-weight:600;border-radius:2px;transition:background 0.2s;white-space:nowrap;}.btn-primary:hover{background:var(--accent);}
+    footer{border-top:1px solid var(--border);padding:64px 48px 32px;}.footer-inner{max-width:1200px;margin:0 auto;}.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border);}
+    .footer-brand-name{margin-bottom:0;}.footer-tagline{font-size:13px;color:rgba(245,245,245,0.5);line-height:1.7;margin-bottom:24px;max-width:280px;}
+    .footer-socials{display:flex;gap:12px;}.footer-social-link{width:36px;height:36px;border:1px solid var(--border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(245,245,245,0.5);transition:border-color 0.2s,color 0.2s;}.footer-social-link:hover{border-color:var(--accent);color:var(--accent);}
+    .footer-col-heading{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.4);margin-bottom:20px;}.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}.footer-links a{font-size:13px;color:rgba(245,245,245,0.55);transition:color 0.2s;}.footer-links a:hover{color:var(--white);}
+    .footer-contact p{font-size:13px;color:rgba(245,245,245,0.55);line-height:1.7;margin-bottom:8px;}.footer-contact a{color:var(--accent);}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:28px;font-size:12px;color:rgba(245,245,245,0.3);}
+    @media(max-width:1024px){nav,section,.page-hero,.cta-strip{padding-left:24px;padding-right:24px;}.capabilities-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}.cta-strip{flex-direction:column;align-items:flex-start;}}
+    @media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}.footer-top{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/apex-logo.png" alt="Apex Sports" class="nav-logo-img" /></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="index.html#about">About Us</a></li><li class="has-dropdown"><a href="#">Our Services</a><ul class="dropdown"><li><a href="media-rights.html">Media Rights</a></li><li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li><li><a href="strategy-advisory-services.html">Strategy &amp; Advisory Services</a></li><li><a href="event-delivery.html">Event Delivery, Operations &amp; League Planning</a></li><li><a href="athlete-management.html">Athlete Management</a></li><li><a href="production.html">Production</a></li></ul></li><li><a href="our-team.html">Our Team</a></li><li><a href="our-partners.html">Partners</a></li><li><a href="our-roster.html">Roster</a></li><li><a href="apex-insights.html">Apex Insights</a></li><li><a href="mailto:office@apex-sports.org" class="nav-cta">Contact Us</a></li></ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="page-hero">
+  <div class="eyebrow">Our Services</div>
+  <h1 class="page-headline">Strategy &amp; Advisory Services</h1>
+  <p class="page-subhead">Market intelligence. Investment-grade analysis. Decisions that hold under pressure.</p>
+</div>
+<section>
+  <div class="eyebrow">What We Offer</div>
+  <h2 class="section-heading">Capabilities</h2>
+  <div class="capabilities-grid">
+    <div class="cap-card"><div class="cap-title">Market Entry Advisory</div><div class="cap-text">We guide organisations entering GCC, South Asia, and European markets — navigating regulatory environments, identifying the right local partners, and structuring entry correctly from day one.</div></div>
+    <div class="cap-card"><div class="cap-title">Asset Valuation</div><div class="cap-text">We provide independent, commercial valuations of sports assets — leagues, media rights, franchises, sponsorship packages — grounded in comparable transaction data and market intelligence.</div></div>
+    <div class="cap-card"><div class="cap-title">PE &amp; Investment Advisory</div><div class="cap-text">We advise private equity funds, family offices, and sovereign investors evaluating sports assets — from deal origination and due diligence through to post-acquisition value creation.</div></div>
+    <div class="cap-card"><div class="cap-title">Regulatory Advisory</div><div class="cap-text">Sports regulation varies dramatically by market. We advise on broadcast regulation, sports law, governance structures, and compliance across the jurisdictions in which we operate.</div></div>
+    <div class="cap-card"><div class="cap-title">Legal &amp; Governance Frameworks</div><div class="cap-text">We design and conduct bidding processes and standard operating procedures for international sporting events and league structures, from franchise bidding to governance documents.</div></div>
+    <div class="cap-card"><div class="cap-title">Commercial Due Diligence</div><div class="cap-text">For acquirers and investors, we provide commercial due diligence on sports rights, media businesses, and sponsorship assets — assessing value, risk, and growth potential.</div></div>
+  </div>
+</section>
+<section>
+  <div class="eyebrow">Track Record</div>
+  <h2 class="section-heading">Decisions That Shaped Sport</h2>
+  <p class="section-body">Negotiated the shareholding sale in Ten Sports to Sony Group at a significant premium to initial investment — company valued at over $385 million against an initial $20 million investment. Advised on private equity investments and acquisitions across the cricket and broadcast sectors. Designed bidding processes and SOPs for major international sporting events.</p>
+</section>
+<div class="cta-strip"><h2>Need a strategic edge in your next sports deal?</h2><a href="mailto:office@apex-sports.org" class="btn-primary">Get in Touch</a></div>
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-brand-name"><img src="assets/apex-logo.png" alt="Apex Sports" class="footer-logo-img" /></div><p class="footer-tagline">End-to-end solutions that drive success across the global sports ecosystem.</p><div class="footer-socials" id="footer-socials"></div></div><div><div class="footer-col-heading">Quick Links</div><ul class="footer-links"><li><a href="index.html#about">About Us</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="our-partners.html">Our Partners</a></li><li><a href="apex-insights.html">Apex Insights</a></li><li><a href="mailto:office@apex-sports.org">Contact</a></li></ul></div><div><div class="footer-col-heading">Our Services</div><ul class="footer-links"><li><a href="media-rights.html">Media Rights</a></li><li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li><li><a href="strategy-advisory-services.html">Strategy &amp; Advisory</a></li><li><a href="event-delivery.html">Event Delivery</a></li><li><a href="athlete-management.html">Athlete Management</a></li><li><a href="production.html">Production</a></li></ul></div><div class="footer-contact"><div class="footer-col-heading">Contact</div><p><a href="mailto:office@apex-sports.org">office@apex-sports.org</a></p><p>Business Center 1, M Floor,<br>The Meydan Hotel,<br>Nad Al Sheba, Dubai, U.A.E.</p></div></div><div class="footer-bottom"><span>© 2026 Apex Sports Consulting LLC FZ. All Rights Reserved.</span><span>Dubai, U.A.E.</span></div></div></footer>
+<script>(function(){const s=APEX.meta.social;const i=[['instagram','assets/icons/instagram.svg'],['twitter','assets/icons/x.svg'],['youtube','assets/icons/youtube.svg'],['linkedin','assets/icons/linkedin.svg']];document.getElementById('footer-socials').innerHTML=i.map(([k,src])=>`<a href="${s[k]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${src}" alt="${k}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`).join('');})();function toggleMenu(){const l=document.querySelector('.nav-links');if(l.style.display==='flex'){l.style.display='';}else{l.style.cssText='display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';}}document.querySelectorAll('.has-dropdown > a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open');}});});</script>
+</body></html>

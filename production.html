@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Production | Apex Sports Consulting</title>
+  <meta name="description" content="Concept to final cut. Broadcast-grade sports content production and distribution. The team behind DP World Dressing Room." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="content.js"></script>
+  <script src="animations.js" defer></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}:root{--navy:#04081A;--blue:#1E3A8A;--accent:#3B82F6;--gold:#D4AF37;--white:#F5F5F5;--border:rgba(59,130,246,0.15);}html{scroll-behavior:smooth;}body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(4,8,26,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    .nav-logo{display:flex;align-items:center;}.nav-logo-img{height:48px;width:auto;display:block;}.footer-logo-img{height:42px;width:auto;display:block;margin-bottom:12px;}
+    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}.nav-links li{position:relative;}.nav-links a{display:block;padding:8px 14px;font-size:13px;font-weight:500;color:rgba(245,245,245,0.75);border-radius:2px;transition:color 0.2s;white-space:nowrap;}.nav-links a:hover{color:var(--white);}
+    .has-dropdown>a::after{content:" ▾";font-size:10px;opacity:0.6;}.dropdown{display:none;position:absolute;top:100%;padding-top:8px;left:0;background:#0D1833;border:1px solid var(--border);border-radius:4px;min-width:260px;padding:8px 0;box-shadow:0 20px 40px rgba(0,0,0,0.5);}.has-dropdown:hover .dropdown{display:block;}.has-dropdown.open .dropdown{display:block;}@media(max-width:768px){.has-dropdown.open .dropdown{position:static;border:none;box-shadow:none;background:transparent;padding:4px 0 4px 14px;min-width:0;}}.dropdown a{padding:10px 20px;font-size:13px;color:rgba(245,245,245,0.7);}.dropdown a:hover{background:rgba(59,130,246,0.1);color:var(--accent);}
+    .nav-cta{padding:9px 22px !important;background:var(--blue) !important;color:var(--white) !important;border-radius:2px !important;font-weight:600 !important;}.nav-cta:hover{background:var(--accent) !important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}.nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);}
+    .page-hero{padding:160px 48px 80px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;}.eyebrow::before{content:"";display:block;width:24px;height:1px;background:var(--gold);}
+    .page-headline{font-size:clamp(48px,6vw,80px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;}.page-subhead{font-size:20px;font-weight:300;color:rgba(245,245,245,0.6);max-width:600px;line-height:1.7;}
+    section{padding:80px 48px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
+    .section-heading{font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:20px;}.section-body{font-size:15px;font-weight:300;color:rgba(245,245,245,0.7);line-height:1.85;max-width:680px;}
+    .capabilities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:48px;border:1px solid var(--border);}
+    .cap-card{padding:32px 36px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.25s;}.cap-card:hover{background:rgba(30,58,138,0.1);}
+    .cap-title{font-size:15px;font-weight:700;margin-bottom:8px;}.cap-text{font-size:13px;font-weight:300;color:rgba(245,245,245,0.6);line-height:1.75;}
+    .case-study-highlight{margin-top:48px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:2px;padding:48px 56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .case-stats{display:flex;flex-direction:column;gap:28px;}
+    .case-stat-value{font-size:48px;font-weight:800;color:var(--accent);line-height:1;}
+    .case-stat-label{font-size:12px;color:rgba(245,245,245,0.5);margin-top:4px;}
+    .case-body-heading{font-size:22px;font-weight:800;letter-spacing:-0.5px;margin-bottom:12px;}
+    .case-body-text{font-size:14px;font-weight:300;color:rgba(245,245,245,0.65);line-height:1.85;margin-bottom:20px;}
+    .case-link{font-size:13px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px;transition:gap 0.2s;}.case-link:hover{gap:10px;}
+    .cta-strip{background:linear-gradient(135deg,rgba(30,58,138,0.3),rgba(4,8,26,0));border:1px solid var(--border);border-radius:2px;padding:60px 64px;display:flex;align-items:center;justify-content:space-between;gap:40px;margin:0 auto 80px;max-width:1200px;}
+    .cta-strip h2{font-size:32px;font-weight:800;letter-spacing:-1px;max-width:480px;}
+    .btn-primary{display:inline-block;padding:14px 32px;background:var(--blue);color:var(--white);font-size:14px;font-weight:600;border-radius:2px;transition:background 0.2s;white-space:nowrap;}.btn-primary:hover{background:var(--accent);}
+    footer{border-top:1px solid var(--border);padding:64px 48px 32px;}.footer-inner{max-width:1200px;margin:0 auto;}.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border);}
+    .footer-brand-name{margin-bottom:0;}.footer-tagline{font-size:13px;color:rgba(245,245,245,0.5);line-height:1.7;margin-bottom:24px;max-width:280px;}
+    .footer-socials{display:flex;gap:12px;}.footer-social-link{width:36px;height:36px;border:1px solid var(--border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(245,245,245,0.5);transition:border-color 0.2s,color 0.2s;}.footer-social-link:hover{border-color:var(--accent);color:var(--accent);}
+    .footer-col-heading{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.4);margin-bottom:20px;}.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}.footer-links a{font-size:13px;color:rgba(245,245,245,0.55);transition:color 0.2s;}.footer-links a:hover{color:var(--white);}
+    .footer-contact p{font-size:13px;color:rgba(245,245,245,0.55);line-height:1.7;margin-bottom:8px;}.footer-contact a{color:var(--accent);}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:28px;font-size:12px;color:rgba(245,245,245,0.3);}
+    @media(max-width:1024px){nav,section,.page-hero,.cta-strip{padding-left:24px;padding-right:24px;}.capabilities-grid{grid-template-columns:1fr;}.case-study-highlight{grid-template-columns:1fr;padding:36px;}.footer-top{grid-template-columns:1fr 1fr;}.cta-strip{flex-direction:column;align-items:flex-start;}}
+    @media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}.footer-top{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/apex-logo.png" alt="Apex Sports" class="nav-logo-img" /></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="index.html#about">About Us</a></li><li class="has-dropdown"><a href="#">Our Services</a><ul class="dropdown"><li><a href="media-rights.html">Media Rights</a></li><li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li><li><a href="strategy-advisory-services.html">Strategy &amp; Advisory Services</a></li><li><a href="event-delivery.html">Event Delivery, Operations &amp; League Planning</a></li><li><a href="athlete-management.html">Athlete Management</a></li><li><a href="production.html">Production</a></li></ul></li><li><a href="our-team.html">Our Team</a></li><li><a href="our-partners.html">Partners</a></li><li><a href="our-roster.html">Roster</a></li><li><a href="apex-insights.html">Apex Insights</a></li><li><a href="mailto:office@apex-sports.org" class="nav-cta">Contact Us</a></li></ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="page-hero">
+  <div class="eyebrow">Our Services</div>
+  <h1 class="page-headline">Production</h1>
+  <p class="page-subhead">Broadcast-grade content. Distribution-ready from day one. From concept to final cut — we manage every detail.</p>
+</div>
+<section>
+  <div class="eyebrow">What We Offer</div>
+  <h2 class="section-heading">Capabilities</h2>
+  <div class="capabilities-grid">
+    <div class="cap-card"><div class="cap-title">Concept Development</div><div class="cap-text">We develop show concepts from scratch — format, editorial approach, talent strategy, production values, and commercial packaging. We build for distribution from day one.</div></div>
+    <div class="cap-card"><div class="cap-title">Scripting &amp; Editorial</div><div class="cap-text">Show treatments, scripts, rundowns, and editorial frameworks — built around the audience, the broadcaster, and the commercial objectives of the production.</div></div>
+    <div class="cap-card"><div class="cap-title">Full Production</div><div class="cap-text">Studio and location production, talent management, broadcast crew, post-production, and delivery. We manage every moving part to broadcast standard.</div></div>
+    <div class="cap-card"><div class="cap-title">Broadcast Infrastructure</div><div class="cap-text">From OB trucks to live streaming setups — we advise on and deploy the infrastructure needed to deliver live sports content at broadcast quality.</div></div>
+    <div class="cap-card"><div class="cap-title">Content Packaging</div><div class="cap-text">We package finished content for TV, digital, social, and OTT — adapting format, duration, and delivery spec to each platform and distribution partner.</div></div>
+    <div class="cap-card"><div class="cap-title">Distribution</div><div class="cap-text">We leverage our network — broadcast partners, YouTube channels, digital platforms, and streaming services — to maximise reach for every production we deliver.</div></div>
+  </div>
+</section>
+<section>
+  <div class="eyebrow">Featured Case Study</div>
+  <h2 class="section-heading">The DP World Dressing Room</h2>
+  <div class="case-study-highlight">
+    <div class="case-stats">
+      <div><div class="case-stat-value">90M+</div><div class="case-stat-label">TV Views</div></div>
+      <div><div class="case-stat-value">200M+</div><div class="case-stat-label">Total Digital Views</div></div>
+    </div>
+    <div>
+      <div class="case-body-heading">How Apex Sports Turned Cricket Analysis into a Global Digital Hit</div>
+      <p class="case-body-text">Hailed as "a masterclass in cricket, analysis, and entertainment," The DP World Dressing Room featured Wasim Akram, Waqar Younis, Ravi Shastri, and Sunil Gavaskar — distributed across Ten Sports and digital partners, reaching millions across South Asia and the global cricket diaspora.</p>
+      <a href="apex-insights.html#dp-world-dressing-room" class="case-link">Read Full Case Study →</a>
+    </div>
+  </div>
+</section>
+<div class="cta-strip"><h2>Have a production project in mind?</h2><a href="mailto:office@apex-sports.org" class="btn-primary">Get in Touch</a></div>
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-brand-name"><img src="assets/apex-logo.png" alt="Apex Sports" class="footer-logo-img" /></div><p class="footer-tagline">End-to-end solutions that drive success across the global sports ecosystem.</p><div class="footer-socials" id="footer-socials"></div></div><div><div class="footer-col-heading">Quick Links</div><ul class="footer-links"><li><a href="index.html#about">About Us</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="our-partners.html">Our Partners</a></li><li><a href="apex-insights.html">Apex Insights</a></li><li><a href="mailto:office@apex-sports.org">Contact</a></li></ul></div><div><div class="footer-col-heading">Our Services</div><ul class="footer-links"><li><a href="media-rights.html">Media Rights</a></li><li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li><li><a href="strategy-advisory-services.html">Strategy &amp; Advisory</a></li><li><a href="event-delivery.html">Event Delivery</a></li><li><a href="athlete-management.html">Athlete Management</a></li><li><a href="production.html">Production</a></li></ul></div><div class="footer-contact"><div class="footer-col-heading">Contact</div><p><a href="mailto:office@apex-sports.org">office@apex-sports.org</a></p><p>Business Center 1, M Floor,<br>The Meydan Hotel,<br>Nad Al Sheba, Dubai, U.A.E.</p></div></div><div class="footer-bottom"><span>© 2026 Apex Sports Consulting LLC FZ. All Rights Reserved.</span><span>Dubai, U.A.E.</span></div></div></footer>
+<script>(function(){const s=APEX.meta.social;const i=[['instagram','assets/icons/instagram.svg'],['twitter','assets/icons/x.svg'],['youtube','assets/icons/youtube.svg'],['linkedin','assets/icons/linkedin.svg']];document.getElementById('footer-socials').innerHTML=i.map(([k,src])=>`<a href="${s[k]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${src}" alt="${k}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`).join('');})();function toggleMenu(){const l=document.querySelector('.nav-links');if(l.style.display==='flex'){l.style.display='';}else{l.style.cssText='display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';}}document.querySelectorAll('.has-dropdown > a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open');}});});</script>
+</body></html>

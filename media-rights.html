@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Rights | Apex Sports Consulting</title>
+  <meta name="description" content="Global broadcast distribution, OTT strategy, and YouTube-first content monetisation. Apex Sports Media Rights advisory." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="content.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #04081A;
+      --blue: #1E3A8A;
+      --accent: #3B82F6;
+      --gold: #D4AF37;
+      --white: #F5F5F5;
+      --border: rgba(59,130,246,0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── SCROLL PROGRESS ── */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--accent));
+      z-index: 3000; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(4,8,26,0.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links li { position: relative; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 500; color: rgba(245,245,245,0.75); border-radius: 2px; transition: color 0.2s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .has-dropdown > a::after { content: " ▾"; font-size: 10px; opacity: 0.6; }
+    .dropdown { display: none; position: absolute; top: 100%; padding-top: 8px; left: 0; background: #0D1833; border: 1px solid var(--border); border-radius: 4px; min-width: 260px; padding: 8px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .has-dropdown:hover .dropdown { display: block; }
+    .has-dropdown.open .dropdown { display: block; }
+    @media (max-width: 768px) {
+      .has-dropdown.open .dropdown { position: static; border: none; box-shadow: none; background: transparent; padding: 4px 0 4px 14px; min-width: 0; }
+    }
+    .dropdown a { padding: 10px 20px; font-size: 13px; color: rgba(245,245,245,0.7); border-radius: 0; }
+    .dropdown a:hover, .dropdown a.active { background: rgba(59,130,246,0.1); color: var(--accent); }
+    .nav-cta { padding: 9px 22px !important; background: var(--blue) !important; color: var(--white) !important; border-radius: 2px !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--accent) !important; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
+
+    /* ── SECTION NUMBERING ── */
+    .section-number {
+      position: absolute; right: 0; top: 0;
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      color: rgba(245,245,245,0.12); text-transform: uppercase;
+      writing-mode: vertical-rl; text-orientation: mixed;
+      padding-right: 4px; user-select: none;
+    }
+
+    /* ── HERO LOGO OVERLAY ── */
+    .hero-logos {
+      position: absolute; inset: 0; z-index: 2;
+      pointer-events: none;
+    }
+    .hero-logo-item {
+      position: absolute;
+      opacity: 0.18;
+      mix-blend-mode: screen;
+      filter: grayscale(1) brightness(3);
+    }
+
+
+    /* ── HERO ── */
+    .hero-outer {
+      position: relative; min-height: 90vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; top: -30%; left: 0; right: 0; bottom: -30%;
+      background: url('assets/media-rights-hero.jpg') center / cover no-repeat;
+      will-change: transform;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(4,8,26,0.88) 0%, rgba(4,8,26,0.65) 60%, rgba(4,8,26,0.80) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 3;
+      padding: 140px 48px 100px; max-width: 1200px; margin: 0 auto; width: 100%;
+    }
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+      opacity: 0; transform: translateX(-20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .eyebrow.reveal { opacity: 1; transform: translateX(0); }
+    .eyebrow-line {
+      display: inline-block; width: 0; height: 1px; background: var(--gold);
+      transition: width 0.5s ease 0.2s;
+    }
+    .eyebrow.reveal .eyebrow-line { width: 24px; }
+    .hero-headline {
+      font-size: clamp(52px, 7vw, 88px); font-weight: 800;
+      line-height: 1.02; letter-spacing: -2.5px;
+      margin-bottom: 28px;
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.65s ease 0.2s, transform 0.65s ease 0.2s;
+    }
+    .hero-headline.reveal { opacity: 1; transform: translateY(0); }
+    .hero-subhead {
+      font-size: 20px; font-weight: 300; color: rgba(245,245,245,0.65);
+      max-width: 580px; line-height: 1.75;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease 0.45s, transform 0.6s ease 0.45s;
+    }
+    .hero-subhead.reveal { opacity: 1; transform: translateY(0); }
+
+    /* ── TRUSTED BY STRIP ── */
+    .trusted-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 48px;
+      background: rgba(30,58,138,0.04);
+      overflow: hidden;
+    }
+    .trusted-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(245,245,245,0.3);
+      text-align: center; margin-bottom: 24px;
+    }
+    .trusted-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .trusted-logo-item {
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .trusted-logo-item.reveal { opacity: 1; transform: translateY(0); }
+    .trusted-logo-item img {
+      height: 32px; width: auto;
+      filter: grayscale(1) brightness(0.6);
+      transition: filter 0.3s ease;
+    }
+    .trusted-logo-item:hover img { filter: grayscale(0) brightness(1); }
+    .trusted-logo-text {
+      font-size: 13px; font-weight: 500;
+      color: rgba(245,245,245,0.4);
+      transition: color 0.3s ease;
+    }
+    .trusted-logo-text:hover { color: rgba(245,245,245,0.8); }
+
+    /* ── SHARED SECTION WRAPPER ── */
+    .section-wrap {
+      position: relative;
+      padding: 100px 48px; max-width: 1200px; margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+    }
+    .section-eyebrow::before { content: ""; display: block; width: 20px; height: 1px; background: var(--gold); }
+    .section-heading {
+      font-size: clamp(30px, 3.5vw, 48px); font-weight: 800;
+      letter-spacing: -1.5px; line-height: 1.08; margin-bottom: 24px;
+    }
+    .section-body {
+      font-size: 15px; font-weight: 300;
+      color: rgba(245,245,245,0.65); line-height: 1.85; max-width: 640px;
+    }
+
+    /* ── FADE-UP REVEAL ── */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.55s cubic-bezier(0.25,0.1,0.25,1), transform 0.55s cubic-bezier(0.25,0.1,0.25,1);
+    }
+    .fade-up.reveal { opacity: 1; transform: translateY(0); }
+
+    /* ── CAPABILITIES GRID ── */
+    .cap-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; margin-top: 56px;
+      border: 1px solid var(--border);
+      background: var(--border);
+    }
+    .cap-card {
+      position: relative; overflow: hidden;
+      padding: 36px 32px; background: var(--navy);
+      transition: background 0.3s ease, transform 0.25s ease;
+      cursor: default;
+    }
+    .cap-card::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(circle 120px at var(--mx, 50%) var(--my, 50%), rgba(59,130,246,0.08), transparent 70%);
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .cap-card:hover { background: rgba(30,58,138,0.12); transform: translateY(-4px); }
+    .cap-card:hover::after { opacity: 1; }
+    .cap-title { font-size: 14px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.2px; }
+    .cap-text { font-size: 13px; font-weight: 300; color: rgba(245,245,245,0.58); line-height: 1.8; }
+
+    /* ── HOW WE WORK ── */
+    .how-flow {
+      display: flex; align-items: flex-start; gap: 0;
+      margin-top: 64px; position: relative;
+    }
+    .how-step {
+      flex: 1; opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .how-step.reveal { opacity: 1; transform: translateY(0); }
+    .step-circle {
+      width: 52px; height: 52px; border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: var(--accent);
+      margin-bottom: 24px; position: relative;
+      background: rgba(59,130,246,0.08);
+      transform: scale(0.7);
+      transition: transform 0.4s cubic-bezier(0.25,0.1,0.25,1);
+    }
+    .how-step.reveal .step-circle { transform: scale(1); }
+    .step-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .step-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .step-text { font-size: 13px; font-weight: 300; color: rgba(245,245,245,0.58); line-height: 1.85; max-width: 280px; }
+
+    .step-connector {
+      flex: 0 0 60px; margin-top: 26px;
+      display: flex; align-items: center; padding: 0 8px;
+    }
+    .connector-track {
+      width: 100%; height: 1px; background: rgba(59,130,246,0.15);
+      position: relative; overflow: hidden;
+    }
+    .connector-fill {
+      position: absolute; top: 0; left: 0; height: 100%;
+      width: 100%; background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .connector-fill.reveal { transform: scaleX(1); }
+
+    /* ── TRACK RECORD ── */
+    .track-cards { display: grid; gap: 20px; margin-top: 52px; }
+    .track-card {
+      position: relative; overflow: hidden;
+      padding: 32px 36px; background: rgba(13,24,51,0.5);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      opacity: 0; transform: translateX(-24px);
+      transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
+    }
+    .track-card.reveal { opacity: 1; transform: translateX(0); }
+    .track-card:hover { background: rgba(30,58,138,0.12); }
+    .track-card::before {
+      content: ""; position: absolute; left: 0; top: 0;
+      width: 3px; height: 0; background: var(--gold);
+      transition: height 0.5s ease 0.2s;
+    }
+    .track-card.reveal::before { height: 100%; }
+    .track-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .track-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .track-proof { font-size: 13px; font-weight: 300; color: rgba(245,245,245,0.6); line-height: 1.7; }
+    .track-link {
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      white-space: nowrap; display: flex; align-items: center; gap: 6px;
+      transition: gap 0.2s ease;
+    }
+    .track-link:hover { gap: 10px; }
+    .track-see-all {
+      margin-top: 28px; text-align: right;
+      font-size: 13px; font-weight: 500; color: rgba(245,245,245,0.4);
+    }
+    .track-see-all a { color: var(--accent); transition: color 0.2s; }
+    .track-see-all a:hover { color: var(--white); }
+
+    /* ── GLOBE ── */
+    .globe-scene {
+      margin-top: 56px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 0;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .globe-scene.reveal { opacity: 1; transform: translateY(0); }
+    .globe-callouts-left, .globe-callouts-right {
+      display: flex; flex-direction: column;
+      gap: 28px; flex: 1; max-width: 220px;
+    }
+    .globe-callouts-left { align-items: flex-end; padding-right: 28px; }
+    .globe-callouts-right { align-items: flex-start; padding-left: 28px; }
+    .globe-center { flex: 0 0 380px; position: relative; }
+    #globe-canvas { display: block; cursor: grab; }
+    #globe-canvas:active { cursor: grabbing; }
+
+    .globe-callout {
+      position: relative;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      background: rgba(13,24,51,0.5);
+      transition: border-color 0.3s ease, background 0.3s ease;
+      max-width: 200px;
+    }
+    .globe-callout.active {
+      border-color: rgba(212,175,55,0.5);
+      background: rgba(30,58,138,0.15);
+    }
+    .globe-callouts-left .globe-callout { text-align: right; }
+    .globe-callouts-right .globe-callout { text-align: left; }
+
+    /* Connector lines */
+    .globe-callouts-left .globe-callout::after {
+      content: ''; position: absolute;
+      top: 50%; right: -28px;
+      width: 24px; height: 1px;
+      background: linear-gradient(90deg, rgba(212,175,55,0.2), rgba(212,175,55,0.7));
+    }
+    .globe-callouts-right .globe-callout::before {
+      content: ''; position: absolute;
+      top: 50%; left: -28px;
+      width: 24px; height: 1px;
+      background: linear-gradient(270deg, rgba(212,175,55,0.2), rgba(212,175,55,0.7));
+    }
+
+    .globe-callout-region {
+      font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+    }
+    .globe-callout-stat {
+      font-size: 17px; font-weight: 800; letter-spacing: -0.5px;
+      color: var(--white); line-height: 1.1;
+    }
+    .globe-callout.active .globe-callout-stat { color: var(--accent); }
+    .globe-callout-desc {
+      font-size: 11px; font-weight: 300;
+      color: rgba(245,245,245,0.45); margin-top: 3px; line-height: 1.5;
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-outer {
+      max-width: 1200px; margin: 0 auto 80px;
+      padding: 0 48px;
+    }
+    .cta-strip {
+      background: linear-gradient(135deg, rgba(30,58,138,0.3), rgba(4,8,26,0));
+      border: 1px solid var(--border); border-radius: 2px;
+      padding: 64px 72px;
+      display: flex; align-items: center; justify-content: space-between; gap: 40px;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .cta-strip.reveal { opacity: 1; transform: translateY(0); }
+    .cta-strip h2 { font-size: 32px; font-weight: 800; letter-spacing: -1px; max-width: 480px; line-height: 1.15; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 34px; background: var(--blue);
+      color: var(--white); font-size: 14px; font-weight: 600;
+      border-radius: 2px; white-space: nowrap;
+      position: relative; overflow: hidden;
+      transition: background 0.2s ease;
+    }
+    .btn-primary::after {
+      content: ""; position: absolute; top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      transform: skewX(-20deg);
+      animation: btnShimmer 4s ease 2s infinite;
+    }
+    @keyframes btnShimmer {
+      0% { left: -100%; }
+      40% { left: 160%; }
+      100% { left: 160%; }
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-arrow { transition: transform 0.2s ease; }
+    .btn-primary:hover .btn-arrow { transform: translateX(4px); }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 64px 48px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
+    .footer-logo-img { height: 42px; width: auto; display: block; margin-bottom: 12px; }
+    .footer-tagline { font-size: 13px; color: rgba(245,245,245,0.5); line-height: 1.7; margin-bottom: 24px; max-width: 280px; }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social-link { width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgba(245,245,245,0.5); transition: border-color 0.2s, color 0.2s; }
+    .footer-social-link:hover { border-color: var(--accent); color: var(--accent); }
+    .footer-col-heading { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,245,245,0.4); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: rgba(245,245,245,0.55); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-contact p { font-size: 13px; color: rgba(245,245,245,0.55); line-height: 1.7; margin-bottom: 8px; }
+    .footer-contact a { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; font-size: 12px; color: rgba(245,245,245,0.3); }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, .hero-headline, .hero-subhead,
+      .fade-up, .trusted-logo-item, .how-step, .cap-card,
+      .track-card, .dist-card, .cta-strip,
+      .connector-fill, .step-circle, .track-card::before {
+        opacity: 1 !important; transform: none !important; transition: none !important;
+      }
+      .btn-primary::after { animation: none !important; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav, .cta-outer, .section-wrap { padding-left: 24px; padding-right: 24px; }
+      .hero-content { padding-left: 24px; padding-right: 24px; }
+      .trusted-strip { padding-left: 24px; padding-right: 24px; }
+      .cap-grid { grid-template-columns: repeat(2, 1fr); }
+      .globe-callouts-left, .globe-callouts-right { max-width: 170px; }
+      .globe-callout-stat { font-size: 14px; }
+      .cta-strip { flex-direction: column; align-items: flex-start; padding: 48px 40px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      footer { padding-left: 24px; padding-right: 24px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .cap-grid { grid-template-columns: 1fr; }
+      .how-flow { flex-direction: column; gap: 32px; }
+      .step-connector { display: none; }
+      .track-card { flex-direction: column; align-items: flex-start; }
+      .globe-scene { flex-direction: column; gap: 24px; }
+      .globe-callouts-left, .globe-callouts-right { flex-direction: row; flex-wrap: wrap; justify-content: center; max-width: 100%; padding: 0; align-items: stretch; }
+      .globe-callouts-left .globe-callout, .globe-callouts-right .globe-callout { text-align: left; max-width: 45%; }
+      .globe-callouts-left .globe-callout::after, .globe-callouts-right .globe-callout::before { display: none; }
+      .globe-center { flex: 0 0 280px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .section-number { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/apex-logo.png" alt="Apex Sports" class="nav-logo-img" /></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li class="has-dropdown">
+      <a href="#">Our Services</a>
+      <ul class="dropdown">
+        <li><a href="media-rights.html" class="active">Media Rights</a></li>
+        <li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li>
+        <li><a href="strategy-advisory-services.html">Strategy &amp; Advisory Services</a></li>
+        <li><a href="event-delivery.html">Event Delivery, Operations &amp; League Planning</a></li>
+        <li><a href="athlete-management.html">Athlete Management</a></li>
+        <li><a href="production.html">Production</a></li>
+      </ul>
+    </li>
+    <li><a href="our-team.html">Our Team</a></li>
+    <li><a href="our-partners.html">Partners</a></li>
+    <li><a href="our-roster.html">Roster</a></li>
+    <li><a href="apex-insights.html">Apex Insights</a></li>
+    <li><a href="mailto:office@apex-sports.org" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ── SECTION 1: HERO ── -->
+<div class="hero-outer">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <!-- Logo layer sits ABOVE the overlay at z-index:2, below content at z-index:3 -->
+  <div class="hero-logos" aria-hidden="true">
+    <img src="assets/apex-logo.png" class="hero-logo-item" style="right: 8%; top: 30%; width: 140px;" alt="" />
+    <img src="assets/logos/dp-world.png" class="hero-logo-item" style="left: 12%; top: 38%; width: 90px;" alt="" />
+    <img src="assets/logos/geo-super.png" class="hero-logo-item" style="left: 38%; bottom: 28%; width: 72px;" alt="" />
+    <img src="assets/logos/myco.png" class="hero-logo-item" style="right: 22%; bottom: 32%; width: 64px;" alt="" />
+  </div>
+  <div class="hero-content">
+    <div class="eyebrow" id="hero-eyebrow">
+      <span class="eyebrow-line"></span>Our Services
+    </div>
+    <h1 class="hero-headline" id="hero-headline">Media Rights</h1>
+    <p class="hero-subhead" id="hero-subhead">Global broadcast distribution built on decades of deal-making across cricket, football, motorsport, and beyond.</p>
+  </div>
+</div>
+
+<!-- ── SECTION 2: TRUSTED BY ── -->
+<div class="trusted-strip">
+  <div class="trusted-label">Trusted across global sport</div>
+  <div class="trusted-logos" id="trusted-logos"></div>
+</div>
+
+<!-- ── SECTION 3: CAPABILITIES ── -->
+<div style="border-bottom: 1px solid var(--border);">
+  <div class="section-wrap" style="border-bottom: none;">
+    <span class="section-number">01</span>
+    <div class="fade-up">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-heading">Capabilities</h2>
+    </div>
+    <div class="cap-grid" id="cap-grid">
+      <div class="cap-card fade-up" style="transition-delay: 0.05s">
+        <div class="cap-title">Global Broadcast Distribution</div>
+        <div class="cap-text">We distribute rights across television, OTT, and digital platforms in MENA, South Asia, Europe, and beyond. We know the buyers, the deal structures, and the market rates.</div>
+      </div>
+      <div class="cap-card fade-up" style="transition-delay: 0.10s">
+        <div class="cap-title">OTT Strategy</div>
+        <div class="cap-text">We help rights holders navigate the shift from linear to digital — packaging content for streaming platforms and building direct-to-fan subscription models.</div>
+      </div>
+      <div class="cap-card fade-up" style="transition-delay: 0.15s">
+        <div class="cap-title">YouTube-First Monetisation</div>
+        <div class="cap-text">Through our DRM joint venture — 600+ channels, 162M+ subscribers — we monetise sports archive and live content at scale on YouTube, including membership tiers and high-CPM audience development.</div>
+      </div>
+      <div class="cap-card fade-up" style="transition-delay: 0.20s">
+        <div class="cap-title">Rights Acquisition &amp; Packaging</div>
+        <div class="cap-text">We advise on the acquisition side too — assessing fair value, negotiating terms, and packaging bundles that maximise revenue across territories.</div>
+      </div>
+      <div class="cap-card fade-up" style="transition-delay: 0.25s">
+        <div class="cap-title">Archive Monetisation</div>
+        <div class="cap-text">Legacy footage is underutilised. We identify and unlock the commercial value of historic sports content through syndication, licensing, and digital distribution deals.</div>
+      </div>
+      <div class="cap-card fade-up" style="transition-delay: 0.30s">
+        <div class="cap-title">Rights Valuation &amp; Benchmarking</div>
+        <div class="cap-text">We provide independent valuation of media rights packages, benchmarking against comparable properties to ensure rights holders and acquirers negotiate from a position of informed confidence.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 4: HOW WE WORK ── -->
+<div style="border-bottom: 1px solid var(--border);">
+  <div class="section-wrap" style="border-bottom: none;">
+    <span class="section-number">02</span>
+    <div class="fade-up">
+      <div class="section-eyebrow">Our Process</div>
+      <h2 class="section-heading">A Structured Approach to Rights Strategy</h2>
+    </div>
+    <div class="how-flow" id="how-flow">
+      <div class="how-step" id="step-1">
+        <div class="step-circle">1</div>
+        <div class="step-label">Assess</div>
+        <div class="step-title">Evaluate &amp; Value</div>
+        <div class="step-text">We begin with a thorough evaluation of your content portfolio, current distribution footprint, and market positioning. This includes rights valuation, competitive benchmarking, and audience analysis across target territories.</div>
+      </div>
+      <div class="step-connector">
+        <div class="connector-track"><div class="connector-fill" id="conn-1"></div></div>
+      </div>
+      <div class="how-step" id="step-2">
+        <div class="step-circle">2</div>
+        <div class="step-label">Structure</div>
+        <div class="step-title">Design the Deal</div>
+        <div class="step-text">We design the optimal deal architecture — territory splits, platform mix, exclusivity windows, and revenue models — tailored to maximise total yield while preserving strategic flexibility.</div>
+      </div>
+      <div class="step-connector">
+        <div class="connector-track"><div class="connector-fill" id="conn-2"></div></div>
+      </div>
+      <div class="how-step" id="step-3">
+        <div class="step-circle">3</div>
+        <div class="step-label">Execute</div>
+        <div class="step-title">Close &amp; Deliver</div>
+        <div class="step-text">We take the deal to market, leveraging our global buyer network to negotiate terms, close agreements, and manage the handoff to operational delivery. We stay involved through to fulfilment.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 5: TRACK RECORD ── -->
+<div style="border-bottom: 1px solid var(--border);">
+  <div class="section-wrap" style="border-bottom: none;">
+    <span class="section-number">03</span>
+    <div class="fade-up">
+      <div class="section-eyebrow">Track Record</div>
+      <h2 class="section-heading">Proven Results Across Global Properties</h2>
+    </div>
+    <div class="track-cards">
+      <div class="track-card">
+        <div>
+          <div class="track-tag">Media Rights</div>
+          <div class="track-title">SA20 Media Rights</div>
+          <div class="track-proof">Advised on international broadcast distribution strategy for the SA20 cricket league, expanding reach across MENA and South Asian territories.</div>
+        </div>
+        <a href="apex-insights.html" class="track-link">Read Case Study <span class="btn-arrow">→</span></a>
+      </div>
+      <div class="track-card" style="transition-delay: 0.15s">
+        <div>
+          <div class="track-tag">Broadcast Advisory</div>
+          <div class="track-title">Sony — Asia Cup Consultancy</div>
+          <div class="track-proof">Provided consultancy on broadcast distribution and rights packaging strategy for Asia Cup, working directly with Sony Sports.</div>
+        </div>
+        <a href="apex-insights.html" class="track-link">Read Case Study <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+    <div class="track-see-all">
+      <a href="apex-insights.html">See all case studies →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 6: DISTRIBUTION FOOTPRINT ── -->
+<div style="border-bottom: 1px solid var(--border);">
+  <div class="section-wrap" style="border-bottom: none;">
+    <span class="section-number">04</span>
+    <div class="fade-up">
+      <div class="section-eyebrow">Coverage</div>
+      <h2 class="section-heading">Where We Operate</h2>
+    </div>
+
+    <div class="globe-scene" id="globe-scene">
+      <!-- Left callouts -->
+      <div class="globe-callouts-left">
+        <div class="globe-callout" id="callout-mena">
+          <div class="globe-callout-region">MENA</div>
+          <div class="globe-callout-stat">20+ Markets</div>
+          <div class="globe-callout-desc">Active broadcast &amp; digital distribution across the Middle East &amp; North Africa</div>
+        </div>
+        <div class="globe-callout" id="callout-sa">
+          <div class="globe-callout-region">South Asia</div>
+          <div class="globe-callout-stat">1.8B+ Population</div>
+          <div class="globe-callout-desc">Broadcast and digital partnerships across the subcontinent</div>
+        </div>
+        <div class="globe-callout" id="callout-uk">
+          <div class="globe-callout-region">United Kingdom</div>
+          <div class="globe-callout-stat">Active</div>
+          <div class="globe-callout-desc">OTT and linear distribution across UK broadcast platforms</div>
+        </div>
+      </div>
+
+      <!-- Globe canvas -->
+      <div class="globe-center">
+        <canvas id="globe-canvas" width="380" height="380"></canvas>
+      </div>
+
+      <!-- Right callouts -->
+      <div class="globe-callouts-right">
+        <div class="globe-callout" id="callout-yt">
+          <div class="globe-callout-region">YouTube Global</div>
+          <div class="globe-callout-stat">162 Million+</div>
+          <div class="globe-callout-desc">Subscribers via DRM joint venture — 600+ channels</div>
+        </div>
+        <div class="globe-callout" id="callout-eu">
+          <div class="globe-callout-region">Europe</div>
+          <div class="globe-callout-stat">OTT &amp; Linear</div>
+          <div class="globe-callout-desc">Deals across France, Germany and emerging markets</div>
+        </div>
+        <div class="globe-callout" id="callout-anz">
+          <div class="globe-callout-region">ANZ &amp; Americas</div>
+          <div class="globe-callout-stat">Active</div>
+          <div class="globe-callout-desc">Australia, New Zealand, North America and the Americas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 7: CTA ── -->
+<div class="cta-outer" style="margin-top: 80px;">
+  <div class="cta-strip" id="cta-strip">
+    <h2>Ready to structure your next media rights deal?</h2>
+    <a href="mailto:office@apex-sports.org" class="btn-primary">
+      Get in Touch <span class="btn-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div><img src="assets/apex-logo.png" alt="Apex Sports" class="footer-logo-img" /></div>
+        <p class="footer-tagline">End-to-end solutions that drive success across the global sports ecosystem.</p>
+        <div class="footer-socials" id="footer-socials"></div>
+      </div>
+      <div>
+        <div class="footer-col-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="our-partners.html">Our Partners</a></li>
+          <li><a href="apex-insights.html">Apex Insights</a></li>
+          <li><a href="mailto:office@apex-sports.org">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-heading">Our Services</div>
+        <ul class="footer-links">
+          <li><a href="media-rights.html">Media Rights</a></li>
+          <li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li>
+          <li><a href="strategy-advisory-services.html">Strategy &amp; Advisory</a></li>
+          <li><a href="event-delivery.html">Event Delivery</a></li>
+          <li><a href="athlete-management.html">Athlete Management</a></li>
+          <li><a href="production.html">Production</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <div class="footer-col-heading">Contact</div>
+        <p><a href="mailto:office@apex-sports.org">office@apex-sports.org</a></p>
+        <p>Business Center 1, M Floor,<br>The Meydan Hotel,<br>Nad Al Sheba, Dubai, U.A.E.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Apex Sports Consulting LLC FZ. All Rights Reserved.</span>
+      <span>Dubai, U.A.E.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAV TOGGLE ──
+function toggleMenu(){
+  const l = document.querySelector('.nav-links');
+  if(l.style.display === 'flex'){
+    l.style.display = '';
+  } else {
+    l.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';
+  }
+}
+document.querySelectorAll('.has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) { e.preventDefault(); this.parentElement.classList.toggle('open'); }
+  });
+});
+
+// ── FOOTER SOCIALS ──
+(function(){
+  const s = APEX.meta.social;
+  const i = [['instagram','assets/icons/instagram.svg'],['twitter','assets/icons/x.svg'],['youtube','assets/icons/youtube.svg'],['linkedin','assets/icons/linkedin.svg']];
+  document.getElementById('footer-socials').innerHTML = i.map(([k,src]) =>
+    `<a href="${s[k]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${src}" alt="${k}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`
+  ).join('');
+})();
+
+// ── TRUSTED BY LOGOS ──
+(function(){
+  const container = document.getElementById('trusted-logos');
+  const partners = APEX.partners.slice(0, 8);
+  container.innerHTML = partners.map(p => {
+    if(p.logo){
+      return `<div class="trusted-logo-item"><img src="assets/logos/${p.logo}" alt="${p.name}" /></div>`;
+    }
+    return `<div class="trusted-logo-item"><span class="trusted-logo-text">${p.name}</span></div>`;
+  }).join('');
+})();
+
+// ── SCROLL PROGRESS ──
+window.addEventListener('scroll', function(){
+  const doc = document.documentElement;
+  const scrolled = doc.scrollTop;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const pct = total > 0 ? (scrolled / total) * 100 : 0;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+}, { passive: true });
+
+// ── HERO PARALLAX ──
+const heroBg = document.getElementById('hero-bg');
+window.addEventListener('scroll', function(){
+  if(window.scrollY < window.innerHeight * 1.5){
+    heroBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+  }
+}, { passive: true });
+
+// ── HERO TEXT ANIMATE ON LOAD ──
+window.addEventListener('load', function(){
+  setTimeout(function(){ document.getElementById('hero-eyebrow').classList.add('reveal'); }, 200);
+  setTimeout(function(){ document.getElementById('hero-headline').classList.add('reveal'); }, 400);
+  setTimeout(function(){ document.getElementById('hero-subhead').classList.add('reveal'); }, 650);
+});
+
+// ── CAPABILITY CARD CURSOR SPOTLIGHT ──
+document.querySelectorAll('.cap-card').forEach(function(card){
+  card.addEventListener('mousemove', function(e){
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + '%';
+    const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1) + '%';
+    card.style.setProperty('--mx', x);
+    card.style.setProperty('--my', y);
+  });
+});
+
+// ── INTERSECTION OBSERVER ──
+function makeObserver(callback, options){
+  return new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        callback(entry.target);
+      }
+    });
+  }, options || { threshold: 0.15 });
+}
+
+// General fade-up
+var fadeObs = makeObserver(function(el){
+  el.classList.add('reveal');
+  fadeObs.unobserve(el);
+});
+document.querySelectorAll('.fade-up').forEach(function(el){ fadeObs.observe(el); });
+
+// Trusted logos — staggered
+var logoObs = makeObserver(function(el){
+  var items = el.querySelectorAll('.trusted-logo-item');
+  items.forEach(function(item, i){
+    setTimeout(function(){ item.classList.add('reveal'); }, i * 80);
+  });
+  logoObs.unobserve(el);
+}, { threshold: 0.2 });
+logoObs.observe(document.getElementById('trusted-logos'));
+
+// How We Work — sequenced
+var howObs = makeObserver(function(el){
+  var step1 = document.getElementById('step-1');
+  var conn1 = document.getElementById('conn-1');
+  var step2 = document.getElementById('step-2');
+  var conn2 = document.getElementById('conn-2');
+  var step3 = document.getElementById('step-3');
+  setTimeout(function(){ step1.classList.add('reveal'); }, 0);
+  setTimeout(function(){ conn1.classList.add('reveal'); }, 450);
+  setTimeout(function(){ step2.classList.add('reveal'); }, 750);
+  setTimeout(function(){ conn2.classList.add('reveal'); }, 1100);
+  setTimeout(function(){ step3.classList.add('reveal'); }, 1400);
+  howObs.unobserve(el);
+}, { threshold: 0.2 });
+howObs.observe(document.getElementById('how-flow'));
+
+// Track cards
+var trackObs = makeObserver(function(el){
+  el.classList.add('reveal');
+  trackObs.unobserve(el);
+});
+document.querySelectorAll('.track-card').forEach(function(el){ trackObs.observe(el); });
+
+// ── GLOBE ──
+(function(){
+  var canvas = document.getElementById('globe-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var cx = W / 2, cy = H / 2, R = 160;
+  var PI = Math.PI, PI2 = PI * 2;
+  var offset = 0;
+  var paused = false;
+  var raf;
+
+  // Territories: [lat_deg, lon_deg, callout_id]
+  var territories = [
+    [25,  45,  'callout-mena'],   // MENA
+    [20,  78,  'callout-sa'],     // South Asia
+    [51,  -1,  'callout-uk'],     // UK
+    [ 5,   0,  'callout-yt'],     // YouTube global (near equator/prime)
+    [50,  10,  'callout-eu'],     // Europe
+    [-25, 135, 'callout-anz'],    // ANZ
+    [40, -100, 'callout-anz']     // Americas (shares callout)
+  ];
+
+  function toRad(d){ return d * PI / 180; }
+
+  function project(latDeg, lonDeg){
+    var lat = toRad(latDeg), lon = toRad(lonDeg) + offset;
+    var x = Math.cos(lat) * Math.sin(lon);
+    var y = Math.sin(lat);
+    var z = Math.cos(lat) * Math.cos(lon);
+    return { sx: cx + x * R, sy: cy - y * R, z: z };
+  }
+
+  function drawFrame(){
+    ctx.clearRect(0, 0, W, H);
+
+    // Sphere fill with radial gradient for 3D depth
+    var grad = ctx.createRadialGradient(cx - R * 0.3, cy - R * 0.3, R * 0.05, cx, cy, R);
+    grad.addColorStop(0,   'rgba(59,130,246,0.18)');
+    grad.addColorStop(0.5, 'rgba(30,58,138,0.10)');
+    grad.addColorStop(1,   'rgba(4,8,26,0.55)');
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, PI2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Sphere rim
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, PI2);
+    ctx.strokeStyle = 'rgba(59,130,246,0.25)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Latitude rings (every 30°)
+    ctx.strokeStyle = 'rgba(59,130,246,0.10)';
+    ctx.lineWidth = 0.6;
+    for (var latD = -60; latD <= 60; latD += 30) {
+      var latR = toRad(latD);
+      var ringR = Math.cos(latR) * R;
+      var ringY = cy - Math.sin(latR) * R;
+      ctx.beginPath();
+      ctx.ellipse(cx, ringY, ringR, ringR * 0.18, 0, 0, PI2);
+      ctx.stroke();
+    }
+
+    // Longitude arcs — only front half (z > 0)
+    for (var lonD = 0; lonD < 360; lonD += 30) {
+      var lonR = toRad(lonD) + offset;
+      var pts = [];
+      for (var laD = -80; laD <= 80; laD += 4) {
+        var laR = toRad(laD);
+        var z3 = Math.cos(laR) * Math.cos(lonR);
+        if (z3 < 0) { if (pts.length) { drawPath(pts); pts = []; } continue; }
+        pts.push({ x: cx + Math.cos(laR) * Math.sin(lonR) * R, y: cy - Math.sin(laR) * R });
+      }
+      if (pts.length) drawPath(pts);
+    }
+
+    // Territory dots
+    var calloutZ = {};
+    territories.forEach(function(t){
+      var p = project(t[0], t[1]);
+      if (p.z < -0.15) return;
+      var alpha = Math.min(1, (p.z + 0.15) / 1.0);
+      var isFront = p.z > 0.6;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      if (isFront) {
+        ctx.shadowBlur = 18; ctx.shadowColor = '#D4AF37';
+      } else {
+        ctx.shadowBlur = 10; ctx.shadowColor = '#3B82F6';
+      }
+      ctx.beginPath();
+      ctx.arc(p.sx, p.sy, isFront ? 5.5 : 3.5, 0, PI2);
+      ctx.fillStyle = isFront ? '#D4AF37' : '#3B82F6';
+      ctx.fill();
+      // Pulse ring for front dots
+      if (isFront) {
+        ctx.beginPath();
+        ctx.arc(p.sx, p.sy, 9, 0, PI2);
+        ctx.strokeStyle = 'rgba(212,175,55,0.3)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      ctx.restore();
+      // Track max z per callout
+      var id = t[2];
+      if (calloutZ[id] === undefined || p.z > calloutZ[id]) calloutZ[id] = p.z;
+    });
+
+    // Update callout highlight state
+    Object.keys(calloutZ).forEach(function(id){
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (calloutZ[id] > 0.55) el.classList.add('active');
+      else el.classList.remove('active');
+    });
+
+    if (!paused) offset += 0.003;
+    raf = requestAnimationFrame(drawFrame);
+  }
+
+  function drawPath(pts){
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+    ctx.stroke();
+  }
+
+  canvas.addEventListener('mouseenter', function(){ paused = true; });
+  canvas.addEventListener('mouseleave', function(){ paused = false; });
+
+  // Start globe when section scrolls into view
+  var globeObs = makeObserver(function(el){
+    el.classList.add('reveal');
+    drawFrame();
+    globeObs.unobserve(el);
+  }, { threshold: 0.2 });
+  globeObs.observe(document.getElementById('globe-scene'));
+
+  // Pause when off screen to save resources
+  var visObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting && raf) { cancelAnimationFrame(raf); raf = null; }
+      else if (e.isIntersecting && !raf) drawFrame();
+    });
+  }, { threshold: 0 });
+  visObs.observe(canvas);
+})();
+
+// CTA strip
+var ctaObs = makeObserver(function(el){
+  el.classList.add('reveal');
+  ctaObs.unobserve(el);
+}, { threshold: 0.3 });
+ctaObs.observe(document.getElementById('cta-strip'));
+</script>
+</body>
+</html>
