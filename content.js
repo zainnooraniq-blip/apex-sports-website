@@ -108,7 +108,7 @@ const APEX = {
       subtitle: "PKR 20 Billion PSL Franchise Transaction",
       category: "Commercial",
       coverImage: "multan-sultans.jpeg",
-      video: "multan-sultans-video.mp4",
+      video: "https://www.youtube.com/embed/gxPuE3ON1AU",
       featured: true,
       stats: [
         { value: "PKR 20B", label: "Transaction Value" },
