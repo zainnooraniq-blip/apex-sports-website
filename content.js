@@ -29,11 +29,11 @@ const APEX = {
     address: "Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E.",
     phone: "",
     social: {
-      instagram: "#",   // e.g. https://instagram.com/apexsports
+      instagram: "https://www.instagram.com/apexsportsae/",
       facebook: "#",
-      twitter: "#",
-      youtube: "#",
-      linkedin: "#",
+      twitter: "https://x.com/ApexSportsAE",
+      youtube: "https://www.youtube.com/@sportshubplay",
+      linkedin: "https://www.linkedin.com/company/apexsportsconsulting",
     },
     newsletter: {
       // Set action to your Mailchimp/ConvertKit form URL
