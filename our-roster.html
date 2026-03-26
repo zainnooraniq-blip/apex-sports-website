@@ -50,7 +50,7 @@
     .footer-contact p{font-size:13px;color:rgba(245,245,245,0.55);line-height:1.7;margin-bottom:8px;}.footer-contact a{color:var(--accent);}
     .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:28px;font-size:12px;color:rgba(245,245,245,0.3);}
     @media(max-width:1024px){nav,.roster-section,.page-hero{padding-left:24px;padding-right:24px;}.roster-grid{grid-template-columns:repeat(3,1fr);}.enquire-strip{flex-direction:column;align-items:flex-start;}.footer-top{grid-template-columns:1fr 1fr;}}
-    @media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}.roster-grid{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr;}}@media(max-width:480px){.roster-grid{grid-template-columns:1fr;}}
+    @media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}.roster-grid{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr;}}@media(max-width:480px){.roster-grid{grid-template-columns:repeat(2,1fr);}}
   </style>
 </head>
 <body>
@@ -109,6 +109,6 @@
 })();
 (function(){const s=APEX.meta.social;const i=[['instagram','assets/icons/instagram.svg'],['twitter','assets/icons/x.svg'],['youtube','assets/icons/youtube.svg'],['linkedin','assets/icons/linkedin.svg']];document.getElementById('footer-socials').innerHTML=i.map(([k,src])=>`<a href="${s[k]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${src}" alt="${k}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`).join('');})();
 function toggleMenu(){const l=document.querySelector('.nav-links');if(l.style.display==='flex'){l.style.display='';}else{l.style.cssText='display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';}}
-document.querySelectorAll('.has-dropdown > a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();this.parentElement.classList.toggle('open');}});});
+document.querySelectorAll('.has-dropdown > a').forEach(function(a){function handler(e){if(window.innerWidth<=768){e.preventDefault();e.stopPropagation();this.parentElement.classList.toggle('open');}}a.addEventListener('click',handler);a.addEventListener('touchend',handler);});
 </script>
 </body></html>

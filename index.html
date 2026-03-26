@@ -1458,12 +1458,15 @@ function toggleMenu() {
   }
 }
 document.querySelectorAll('.has-dropdown > a').forEach(function(a) {
-  a.addEventListener('click', function(e) {
+  function handler(e) {
     if (window.innerWidth <= 768) {
       e.preventDefault();
+      e.stopPropagation();
       this.parentElement.classList.toggle('open');
     }
-  });
+  }
+  a.addEventListener('click', handler);
+  a.addEventListener('touchend', handler);
 });
 
 // ── SCROLL NAV ───────────────────────────────────────────
