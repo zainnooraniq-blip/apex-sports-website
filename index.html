@@ -665,6 +665,42 @@
       transition: gap 0.2s;
     }
 
+    .service-cta-card {
+      grid-column: 3;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,58,138,0.12));
+      border-top: 2px solid var(--gold) !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .service-cta-card::before { background: var(--gold) !important; }
+    .service-cta-card:hover { background: linear-gradient(135deg, rgba(212,175,55,0.14), rgba(30,58,138,0.18)) !important; }
+    .service-cta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .service-cta-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(245,245,245,0.75);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .service-cta-text strong { color: var(--white); font-weight: 600; }
+    .service-cta-link {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: opacity 0.2s;
+    }
+    .service-cta-link:hover { opacity: 0.75; }
+
     .service-card:hover .service-link { gap: 10px; }
 
     /* ── EXPERTISE ───────────────────────────────────────── */
@@ -1044,6 +1080,7 @@
       nav { padding: 0 24px; }
       section { padding: 72px 24px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-cta-card { grid-column: auto; }
       .insights-grid { grid-template-columns: repeat(2, 1fr); }
       .partners-grid { grid-template-columns: repeat(4, 1fr); }
       #about { grid-template-columns: 1fr; gap: 40px; }
@@ -1242,6 +1279,11 @@
       <div class="service-name">Production</div>
       <div class="service-desc">Concept to final cut, broadcast infrastructure, content packaging and distribution.</div>
       <a href="production.html" class="service-link">Learn More →</a>
+    </div>
+    <div class="service-card service-cta-card">
+      <div class="service-cta-label">Got Content?</div>
+      <p class="service-cta-text">Do you have archival content or content not reaching its full monetisation potential?<br><strong>We want it.</strong></p>
+      <a href="mailto:office@apex-sports.org" class="service-cta-link">Email Us →</a>
     </div>
   </div>
 </section>
