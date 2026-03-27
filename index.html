@@ -665,41 +665,89 @@
       transition: gap 0.2s;
     }
 
-    .service-cta-card {
-      grid-column: 3;
-      background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(30,58,138,0.12));
-      border-top: 2px solid var(--gold) !important;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* ── CONTENT CTA ──────────────────────────────────────── */
+    .content-cta-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
     }
-    .service-cta-card::before { background: var(--gold) !important; }
-    .service-cta-card:hover { background: linear-gradient(135deg, rgba(212,175,55,0.14), rgba(30,58,138,0.18)) !important; }
-    .service-cta-label {
+    .content-cta-inner {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 64px 72px;
+      background: linear-gradient(135deg, rgba(212,175,55,0.07) 0%, rgba(30,58,138,0.15) 50%, rgba(4,8,26,0) 100%);
+      text-align: center;
+    }
+    .content-cta-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .content-cta-eyebrow {
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 14px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
     }
-    .service-cta-text {
-      font-size: 14px;
+    .content-cta-eyebrow::before, .content-cta-eyebrow::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+    .content-cta-heading {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    .content-cta-sub {
+      font-size: 16px;
       font-weight: 300;
-      color: rgba(245,245,245,0.75);
+      color: rgba(245,245,245,0.6);
       line-height: 1.7;
-      margin-bottom: 24px;
+      max-width: 560px;
+      margin: 0 auto 40px;
     }
-    .service-cta-text strong { color: var(--white); font-weight: 600; }
-    .service-cta-link {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--gold);
-      transition: opacity 0.2s;
+    @keyframes ctaBounce {
+      0%, 100% { transform: translateY(0); box-shadow: 0 4px 24px rgba(212,175,55,0.3); }
+      40%       { transform: translateY(-10px); box-shadow: 0 18px 36px rgba(212,175,55,0.45); }
+      60%       { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(212,175,55,0.38); }
     }
-    .service-cta-link:hover { opacity: 0.75; }
+    .content-cta-btn {
+      display: inline-block;
+      padding: 16px 44px;
+      background: var(--gold);
+      color: #04081A;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: 2px;
+      animation: ctaBounce 2.4s ease-in-out infinite;
+      position: relative;
+      z-index: 1;
+    }
+    .content-cta-btn:hover {
+      animation-play-state: paused;
+      background: #e8c43f;
+      box-shadow: 0 8px 32px rgba(212,175,55,0.5);
+    }
+    @media(max-width:1024px){ .content-cta-wrap{ padding-left:24px;padding-right:24px; } .content-cta-inner{ padding:48px 36px; } }
+    @media(max-width:768px){ .content-cta-inner{ padding:40px 24px; } .content-cta-heading{ letter-spacing:-1px; } }
 
     .service-card:hover .service-link { gap: 10px; }
 
@@ -1080,7 +1128,6 @@
       nav { padding: 0 24px; }
       section { padding: 72px 24px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .service-cta-card { grid-column: auto; }
       .insights-grid { grid-template-columns: repeat(2, 1fr); }
       .partners-grid { grid-template-columns: repeat(4, 1fr); }
       #about { grid-template-columns: 1fr; gap: 40px; }
@@ -1280,13 +1327,18 @@
       <div class="service-desc">Concept to final cut, broadcast infrastructure, content packaging and distribution.</div>
       <a href="production.html" class="service-link">Learn More →</a>
     </div>
-    <div class="service-card service-cta-card">
-      <div class="service-cta-label">Got Content?</div>
-      <p class="service-cta-text">Do you have archival content or content not reaching its full monetisation potential?<br><strong>We want it.</strong></p>
-      <a href="mailto:office@apex-sports.org" class="service-cta-link">Email Us →</a>
-    </div>
   </div>
 </section>
+
+<!-- ── CONTENT CTA ───────────────────────────────────────── -->
+<div class="content-cta-wrap">
+  <div class="content-cta-inner">
+    <div class="content-cta-eyebrow">Unlock Hidden Revenue</div>
+    <h2 class="content-cta-heading">Your archive is a goldmine.<br>We'll prove it.</h2>
+    <p class="content-cta-sub">Sitting on sports footage, archival content, or rights that aren't working hard enough? We turn dormant content into real, recurring revenue.</p>
+    <a href="mailto:office@apex-sports.org" class="content-cta-btn">Let's Talk →</a>
+  </div>
+</div>
 
 <!-- ── EXPERTISE ─────────────────────────────────────────── -->
 <section id="expertise">
