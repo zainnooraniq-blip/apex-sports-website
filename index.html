@@ -251,75 +251,7 @@
       50% { box-shadow: 0 0 30px var(--gold), 0 0 100px rgba(212,175,55,0.5); }
     }
 
-    /* Floating deal cards */
-    .hero-float-cards {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
 
-    .float-card {
-      position: absolute;
-      background: rgba(8,14,36,0.85);
-      border: 1px solid rgba(59,130,246,0.25);
-      border-radius: 6px;
-      padding: 14px 18px;
-      backdrop-filter: blur(12px);
-      white-space: nowrap;
-      animation: floatUp linear infinite;
-    }
-
-    .float-card-value {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--accent);
-      line-height: 1;
-    }
-
-    .float-card-value.gold { color: var(--gold); }
-
-    .float-card-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: rgba(245,245,245,0.45);
-      margin-top: 3px;
-    }
-
-    .float-card-tag {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 2px 6px;
-      border-radius: 2px;
-      margin-top: 6px;
-    }
-
-    .float-card-tag.blue { background: rgba(59,130,246,0.2); color: var(--accent); }
-    .float-card-tag.gold { background: rgba(212,175,55,0.15); color: var(--gold); }
-    .float-card-tag.green { background: rgba(34,197,94,0.15); color: #4ade80; }
-
-    @keyframes floatUp {
-      0%   { transform: translateY(0)   opacity(0); opacity: 0; }
-      8%   { opacity: 1; }
-      88%  { opacity: 0.85; }
-      100% { transform: translateY(-110vh); opacity: 0; }
-    }
-
-    /* Individual card positions & timings */
-    .float-card:nth-child(1) { right: 18%; bottom: -80px;  animation-duration: 18s; animation-delay: 0s; }
-    .float-card:nth-child(2) { right: 6%;  bottom: -160px; animation-duration: 22s; animation-delay: 3s; }
-    .float-card:nth-child(3) { right: 30%; bottom: -120px; animation-duration: 20s; animation-delay: 7s; }
-    .float-card:nth-child(4) { right: 42%; bottom: -200px; animation-duration: 24s; animation-delay: 1s; }
-    .float-card:nth-child(5) { right: 56%; bottom: -100px; animation-duration: 19s; animation-delay: 5s; }
-    .float-card:nth-child(6) { right: 70%; bottom: -140px; animation-duration: 21s; animation-delay: 10s; }
-    .float-card:nth-child(7) { right: 82%; bottom: -180px; animation-duration: 23s; animation-delay: 4s; }
-    .float-card:nth-child(8) { right: 48%; bottom: -240px; animation-duration: 25s; animation-delay: 8s; }
-    .float-card:nth-child(9) { right: 62%; bottom: -60px;  animation-duration: 17s; animation-delay: 12s; }
 
     /* Grid lines overlay */
     .hero-grid {
@@ -1201,54 +1133,6 @@
       <div class="hero-ring"></div>
       <div class="hero-ring-center"></div>
     </div>
-    <!-- Floating deal data cards -->
-    <div class="hero-float-cards" id="hero-float-cards">
-      <div class="float-card">
-        <div class="float-card-value">$385M</div>
-        <div class="float-card-label">Ten Sports</div>
-        <div class="float-card-tag gold">M&amp;A</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value">200M+</div>
-        <div class="float-card-label">Digital Views</div>
-        <div class="float-card-tag blue">DP World Dressing Room Show</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value gold">Jazz 5G</div>
-        <div class="float-card-label">Sponsorship Consultant</div>
-        <div class="float-card-tag green">Commercial</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value">162M+</div>
-        <div class="float-card-label">YouTube MCN</div>
-        <div class="float-card-tag blue">Media Rights</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value gold">90M+</div>
-        <div class="float-card-label">TV Views</div>
-        <div class="float-card-tag gold">DP World</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value">Sony</div>
-        <div class="float-card-label">Official Advisor</div>
-        <div class="float-card-tag blue">Consulting</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value gold">MASL</div>
-        <div class="float-card-label">Distribution</div>
-        <div class="float-card-tag gold">Media Rights</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value">Remitly</div>
-        <div class="float-card-label">Sponsorship Deal</div>
-        <div class="float-card-tag green">Commercial</div>
-      </div>
-      <div class="float-card">
-        <div class="float-card-value gold">Asia Cup</div>
-        <div class="float-card-label">Distribution</div>
-        <div class="float-card-tag blue">Media Rights</div>
-      </div>
-    </div>
   </div>
   <!-- Optional video layer (add assets/hero-video.mp4 to activate) -->
   <video id="hero-video" autoplay muted loop playsinline>
@@ -1297,7 +1181,7 @@
     <div class="service-card">
       <div class="service-number">01</div>
       <div class="service-name">Media Rights</div>
-      <div class="service-desc">Global broadcast distribution, OTT strategy, and YouTube-first content monetisation.</div>
+      <div class="service-desc">Global broadcast distribution and OTT strategy.</div>
       <a href="media-rights.html" class="service-link">Learn More →</a>
     </div>
     <div class="service-card">
@@ -1453,7 +1337,7 @@
 
 // ── TICKER ───────────────────────────────────────────────
 (function() {
-  const names = ["Sony","PCB","DP World","Geo Super","Myco","SA20","Jazz 5G","Walee Tech","Multan Sultans","Fancode"];
+  const names = ["Ten Sports","Sony","Willow TV","ESPN","South Africa 20","St Kitts & Nevis","Desert Vipers","CD Ventures","Jazz 5G","Remitly","DP World","Coke","Myco","Formula E","Walee","Hong Kong 6s"];
   const track = document.getElementById('ticker-track');
   const doubled = [...names, ...names];
   track.innerHTML = doubled.map(n => `<span class="ticker-item">${n}</span>`).join('');
