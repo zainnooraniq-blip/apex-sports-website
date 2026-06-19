@@ -5,8 +5,8 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Production | Apex Sports Consulting</title>
-  <meta name="description" content="Concept to final cut. Broadcast-grade sports content production and distribution. The team behind DP World Dressing Room." />
+  <title>Esports | Apex Sports Consulting</title>
+  <meta name="description" content="Apex Sports is now active in the esports space — sponsoring tournaments, creating events, and bringing brands into competitive gaming across the region." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="content.js"></script>
@@ -27,6 +27,14 @@
     .capabilities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:48px;border:1px solid var(--border);}
     .cap-card{padding:32px 36px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.25s;}.cap-card:hover{background:rgba(30,58,138,0.1);}
     .cap-title{font-size:15px;font-weight:700;margin-bottom:8px;}.cap-text{font-size:13px;font-weight:300;color:rgba(245,245,245,0.6);line-height:1.75;}
+    .titles-intro{padding-bottom:40px;border-bottom:none;}
+    .game-ticker-wrap{overflow:hidden;background:rgba(30,58,138,0.1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:38px 0;}
+    .game-ticker-track{display:flex;align-items:center;gap:80px;width:max-content;animation:gameticker 34s linear infinite;padding-left:80px;}
+    .game-ticker-wrap:hover .game-ticker-track{animation-play-state:paused;}
+    .game-ticker-track img{height:40px;width:auto;filter:brightness(0) invert(1);opacity:0.5;transition:opacity 0.3s;}
+    .game-ticker-track img:hover{opacity:1;}
+    @keyframes gameticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    @media(max-width:768px){.game-ticker-track{gap:52px;padding-left:52px;}.game-ticker-track img{height:30px;}}
     .case-study-highlight{margin-top:48px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:2px;padding:48px 56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
     .case-stats{display:flex;flex-direction:column;gap:28px;}
     .case-stat-value{font-size:48px;font-weight:800;color:var(--accent);line-height:1;}
@@ -55,37 +63,60 @@
 </nav>
 <div class="page-hero">
   <div class="eyebrow">Our Services</div>
-  <h1 class="page-headline">Production</h1>
-  <p class="page-subhead">Broadcast-grade content. Distribution-ready from day one. From concept to final cut — we manage every detail.</p>
+  <h1 class="page-headline">Esports</h1>
+  <p class="page-subhead">We've moved into competitive gaming. From sponsoring tournaments to creating events from the ground up — Apex now operates across the esports ecosystem.</p>
 </div>
+<section>
+  <div class="eyebrow">A New Frontier</div>
+  <h2 class="section-heading">Sport, Without Borders</h2>
+  <p class="section-body">Esports is one of the fastest-growing entertainment categories in the world — a digitally native, globally connected audience that brands are racing to reach. Through a strategic partnership with a leading regional esports operator, Apex now brings the same rigour we apply to traditional sport — commercial structuring, event delivery, broadcast, and brand integration — into competitive gaming. Whether it's putting a brand's name on a tournament or building a new event from concept to final whistle, we operate end to end.</p>
+</section>
 <section>
   <div class="eyebrow">What We Offer</div>
   <h2 class="section-heading">Capabilities</h2>
   <div class="capabilities-grid">
-    <div class="cap-card"><div class="cap-title">Concept Development</div><div class="cap-text">We develop show concepts from scratch — format, editorial approach, talent strategy, production values, and commercial packaging. We build for distribution from day one.</div></div>
-    <div class="cap-card"><div class="cap-title">Scripting &amp; Editorial</div><div class="cap-text">Show treatments, scripts, rundowns, and editorial frameworks — built around the audience, the broadcaster, and the commercial objectives of the production.</div></div>
-    <div class="cap-card"><div class="cap-title">Full Production</div><div class="cap-text">Studio and location production, talent management, broadcast crew, post-production, and delivery. We manage every moving part to broadcast standard.</div></div>
-    <div class="cap-card"><div class="cap-title">Broadcast Infrastructure</div><div class="cap-text">From OB trucks to live streaming setups — we advise on and deploy the infrastructure needed to deliver live sports content at broadcast quality.</div></div>
-    <div class="cap-card"><div class="cap-title">Content Packaging</div><div class="cap-text">We package finished content for TV, digital, social, and OTT — adapting format, duration, and delivery spec to each platform and distribution partner.</div></div>
-    <div class="cap-card"><div class="cap-title">Distribution</div><div class="cap-text">We leverage our network — broadcast partners, YouTube channels, digital platforms, and streaming services — to maximise reach for every production we deliver.</div></div>
+    <div class="cap-card"><div class="cap-title">Tournament Sponsorship</div><div class="cap-text">We connect brands to the right competitive properties — packaging and placing sponsorship across tournaments, leagues, and teams to put your name in front of a young, engaged, hard-to-reach audience.</div></div>
+    <div class="cap-card"><div class="cap-title">Event Creation</div><div class="cap-text">From a single marquee tournament to a full season of competition, we design and create esports events from the ground up — format, prize structure, venue, and the show that surrounds the play.</div></div>
+    <div class="cap-card"><div class="cap-title">Tournament Operations</div><div class="cap-text">Online and on-stage execution — brackets, moderation, officiating, player and team management, and the operational backbone that keeps a competition running cleanly start to finish.</div></div>
+    <div class="cap-card"><div class="cap-title">Broadcast &amp; Production</div><div class="cap-text">Studio-grade live production, on-screen graphics, casting talent, and multi-platform streaming — built to broadcast standard and packaged for TV, digital, and social.</div></div>
+    <div class="cap-card"><div class="cap-title">Brand Activation</div><div class="cap-text">In-game, on-stage, and around the event — we build activations that turn a sponsorship into genuine engagement with the gaming community, not just a logo on a banner.</div></div>
+    <div class="cap-card"><div class="cap-title">Audience &amp; Community</div><div class="cap-text">We grow and engage the audience that surrounds every competition — content, creators, and community programming that extend reach well beyond the event itself.</div></div>
   </div>
 </section>
+<section class="titles-intro">
+  <div class="eyebrow">Across Every Arena</div>
+  <h2 class="section-heading">Esports Titles We Specialize In</h2>
+  <p class="section-body">From battle royales to fighting games and MOBAs — we operate across the titles that define competitive gaming today, building events and brand activations around the games audiences actually play.</p>
+</section>
+<div class="game-ticker-wrap">
+  <div class="game-ticker-track" id="game-ticker-track">
+    <img src="assets/esports/league-of-legends.png" alt="League of Legends" />
+    <img src="assets/esports/counter-strike-2.png" alt="Counter-Strike 2" />
+    <img src="assets/esports/tekken8.svg" alt="Tekken 8" />
+    <img src="assets/esports/fortnite.png" alt="Fortnite" />
+    <img src="assets/esports/pubg-mobile.png" alt="PUBG Mobile" />
+    <img src="assets/esports/free-fire.png" alt="Free Fire" />
+    <img src="assets/esports/mobile-legends.png" alt="Mobile Legends" />
+    <img src="assets/esports/ea-sports-fc.svg" alt="EA Sports FC" />
+  </div>
+</div>
 <section>
-  <div class="eyebrow">Featured Case Study</div>
-  <h2 class="section-heading">The DP World Dressing Room</h2>
+  <div class="eyebrow">The Opportunity</div>
+  <h2 class="section-heading">Why Esports, Why Now</h2>
   <div class="case-study-highlight">
     <div class="case-stats">
-      <div><div class="case-stat-value">90M+</div><div class="case-stat-label">TV Views</div></div>
-      <div><div class="case-stat-value">200M+</div><div class="case-stat-label">Total Digital Views</div></div>
+      <div><div class="case-stat-value">640M+</div><div class="case-stat-label">Global Esports Audience</div></div>
+      <div><div class="case-stat-value">70%</div><div class="case-stat-label">Of Viewers Under 35</div></div>
     </div>
     <div>
-      <div class="case-body-heading">How Apex Sports Turned Cricket Analysis into a Global Digital Hit</div>
-      <p class="case-body-text">Hailed as "a masterclass in cricket, analysis, and entertainment," The DP World Dressing Room featured Wasim Akram, Waqar Younis, Ravi Shastri, and Sunil Gavaskar — distributed across Ten Sports and digital partners, reaching millions across South Asia and the global cricket diaspora.</p>
-      <a href="apex-insights.html#dp-world-dressing-room" class="case-link">Read Full Case Study →</a>
+      <div class="case-body-heading">A Generation Brands Can't Reach Anywhere Else</div>
+      <p class="case-body-text">Esports reaches a young, global, digitally native audience that traditional media increasingly struggles to capture. Backed by a partnership with an established regional esports operator, Apex offers a direct route into that audience — owning the event, shaping the broadcast, and placing brands at the heart of the action.</p>
+      <a href="mailto:office@apex-sports.org" class="case-link">Talk to Us About Esports →</a>
     </div>
   </div>
 </section>
-<div class="cta-strip"><h2>Have a production project in mind?</h2><a href="mailto:office@apex-sports.org" class="btn-primary">Get in Touch</a></div>
+<div class="cta-strip"><h2>Want to enter the esports space?</h2><a href="mailto:office@apex-sports.org" class="btn-primary">Get in Touch</a></div>
 <footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-brand-name"><img src="assets/apex-logo.png" alt="Apex Sports" class="footer-logo-img" /></div><p class="footer-tagline">End-to-end solutions that drive success across the global sports ecosystem.</p><div class="footer-socials" id="footer-socials"></div></div><div><div class="footer-col-heading">Quick Links</div><ul class="footer-links"><li><a href="index.html#about">About Us</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="our-partners.html">Our Partners</a></li><li><a href="apex-insights.html">Apex Insights</a></li><li><a href="mailto:office@apex-sports.org">Contact</a></li></ul></div><div><div class="footer-col-heading">Our Services</div><ul class="footer-links"><li><a href="media-rights.html">Media Rights</a></li><li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li><li><a href="strategy-advisory-services.html">Strategy &amp; Advisory</a></li><li><a href="event-delivery.html">Event Delivery</a></li><li><a href="athlete-management.html">Athlete Management</a></li><li><a href="production.html">Production</a></li><li><a href="esports.html">Esports</a></li></ul></div><div class="footer-contact"><div class="footer-col-heading">Contact</div><p><a href="mailto:office@apex-sports.org">office@apex-sports.org</a></p><p>Business Center 1, M Floor,<br>The Meydan Hotel,<br>Nad Al Sheba, Dubai, U.A.E.</p></div></div><div class="footer-bottom"><span>© 2026 Apex Sports Consulting LLC FZ. All Rights Reserved.</span><span>Dubai, U.A.E.</span></div></div></footer>
+<script>(function(){const t=document.getElementById('game-ticker-track');if(t){t.innerHTML+=t.innerHTML;}})();</script>
 <script>(function(){const s=APEX.meta.social;const i=[['instagram','assets/icons/instagram.svg'],['twitter','assets/icons/x.svg'],['youtube','assets/icons/youtube.svg'],['linkedin','assets/icons/linkedin.svg']];document.getElementById('footer-socials').innerHTML=i.map(([k,src])=>`<a href="${s[k]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${src}" alt="${k}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`).join('');})();function toggleMenu(){const l=document.querySelector('.nav-links');if(l.style.display==='flex'){l.style.display='';}else{l.style.cssText='display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';}}document.querySelectorAll('.has-dropdown > a').forEach(function(a){function handler(e){if(window.innerWidth<=768){e.preventDefault();e.stopPropagation();this.parentElement.classList.toggle('open');}}a.addEventListener('click',handler);a.addEventListener('touchend',handler);});</script>
 </body></html>
