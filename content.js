@@ -51,21 +51,98 @@ const APEX = {
   ],
 
   /* ── PARTNERS ──────────────────────────────────────────── */
-  // logo: filename inside assets/logos/ (e.g. "fifa.svg")
-  // active: true = current partner, false = historical
-  // show: true = display on website
+  // logo:     filename inside assets/logos/ (transparent PNG/SVG, cleaned for dark backgrounds)
+  // wide:     true for long horizontal lockups — gets extra width so the small type stays legible
+  // category: groups the logo wall on our-partners.html — see partnerCategories below
+  // active:   true = current partner, false = prior relationship
+  // show:     true = display on website
+  // marqueeLead: names that lead the homepage carousel (top row), in display order
+  marqueeLead: [
+    "DP World",
+    "Coca-Cola",
+    "Pepsi",
+    "Jazz",
+    "Remitly",
+    "Bundesliga",
+    "Serie A",
+    "Sony",
+    "ESPN",
+    "Formula E",
+    "Riyadh Season",
+    "PUBG Mobile",
+    "SA20",
+    "ILT20",
+    "HBL PSL",
+    "Asian Cricket Council",
+    "Pakistan Cricket Board",
+    "FanCode",
+  ],
+
+  partnerCategories: [
+    "Rights Holders & Governing Bodies",
+    "Leagues & Events",
+    "PSL Franchises",
+    "Broadcasters & Platforms",
+    "Digital, OTT & Technology",
+    "Brands & Sponsors",
+  ],
+
   partners: [
-    // Drop logo files into assets/logos/ and update the logo field when ready
-    { name: "Sony", logo: "", description: "", active: true, show: true },
-    { name: "PCB", logo: "", description: "", active: true, show: true },
-    { name: "DP World", logo: "dp-world.png", description: "", active: true, show: true },
-    { name: "Geo Super", logo: "geo-super.png", description: "", active: true, show: true },
-    { name: "Myco", logo: "myco.png", description: "", active: true, show: true },
-    { name: "SA20", logo: "", description: "", active: true, show: true },
-    { name: "Jazz 5G", logo: "", description: "", active: true, show: true },
-    { name: "Walee Tech", logo: "", description: "", active: true, show: true },
-    { name: "Multan Sultans", logo: "", description: "", active: true, show: true },
-    { name: "Fancode", logo: "", description: "", active: true, show: true },
+    /* Rights Holders & Governing Bodies */
+    { name: "Pakistan Cricket Board", logo: "pcb.png", category: "Rights Holders & Governing Bodies", description: "", active: true, show: true },
+    { name: "Asian Cricket Council", logo: "acc.png", category: "Rights Holders & Governing Bodies", description: "", active: true, show: true },
+    { name: "Emirates Cricket Board", logo: "ecb.png", category: "Rights Holders & Governing Bodies", description: "", active: true, show: true },
+    { name: "World Cricketers' Association", logo: "wca.png", category: "Rights Holders & Governing Bodies", description: "", active: true, show: true },
+    { name: "Bundesliga", logo: "bundesliga.png", category: "Rights Holders & Governing Bodies", description: "", active: true, show: true },
+    { name: "Serie A", logo: "seriea.png", category: "Rights Holders & Governing Bodies", description: "", active: true, show: true },
+
+    /* Leagues & Events */
+    { name: "HBL PSL", logo: "psl.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "ILT20", logo: "ilt20.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "SA20", logo: "sa20.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "Canada Super 60", logo: "canadasuper60.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "Hong Kong Sixes", logo: "hk6.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "Top End T20", logo: "topendt20.svg", category: "Leagues & Events", wide: true, description: "", active: true, show: true },
+    { name: "Global Super League", logo: "gsl.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "MASL", logo: "masl.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "Formula E", logo: "formulae.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "Riyadh Season", logo: "riyadh.png", category: "Leagues & Events", description: "", active: true, show: true },
+    { name: "PUBG Mobile", logo: "pubg.png", category: "Leagues & Events", description: "", active: true, show: true },
+
+    /* PSL Franchises */
+    { name: "Karachi Kings", logo: "karachi.png", category: "PSL Franchises", description: "", active: true, show: true },
+    { name: "Lahore Qalandars", logo: "lahore.png", category: "PSL Franchises", description: "", active: true, show: true },
+    { name: "Islamabad United", logo: "islamabad.png", category: "PSL Franchises", description: "", active: true, show: true },
+    { name: "Multan Sultans", logo: "multan.png", category: "PSL Franchises", description: "", active: true, show: true },
+    { name: "Quetta Gladiators", logo: "quetta.png", category: "PSL Franchises", description: "", active: true, show: true },
+
+    /* Broadcasters & Platforms */
+    { name: "Sony", logo: "sony.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "ESPN", logo: "espn.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "Willow TV", logo: "willow.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "Cricbuzz", logo: "cricbuzz.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "FanCode", logo: "fancode.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "T Sports", logo: "tsports.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "Geo Super", logo: "geosuper.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "PTV", logo: "ptv.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "ARY", logo: "ary.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "Sports Central", logo: "sportscentral.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "STV", logo: "stv.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+    { name: "Tamasha", logo: "tamasha.png", category: "Broadcasters & Platforms", description: "", active: true, show: true },
+
+    /* Digital, OTT & Technology */
+    { name: "myco", logo: "myco.png", category: "Digital, OTT & Technology", description: "", active: true, show: true },
+    { name: "Dot Republic Media", logo: "drm.png", category: "Digital, OTT & Technology", description: "", active: true, show: true },
+    { name: "Walee", logo: "walee.png", category: "Digital, OTT & Technology", description: "", active: true, show: true },
+
+    /* Brands & Sponsors */
+    { name: "DP World", logo: "dpworld.png", category: "Brands & Sponsors", description: "", active: true, show: true },
+    { name: "Coca-Cola", logo: "cocacola.png", category: "Brands & Sponsors", description: "", active: true, show: true },
+    { name: "Pepsi", logo: "pepsi.png", category: "Brands & Sponsors", description: "", active: true, show: true },
+    { name: "Jazz", logo: "jazz.png", category: "Brands & Sponsors", description: "", active: true, show: true },
+    { name: "Remitly", logo: "remitly.png", category: "Brands & Sponsors", description: "", active: true, show: true },
+    { name: "Rastah", logo: "rastah.png", category: "Brands & Sponsors", description: "", active: true, show: true },
+
   ],
 
   /* ── TEAM ──────────────────────────────────────────────── */

@@ -24,17 +24,14 @@
     .page-headline{font-size:clamp(48px,6vw,80px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;}.page-subhead{font-size:20px;font-weight:300;color:rgba(245,245,245,0.6);max-width:600px;line-height:1.7;}
     .partners-section{padding:80px 48px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--border);}
     .section-heading{font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-1px;margin-bottom:40px;}
-    .partners-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border:1px solid var(--border);}
-    .partner-card{padding:32px 36px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.25s;display:flex;flex-direction:column;gap:16px;}
-    .partner-card:hover{background:rgba(30,58,138,0.1);}
-    .partner-logo-wrap{height:52px;display:flex;align-items:center;}
-    .partner-logo-wrap img{max-height:44px;max-width:140px;object-fit:contain;filter:grayscale(1) brightness(0.7);transition:filter 0.3s;}
-    .partner-card:hover .partner-logo-wrap img{filter:none;}
-    .partner-name-text{font-size:18px;font-weight:700;color:rgba(245,245,245,0.85);}
-    .partner-desc{font-size:13px;font-weight:300;color:rgba(245,245,245,0.55);line-height:1.75;}
-    .partner-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;}
-    .badge-active{background:rgba(59,130,246,0.15);color:var(--accent);}
-    .badge-historical{background:rgba(212,175,55,0.12);color:var(--gold);}
+    .logo-group{margin-bottom:56px;}
+    .logo-group:last-of-type{margin-bottom:0;}
+    .logo-group-heading{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.45);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+    .logo-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;border:1px solid var(--border);}
+    .logo-tile{display:flex;align-items:center;justify-content:center;padding:30px 22px;min-height:104px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);opacity:0.7;transition:opacity 0.3s,background 0.3s;}
+    .logo-tile:hover{opacity:1;background:rgba(30,58,138,0.14);}
+    .logo-tile img{max-height:58px;max-width:124px;object-fit:contain;}
+    .logo-tile.is-wide img{max-height:52px;max-width:176px;}
     .cta-strip{background:linear-gradient(135deg,rgba(30,58,138,0.3),rgba(4,8,26,0));border:1px solid var(--border);border-radius:2px;padding:60px 64px;display:flex;align-items:center;justify-content:space-between;gap:40px;margin:0 auto 80px;max-width:1200px;}
     .cta-strip h2{font-size:32px;font-weight:800;letter-spacing:-1px;max-width:480px;}
     .btn-primary{display:inline-block;padding:14px 32px;background:var(--blue);color:var(--white);font-size:14px;font-weight:600;border-radius:2px;transition:background 0.2s;white-space:nowrap;}.btn-primary:hover{background:var(--accent);}
@@ -44,8 +41,8 @@
     .footer-col-heading{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.4);margin-bottom:20px;}.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}.footer-links a{font-size:13px;color:rgba(245,245,245,0.55);transition:color 0.2s;}.footer-links a:hover{color:var(--white);}
     .footer-contact p{font-size:13px;color:rgba(245,245,245,0.55);line-height:1.7;margin-bottom:8px;}.footer-contact a{color:var(--accent);}
     .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:28px;font-size:12px;color:rgba(245,245,245,0.3);}
-    @media(max-width:1024px){nav,.partners-section,.page-hero,.cta-strip{padding-left:24px;padding-right:24px;}.partners-detail-grid{grid-template-columns:repeat(2,1fr);}.cta-strip{flex-direction:column;align-items:flex-start;}.footer-top{grid-template-columns:1fr 1fr;}}
-    @media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}.partners-detail-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
+    @media(max-width:1024px){nav,.partners-section,.page-hero,.cta-strip{padding-left:24px;padding-right:24px;}.logo-wall{grid-template-columns:repeat(4,1fr);}.cta-strip{flex-direction:column;align-items:flex-start;}.footer-top{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}.logo-wall{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -60,41 +57,30 @@
   <p class="page-subhead">Trusted by Sony, Willow TV, ESPN, DP World, Formula E, Jazz 5G, and other leading sports and commercial organisations worldwide.</p>
 </div>
 
-<div class="partners-section" id="active-section">
-  <div class="eyebrow">Current Partners</div>
-  <div class="partners-detail-grid" id="active-partners-grid"></div>
-</div>
-
-<div class="partners-section" id="historical-section" style="display:none;">
-  <div class="eyebrow">Prior Relationships</div>
-  <div class="partners-detail-grid" id="historical-partners-grid"></div>
+<div class="partners-section">
+  <div class="eyebrow">Partners &amp; Clients</div>
+  <div id="partner-wall"></div>
 </div>
 
 <div class="cta-strip"><h2>Interested in partnering with Apex Sports?</h2><a href="mailto:office@apex-sports.org" class="btn-primary">Get in Touch</a></div>
 <footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-brand-name"><img src="assets/apex-logo.png" alt="Apex Sports" class="footer-logo-img" /></div><p class="footer-tagline">End-to-end solutions that drive success across the global sports ecosystem.</p><div class="footer-socials" id="footer-socials"></div></div><div><div class="footer-col-heading">Quick Links</div><ul class="footer-links"><li><a href="index.html#about">About Us</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="our-partners.html">Our Partners</a></li><li><a href="apex-insights.html">Apex Insights</a></li><li><a href="mailto:office@apex-sports.org">Contact</a></li></ul></div><div><div class="footer-col-heading">Our Services</div><ul class="footer-links"><li><a href="media-rights.html">Media Rights</a></li><li><a href="commercial-rights-sales.html">Commercial Rights &amp; Sales</a></li><li><a href="strategy-advisory-services.html">Strategy &amp; Advisory</a></li><li><a href="event-delivery.html">Event Delivery</a></li><li><a href="athlete-management.html">Athlete Management</a></li><li><a href="production.html">Production</a></li><li><a href="esports.html">Esports</a></li></ul></div><div class="footer-contact"><div class="footer-col-heading">Contact</div><p><a href="mailto:office@apex-sports.org">office@apex-sports.org</a></p><p>Business Center 1, M Floor,<br>The Meydan Hotel,<br>Nad Al Sheba, Dubai, U.A.E.</p></div></div><div class="footer-bottom"><span>© 2026 Apex Sports Consulting LLC FZ. All Rights Reserved.</span><span>Dubai, U.A.E.</span></div></div></footer>
 <script>
 (function(){
-  function renderGrid(partners, containerId) {
-    const grid = document.getElementById(containerId);
-    grid.innerHTML = partners.map(p => `
-      <div class="partner-card">
-        <div class="partner-logo-wrap">
-          ${p.logo ? `<img src="assets/logos/${p.logo}" alt="${p.name}" />` : ''}
-        </div>
-        <div>
-          <div class="partner-name-text">${p.name}</div>
-          ${p.description ? `<div class="partner-desc">${p.description}</div>` : ''}
-        </div>
-        <div><span class="partner-badge ${p.active ? 'badge-active' : 'badge-historical'}">${p.active ? 'Active Partner' : 'Prior Relationship'}</span></div>
+  const wall = document.getElementById('partner-wall');
+  const visible = APEX.partners.filter(p => p.show);
+  const cats = (APEX.partnerCategories || []).filter(c => visible.some(p => p.category === c));
+  const uncategorised = visible.filter(p => !cats.includes(p.category));
+  const groups = cats.map(c => [c, visible.filter(p => p.category === c)]);
+  if (uncategorised.length) groups.push(['Other Partners', uncategorised]);
+
+  wall.innerHTML = groups.map(([cat, items]) => `
+    <div class="logo-group">
+      <div class="logo-group-heading">${cat}</div>
+      <div class="logo-wall">
+        ${items.map(p => `<div class="logo-tile${p.wide ? ' is-wide' : ''}" title="${p.name}"><img src="assets/logos/${p.logo}" alt="${p.name}" loading="lazy" /></div>`).join('')}
       </div>
-    `).join('');
-  }
-
-  const active = APEX.partners.filter(p => p.show && p.active);
-  const historical = APEX.partners.filter(p => p.show && !p.active);
-
-  if (active.length) renderGrid(active, 'active-partners-grid');
-  if (historical.length) { document.getElementById('historical-section').style.display = 'block'; renderGrid(historical, 'historical-partners-grid'); }
+    </div>
+  `).join('');
 })();
 (function(){const s=APEX.meta.social;const i=[['instagram','assets/icons/instagram.svg'],['twitter','assets/icons/x.svg'],['youtube','assets/icons/youtube.svg'],['linkedin','assets/icons/linkedin.svg']];document.getElementById('footer-socials').innerHTML=i.map(([k,src])=>`<a href="${s[k]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${src}" alt="${k}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`).join('');})();
 function toggleMenu(){const l=document.querySelector('.nav-links');if(l.style.display==='flex'){l.style.display='';}else{l.style.cssText='display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';}}

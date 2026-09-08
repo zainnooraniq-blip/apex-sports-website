@@ -868,28 +868,59 @@
       margin-bottom: 48px;
     }
 
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 2px;
-      border: 1px solid var(--border);
+    /* full-bleed carousel: cancel the section's side padding */
+    .partners-marquee {
+      margin: 0 -48px;
+      padding: 1px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+              mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
     }
 
+    .marquee-row { display: flex; overflow: hidden; }
+    .marquee-row + .marquee-row { border-top: 1px solid var(--border); }
+
+    .marquee-track {
+      display: flex;
+      flex: none;
+      align-items: center;
+      will-change: transform;
+      animation: marquee-left var(--dur, 60s) linear infinite;
+    }
+    .marquee-row[data-dir="right"] .marquee-track { animation-name: marquee-right; }
+
+    @keyframes marquee-left  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
+    @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
+
+    /* pause the whole strip while the visitor is looking at one logo */
+    .partners-marquee:hover .marquee-track { animation-play-state: paused; }
+
     .partner-logo {
+      flex: none;
+      width: 190px;
+      min-height: 104px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 28px 20px;
+      padding: 28px 24px;
       border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      filter: grayscale(1) brightness(0.6);
-      transition: filter 0.3s;
-      min-height: 80px;
+      opacity: 0.7;
+      transition: opacity 0.3s, background 0.3s;
     }
 
-    .partner-logo:hover { filter: none; }
+    .partner-logo:hover { opacity: 1; background: rgba(30,58,138,0.14); }
 
-    .partner-logo img { max-height: 36px; max-width: 100px; object-fit: contain; }
+    .partner-logo img { max-height: 50px; max-width: 130px; object-fit: contain; }
+
+    /* long horizontal lockups get a wider tile so their small type stays readable */
+    .partner-logo.is-wide { width: 250px; }
+    .partner-logo.is-wide img { max-height: 46px; max-width: 200px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+      .marquee-row { overflow-x: auto; }
+    }
 
     .partner-name-fallback {
       font-size: 11px;
@@ -1064,7 +1095,7 @@
       section { padding: 72px 24px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .insights-grid { grid-template-columns: repeat(2, 1fr); }
-      .partners-grid { grid-template-columns: repeat(4, 1fr); }
+      .partners-marquee { margin: 0 -24px; }
       #about { grid-template-columns: 1fr; gap: 40px; }
       #newsletter { grid-template-columns: 1fr; gap: 32px; padding: 40px 32px; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
@@ -1076,7 +1107,10 @@
       .services-grid { grid-template-columns: 1fr; }
       .expertise-grid { grid-template-columns: 1fr; }
       .insights-grid { grid-template-columns: 1fr; }
-      .partners-grid { grid-template-columns: repeat(3, 1fr); }
+      .partner-logo { width: 150px; min-height: 88px; padding: 22px 18px; }
+      .partner-logo img { max-height: 40px; max-width: 104px; }
+      .partner-logo.is-wide { width: 200px; }
+      .partner-logo.is-wide img { max-height: 38px; max-width: 160px; }
       .hero-content { padding: 100px 24px 60px; }
       .hero-ctas { flex-direction: column; align-items: flex-start; }
       .newsletter-form { flex-direction: column; }
@@ -1266,8 +1300,9 @@
     </div>
     <a href="our-partners.html" class="insights-link">View All Partners →</a>
   </div>
-  <div class="partners-grid" id="partners-grid">
-    <!-- populated by JS -->
+  <div class="partners-marquee" id="partners-marquee">
+    <div class="marquee-row" data-dir="left"><div class="marquee-track" id="marquee-track-1"></div></div>
+    <div class="marquee-row" data-dir="right"><div class="marquee-track" id="marquee-track-2"></div></div>
   </div>
 </section>
 
@@ -1398,15 +1433,27 @@
   }
 })();
 
-// ── PARTNERS ─────────────────────────────────────────────
+// ── PARTNERS CAROUSEL ────────────────────────────────────
 (function() {
-  const grid = document.getElementById('partners-grid');
   const visible = APEX.partners.filter(p => p.show);
-  grid.innerHTML = visible.map(p => `
-    <div class="partner-logo" title="${p.name}">
-      ${p.logo ? `<img src="assets/logos/${p.logo}" alt="${p.name}" />` : `<span class="partner-name-fallback">${p.name}</span>`}
-    </div>
-  `).join('');
+  const lead    = APEX.marqueeLead || [];
+
+  // top row = the headline names, in the order listed in content.js
+  const row1 = lead.map(n => visible.find(p => p.name === n)).filter(Boolean);
+  const row2 = visible.filter(p => !lead.includes(p.name));
+
+  const tile = p => `<div class="partner-logo${p.wide ? ' is-wide' : ''}" title="${p.name}">` +
+    (p.logo ? `<img src="assets/logos/${p.logo}" alt="${p.name}" />`
+            : `<span class="partner-name-fallback">${p.name}</span>`) + `</div>`;
+
+  [[row1, 'marquee-track-1'], [row2, 'marquee-track-2']].forEach(([items, id]) => {
+    const track = document.getElementById(id);
+    if (!track || !items.length) return;
+    // the set is rendered twice so translateX(-50%) lands on an identical frame
+    track.innerHTML = items.map(tile).join('') + items.map(tile).join('');
+    // constant speed regardless of row length, so the two rows don't drift apart in feel
+    track.style.setProperty('--dur', (items.length * 3.4).toFixed(1) + 's');
+  });
 })();
 
 // ── FOOTER SOCIALS ───────────────────────────────────────
