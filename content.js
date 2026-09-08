@@ -56,8 +56,8 @@ const APEX = {
   // category: groups the logo wall on our-partners.html — see partnerCategories below
   // active:   true = current partner, false = prior relationship
   // show:     true = display on website
-  // marqueeLead: names that lead the homepage carousel (top row), in display order
-  marqueeLead: [
+  // leadPartners: headline names, shown first in the homepage ticker and partner grid
+  leadPartners: [
     "DP World",
     "Coca-Cola",
     "Pepsi",

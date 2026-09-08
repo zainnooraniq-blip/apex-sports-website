@@ -424,34 +424,38 @@
       background: rgba(30,58,138,0.15);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 14px 0;
+      padding: 18px 0;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
     }
 
     .ticker-track {
       display: flex;
-      gap: 48px;
+      align-items: center;
       width: max-content;
-      animation: ticker 28s linear infinite;
+      animation: ticker var(--ticker-dur, 90s) linear infinite;
     }
 
-    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
 
     .ticker-item {
+      flex: none;
       display: flex;
       align-items: center;
-      gap: 16px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(245,245,245,0.5);
-      white-space: nowrap;
+      justify-content: center;
+      padding: 0 34px;
+      opacity: 0.65;
+      transition: opacity 0.3s;
     }
 
-    .ticker-item::after {
-      content: "·";
-      color: var(--gold);
-      font-size: 16px;
+    .ticker-item:hover { opacity: 1; }
+
+    .ticker-item img { max-height: 34px; max-width: 104px; object-fit: contain; }
+    .ticker-item.is-wide img { max-height: 30px; max-width: 158px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track { animation: none; }
+      .ticker-wrap { overflow-x: auto; }
     }
 
     @keyframes ticker {
@@ -868,59 +872,31 @@
       margin-bottom: 48px;
     }
 
-    /* full-bleed carousel: cancel the section's side padding */
-    .partners-marquee {
-      margin: 0 -48px;
-      padding: 1px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-              mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+      border: 1px solid var(--border);
     }
-
-    .marquee-row { display: flex; overflow: hidden; }
-    .marquee-row + .marquee-row { border-top: 1px solid var(--border); }
-
-    .marquee-track {
-      display: flex;
-      flex: none;
-      align-items: center;
-      will-change: transform;
-      animation: marquee-left var(--dur, 60s) linear infinite;
-    }
-    .marquee-row[data-dir="right"] .marquee-track { animation-name: marquee-right; }
-
-    @keyframes marquee-left  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
-    @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
-
-    /* pause the whole strip while the visitor is looking at one logo */
-    .partners-marquee:hover .marquee-track { animation-play-state: paused; }
 
     .partner-logo {
-      flex: none;
-      width: 190px;
-      min-height: 104px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 28px 24px;
+      padding: 28px 20px;
+      min-height: 96px;
       border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       opacity: 0.7;
       transition: opacity 0.3s, background 0.3s;
     }
 
     .partner-logo:hover { opacity: 1; background: rgba(30,58,138,0.14); }
 
-    .partner-logo img { max-height: 50px; max-width: 130px; object-fit: contain; }
+    .partner-logo img { max-height: 50px; max-width: 124px; object-fit: contain; }
 
-    /* long horizontal lockups get a wider tile so their small type stays readable */
-    .partner-logo.is-wide { width: 250px; }
-    .partner-logo.is-wide img { max-height: 46px; max-width: 200px; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .marquee-track { animation: none; }
-      .marquee-row { overflow-x: auto; }
-    }
+    /* long horizontal lockups get more width so their small type stays readable */
+    .partner-logo.is-wide img { max-height: 46px; max-width: 168px; }
 
     .partner-name-fallback {
       font-size: 11px;
@@ -1095,7 +1071,7 @@
       section { padding: 72px 24px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .insights-grid { grid-template-columns: repeat(2, 1fr); }
-      .partners-marquee { margin: 0 -24px; }
+      .partners-grid { grid-template-columns: repeat(4, 1fr); }
       #about { grid-template-columns: 1fr; gap: 40px; }
       #newsletter { grid-template-columns: 1fr; gap: 32px; padding: 40px 32px; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
@@ -1107,10 +1083,10 @@
       .services-grid { grid-template-columns: 1fr; }
       .expertise-grid { grid-template-columns: 1fr; }
       .insights-grid { grid-template-columns: 1fr; }
-      .partner-logo { width: 150px; min-height: 88px; padding: 22px 18px; }
-      .partner-logo img { max-height: 40px; max-width: 104px; }
-      .partner-logo.is-wide { width: 200px; }
-      .partner-logo.is-wide img { max-height: 38px; max-width: 160px; }
+      .partners-grid { grid-template-columns: repeat(3, 1fr); }
+      .partner-logo { min-height: 82px; padding: 20px 14px; }
+      .partner-logo img { max-height: 40px; max-width: 96px; }
+      .partner-logo.is-wide img { max-height: 36px; max-width: 120px; }
       .hero-content { padding: 100px 24px 60px; }
       .hero-ctas { flex-direction: column; align-items: flex-start; }
       .newsletter-form { flex-direction: column; }
@@ -1300,9 +1276,8 @@
     </div>
     <a href="our-partners.html" class="insights-link">View All Partners →</a>
   </div>
-  <div class="partners-marquee" id="partners-marquee">
-    <div class="marquee-row" data-dir="left"><div class="marquee-track" id="marquee-track-1"></div></div>
-    <div class="marquee-row" data-dir="right"><div class="marquee-track" id="marquee-track-2"></div></div>
+  <div class="partners-grid" id="partners-grid">
+    <!-- populated by JS -->
   </div>
 </section>
 
@@ -1380,10 +1355,22 @@
 
 // ── TICKER ───────────────────────────────────────────────
 (function() {
-  const names = ["Ten Sports","Sony","Willow TV","ESPN","South Africa 20","St Kitts & Nevis","Desert Vipers","CD Ventures","Jazz 5G","Remitly","DP World","Coke","Myco","Formula E","Walee","Hong Kong 6s"];
   const track = document.getElementById('ticker-track');
-  const doubled = [...names, ...names];
-  track.innerHTML = doubled.map(n => `<span class="ticker-item">${n}</span>`).join('');
+  if (!track) return;
+
+  // logos only, headline names first — same source as the partners wall
+  const visible = APEX.partners.filter(p => p.show && p.logo);
+  const lead    = APEX.leadPartners || [];
+  const items   = lead.map(n => visible.find(p => p.name === n)).filter(Boolean)
+                      .concat(visible.filter(p => !lead.includes(p.name)));
+  if (!items.length) return;
+
+  const tile = p => `<span class="ticker-item${p.wide ? ' is-wide' : ''}" title="${p.name}">` +
+    `<img src="assets/logos/${p.logo}" alt="${p.name}" /></span>`;
+
+  // rendered twice so translateX(-50%) lands on an identical frame
+  track.innerHTML = items.map(tile).join('') + items.map(tile).join('');
+  track.style.setProperty('--ticker-dur', (items.length * 2.6).toFixed(1) + 's');
 })();
 
 // ── EXPERTISE ────────────────────────────────────────────
@@ -1433,27 +1420,23 @@
   }
 })();
 
-// ── PARTNERS CAROUSEL ────────────────────────────────────
+// ── PARTNERS ─────────────────────────────────────────────
 (function() {
+  const grid = document.getElementById('partners-grid');
+  if (!grid) return;
+
+  // headline names lead, same order as the ticker above
   const visible = APEX.partners.filter(p => p.show);
-  const lead    = APEX.marqueeLead || [];
+  const lead    = APEX.leadPartners || [];
+  const items   = lead.map(n => visible.find(p => p.name === n)).filter(Boolean)
+                      .concat(visible.filter(p => !lead.includes(p.name)));
 
-  // top row = the headline names, in the order listed in content.js
-  const row1 = lead.map(n => visible.find(p => p.name === n)).filter(Boolean);
-  const row2 = visible.filter(p => !lead.includes(p.name));
-
-  const tile = p => `<div class="partner-logo${p.wide ? ' is-wide' : ''}" title="${p.name}">` +
-    (p.logo ? `<img src="assets/logos/${p.logo}" alt="${p.name}" />`
-            : `<span class="partner-name-fallback">${p.name}</span>`) + `</div>`;
-
-  [[row1, 'marquee-track-1'], [row2, 'marquee-track-2']].forEach(([items, id]) => {
-    const track = document.getElementById(id);
-    if (!track || !items.length) return;
-    // the set is rendered twice so translateX(-50%) lands on an identical frame
-    track.innerHTML = items.map(tile).join('') + items.map(tile).join('');
-    // constant speed regardless of row length, so the two rows don't drift apart in feel
-    track.style.setProperty('--dur', (items.length * 3.4).toFixed(1) + 's');
-  });
+  grid.innerHTML = items.map(p => `
+    <div class="partner-logo${p.wide ? ' is-wide' : ''}" title="${p.name}">
+      ${p.logo ? `<img src="assets/logos/${p.logo}" alt="${p.name}" loading="lazy" />`
+               : `<span class="partner-name-fallback">${p.name}</span>`}
+    </div>
+  `).join('');
 })();
 
 // ── FOOTER SOCIALS ───────────────────────────────────────
