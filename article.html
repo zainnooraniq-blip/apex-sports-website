@@ -6,14 +6,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apex Insights — Case Studies | Apex Sports Consulting</title>
-  <meta name="description" content="Deal intelligence, production wins, and commercial strategy in action. Case studies from Apex Sports Consulting." />
+  <title>Apex Sports Consulting</title>
+  <meta name="description" content="News and announcements from Apex Sports Consulting." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Apex Sports Consulting" />
+  <meta property="og:title" content="Apex Sports Consulting" />
+  <meta property="og:description" content="News and announcements from Apex Sports Consulting." />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="content.js"></script>
-  <script src="animations.js" defer></script>
   <style>
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy:   #04081A;
@@ -279,8 +286,6 @@
 
     /* ── NEWS / BLOG POSTS ─────────────────────────────── */
     .insight-category.is-news { background: rgba(212,175,55,0.92); color: #04081A; }
-    .insight-cover.is-news { aspect-ratio: 16 / 10; }
-    .insight-cover.is-news img { object-position: center 35%; }
     .insight-date {
       font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
       color: rgba(245,245,245,0.40); margin-bottom: 10px;
@@ -360,6 +365,119 @@
       .filters-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .filters-wrap::-webkit-scrollbar { display: none; }
     }
+
+    /* ── EDITORIAL ARTICLE ─────────────────────────────── */
+    .article-hero {
+      position: relative; margin-top: 72px; width: 100%;
+      height: clamp(240px, 44vw, 540px); overflow: hidden;
+      background: linear-gradient(135deg, var(--blue) 0%, #0d1433 100%);
+    }
+    .article-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+    .article-hero::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom, rgba(4,8,26,0.35) 0%, rgba(4,8,26,0) 40%, rgba(4,8,26,0.92) 100%);
+    }
+    .article-caption {
+      max-width: 780px; margin: 0 auto; padding: 12px 24px 0;
+      font-size: 12px; color: rgba(245,245,245,0.35); line-height: 1.6;
+    }
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 44px 24px 80px; }
+
+    .article-eyebrow {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+      font-size: 11px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--gold);
+    }
+    .article-eyebrow::before { content: ""; display: block; width: 26px; height: 1px; background: var(--gold); }
+    .article-title {
+      font-size: clamp(29px, 5.2vw, 46px); font-weight: 800; line-height: 1.14;
+      letter-spacing: -1.3px; margin-bottom: 20px;
+    }
+    .article-standfirst {
+      font-size: clamp(17px, 2.3vw, 20px); line-height: 1.66; font-weight: 400;
+      color: rgba(245,245,245,0.62); margin-bottom: 28px;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+      color: rgba(245,245,245,0.42);
+    }
+    .article-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+    .article-facts {
+      display: flex; flex-wrap: wrap; gap: 26px 44px;
+      padding: 28px 0; border-bottom: 1px solid var(--border); margin-bottom: 8px;
+    }
+    .article-fact-value { font-size: 26px; font-weight: 800; color: var(--accent); line-height: 1.1; }
+    .article-fact-label { font-size: 11px; color: rgba(245,245,245,0.45); margin-top: 5px; letter-spacing: 0.4px; }
+
+    .article-body { padding-top: 34px; }
+    .article-body h2 {
+      font-size: 20px; font-weight: 700; letter-spacing: -0.3px;
+      margin: 38px 0 14px; color: var(--white);
+    }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body p {
+      font-size: 17px; line-height: 1.88; color: rgba(245,245,245,0.72); margin-bottom: 22px;
+    }
+    .article-body p.lede::first-letter { }
+
+    .article-quote {
+      margin: 38px 0; padding: 28px 30px;
+      background: rgba(30,58,138,0.16); border-left: 3px solid var(--gold); border-radius: 0 3px 3px 0;
+    }
+    .article-quote p {
+      font-size: clamp(18px, 2.4vw, 21px); line-height: 1.6; color: var(--white);
+      margin-bottom: 14px; font-weight: 500;
+    }
+    .article-quote cite {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+      color: var(--gold); font-style: normal;
+    }
+
+    .article-partners { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+    .article-partner-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.4px; color: rgba(245,245,245,0.6);
+      border: 1px solid var(--border); padding: 6px 12px; border-radius: 2px;
+    }
+    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .article-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.4px; color: var(--accent);
+      background: rgba(59,130,246,0.1); padding: 6px 12px; border-radius: 2px;
+    }
+
+    .li-block { margin-top: 44px; padding-top: 30px; border-top: 1px solid var(--border); }
+    .li-block-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(245,245,245,0.40); margin-bottom: 16px;
+    }
+    .li-embed {
+      position: relative; width: 100%; max-width: 550px;
+      border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: #0B1228;
+    }
+    .li-embed iframe { display: block; width: 100%; height: 640px; border: none; }
+    .li-link {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+      padding: 11px 20px; border: 1px solid var(--border); border-radius: 2px;
+      font-size: 13px; font-weight: 700; color: var(--accent);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .li-link:hover { border-color: var(--accent); background: rgba(59,130,246,0.08); }
+
+    .article-back {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 48px;
+      font-size: 13px; font-weight: 600; color: rgba(245,245,245,0.5); transition: color 0.2s, gap 0.2s;
+    }
+    .article-back:hover { color: var(--accent); gap: 12px; }
+
+    @media (max-width: 600px) {
+      .article-wrap { padding: 32px 22px 60px; }
+      .article-body p { font-size: 16px; line-height: 1.8; }
+      .article-facts { gap: 20px 30px; padding: 22px 0; }
+      .article-fact-value { font-size: 22px; }
+      .article-quote { padding: 22px 20px; margin: 30px 0; }
+      .li-embed iframe { height: 560px; }
+    }
   </style>
 </head>
 <body>
@@ -390,37 +508,8 @@
   <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- ── PAGE HERO ─────────────────────────────────────────── -->
-<div class="page-hero">
-  <div class="page-eyebrow">Case Studies</div>
-  <h1 class="page-headline">Apex Insights</h1>
-  <p class="page-subhead">Deal intelligence. Production wins. Commercial strategy in action.</p>
-</div>
+<article id="article-root"></article>
 
-<!-- ── FILTERS ───────────────────────────────────────────── -->
-<div class="filters-wrap" id="filters-wrap">
-  <!-- populated by JS -->
-</div>
-
-<!-- ── INSIGHTS GRID ─────────────────────────────────────── -->
-<div class="insights-container">
-  <div class="insights-grid" id="insights-grid">
-    <!-- populated by JS -->
-  </div>
-  <div class="empty-state" id="empty-state" style="display:none;">No case studies in this category yet.</div>
-</div>
-
-<!-- ── CASE STUDY MODAL ───────────────────────────────────── -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal" id="modal">
-    <div class="modal-cover" id="modal-cover">
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
-    </div>
-    <div class="modal-body" id="modal-body"></div>
-  </div>
-</div>
-
-<!-- ── NEWSLETTER ─────────────────────────────────────────── -->
 <div class="newsletter-strip">
   <div class="newsletter-inner">
     <div>
@@ -437,6 +526,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- ── FOOTER ─────────────────────────────────────────────── -->
 <footer>
@@ -483,143 +573,96 @@
 </footer>
 
 <script>
-let currentFilter = 'All';
+function esc(t) { return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-function renderInsights(filter) {
-  const grid = document.getElementById('insights-grid');
-  const empty = document.getElementById('empty-state');
-  const data = filter === 'All' ? APEX.insights : APEX.insights.filter(i => i.category === filter);
+(function renderArticle() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id') || window.location.hash.slice(1);
+  const a = (APEX.insights || []).find(i => i.id === id);
+  const root = document.getElementById('article-root');
 
-  if (data.length === 0) {
-    grid.style.display = 'none';
-    empty.style.display = 'block';
+  if (!a) {
+    root.innerHTML = '<div class="article-wrap"><div class="article-eyebrow">Not found</div>'
+      + '<h1 class="article-title">That article isn\u2019t here</h1>'
+      + '<p class="article-standfirst">The piece you\u2019re looking for may have moved.</p>'
+      + '<a class="article-back" href="apex-insights.html">\u2190 Back to Apex Insights</a></div>';
     return;
   }
-  grid.style.display = 'grid';
-  empty.style.display = 'none';
 
-  grid.innerHTML = data.map(ins => `
-    <div class="insight-card${ins.featured ? ' featured' : ''}" onclick="${ins.type === 'news' ? `location.href='article.html?id=${ins.id}'` : `openModal('${ins.id}')`}">
-      <div class="insight-cover${ins.type === 'news' ? ' is-news' : ''}">
-        ${ins.coverImage ? `<img src="assets/${ins.coverImage}" alt="${ins.title}" />` : ''}
-        <span class="insight-category${ins.type === 'news' ? ' is-news' : ''}">${ins.category}</span>
-      </div>
-      <div class="insight-body">
-        ${ins.type === 'news' && ins.date ? `<div class="insight-date">${ins.date}</div>` : ''}
-        ${ins.stats && ins.stats.length ? `<div class="insight-stats">${ins.stats.map(s => `
-          <div><div class="insight-stat-value">${s.value}</div><div class="insight-stat-label">${s.label}</div></div>
-        `).join('')}</div>` : ''}
-        <div class="insight-title">${ins.title}</div>
-        <div class="insight-summary">${ins.summary}</div>
-        <div class="insight-tags">${ins.tags.map(t => `<span class="insight-tag">${t}</span>`).join('')}</div>
-        <div class="insight-read-more">${ins.type === 'news' ? 'Read Article' : 'Read Case Study'} →</div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function renderFilters() {
-  const cats = ['All', ...new Set(APEX.insights.map(i => i.category))];
-  document.getElementById('filters-wrap').innerHTML = cats.map(c => `
-    <button class="filter-btn ${c === 'All' ? 'active' : ''}" onclick="setFilter('${c}', this)">${c}</button>
-  `).join('');
-}
-
-function setFilter(cat, btn) {
-  currentFilter = cat;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderInsights(cat);
-}
-
-function openModal(id) {
-  const ins = APEX.insights.find(i => i.id === id);
-  if (!ins) return;
-
-  const cover = document.getElementById('modal-cover');
-  if (ins.video) {
-    cover.style.height = 'auto';
-    cover.style.background = '#000';
-    const isYoutube = ins.video.includes('youtube.com/embed') || ins.video.includes('youtu.be');
-    cover.innerHTML = isYoutube
-      ? `<div style="position:relative;width:100%;padding-top:56.25%;"><iframe src="${ins.video}" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><button class="modal-close" onclick="closeModalDirect()">✕</button>`
-      : `<video class="modal-video" controls playsinline preload="metadata"><source src="assets/${ins.video}" type="video/mp4" /></video><button class="modal-close" onclick="closeModalDirect()">✕</button>`;
-  } else {
-    cover.style.height = '';
-    cover.style.background = '';
-    cover.innerHTML = `
-      ${ins.coverImage ? `<img src="assets/${ins.coverImage}" alt="${ins.title}" />` : ''}
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
-    `;
+  // ── document metadata ──
+  document.title = a.title + ' | Apex Sports Consulting';
+  const setMeta = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
+  setMeta('meta[name="description"]', 'content', a.summary || '');
+  setMeta('meta[property="og:title"]', 'content', a.title);
+  setMeta('meta[property="og:description"]', 'content', a.summary || '');
+  if (a.heroImage || a.coverImage) {
+    setMeta('meta[property="og:image"]', 'content', new URL('assets/' + (a.heroImage || a.coverImage), window.location.href).href);
   }
+  setMeta('meta[property="og:url"]', 'content', window.location.href);
 
-  document.getElementById('modal-body').innerHTML = `
-    <div class="modal-category">${ins.type === 'news' ? 'Press Release' : ins.category}</div>
-    <h2 class="modal-title">${ins.title}</h2>
-    ${ins.type === 'news' && ins.date ? `<div class="modal-dateline"><span>${ins.date}</span><span class="sep"></span><span>Apex Sports Consulting</span></div>` : ''}
-    <p class="modal-subtitle">${ins.subtitle}</p>
-    ${ins.stats && ins.stats.length ? `<div class="modal-stats">${ins.stats.map(s => `
-      <div><div class="modal-stat-value">${s.value}</div><div class="modal-stat-label">${s.label}</div></div>
-    `).join('')}</div>` : ''}
-    ${ins.body.map(s => `
-      <div class="modal-section-heading">${s.heading}</div>
-      <p class="modal-section-text">${s.text}</p>
-    `).join('')}
-    ${ins.quote && ins.quote.text ? `
-      <div class="modal-quote">
-        <p>"${ins.quote.text}"</p>
-        <cite>${ins.quote.author}${ins.quote.role ? `, ${ins.quote.role}` : ''}</cite>
-      </div>
-    ` : ''}
-    ${ins.partners.length ? `
-      <div class="modal-partners">
-        ${ins.partners.map(p => `<span class="modal-partner-tag">${p}</span>`).join('')}
-      </div>
-    ` : ''}
-    ${ins.linkedin ? `
-      <div class="li-block">
-        <div class="li-block-label">As announced on LinkedIn</div>
-        ${ins.linkedin.embed ? `<div class="li-embed"><iframe src="${ins.linkedin.embed}" title="Embedded LinkedIn post" frameborder="0" allowfullscreen loading="lazy"></iframe></div>` : ''}
-        ${ins.linkedin.url ? `<a class="li-link" href="${ins.linkedin.url}" target="_blank" rel="noopener noreferrer">Read on LinkedIn →</a>` : ''}
-      </div>
-    ` : ''}
-  `;
+  const heroSrc = a.heroImage || a.coverImage;
+  const isNews = a.type === 'news';
 
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  const hero = heroSrc
+    ? '<div class="article-hero"><img src="assets/' + esc(heroSrc) + '" alt="' + esc(a.title) + '" /></div>'
+      + (a.heroCaption ? '<p class="article-caption">' + esc(a.heroCaption) + '</p>' : '')
+    : '<div class="article-hero"></div>';
 
-  // Update URL hash
-  history.pushState(null, '', `#${id}`);
-}
+  const facts = (a.stats && a.stats.length)
+    ? '<div class="article-facts">' + a.stats.map(s =>
+        '<div><div class="article-fact-value">' + esc(s.value) + '</div>'
+        + '<div class="article-fact-label">' + esc(s.label) + '</div></div>').join('') + '</div>'
+    : '';
 
-function closeModal(e) {
-  if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
-}
+  const body = (a.body || []).map(sec =>
+    (sec.heading ? '<h2>' + esc(sec.heading) + '</h2>' : '') + '<p>' + esc(sec.text) + '</p>'
+  ).join('');
 
-function closeModalDirect() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-  history.pushState(null, '', window.location.pathname);
-}
+  const quote = (a.quote && a.quote.text)
+    ? '<blockquote class="article-quote"><p>\u201C' + esc(a.quote.text) + '\u201D</p>'
+      + '<cite>' + esc(a.quote.author) + (a.quote.role ? ', ' + esc(a.quote.role) : '') + '</cite></blockquote>'
+    : '';
 
-// Open from URL hash on load
-window.addEventListener('load', () => {
-  renderFilters();
-  renderInsights('All');
+  const partners = (a.partners && a.partners.length)
+    ? '<div class="article-partners">' + a.partners.map(p => '<span class="article-partner-tag">' + esc(p) + '</span>').join('') + '</div>'
+    : '';
 
-  const hash = window.location.hash.slice(1);
-  if (hash) {
-    const target = APEX.insights.find(i => i.id === hash);
-    if (target && target.type === 'news') { location.replace('article.html?id=' + hash); return; }
-    openModal(hash);
-  }
-});
+  const tags = (a.tags && a.tags.length)
+    ? '<div class="article-tags">' + a.tags.map(t => '<span class="article-tag">' + esc(t) + '</span>').join('') + '</div>'
+    : '';
+
+  const li = a.linkedin
+    ? '<div class="li-block"><div class="li-block-label">As announced on LinkedIn</div>'
+      + (a.linkedin.embed ? '<div class="li-embed"><iframe src="' + esc(a.linkedin.embed) + '" title="Embedded LinkedIn post" frameborder="0" allowfullscreen loading="lazy"></iframe></div>' : '')
+      + (a.linkedin.url ? '<a class="li-link" href="' + esc(a.linkedin.url) + '" target="_blank" rel="noopener noreferrer">Read on LinkedIn \u2192</a>' : '')
+      + '</div>'
+    : '';
+
+  const meta = '<div class="article-meta">'
+    + (a.date ? '<span>' + esc(a.date) + '</span><span class="dot"></span>' : '')
+    + '<span>Apex Sports Consulting</span>'
+    + (a.category ? '<span class="dot"></span><span>' + esc(a.category) + '</span>' : '')
+    + '</div>';
+
+  root.innerHTML = hero
+    + '<div class="article-wrap">'
+    + '<div class="article-eyebrow">' + (isNews ? 'Press Release' : esc(a.category)) + '</div>'
+    + '<h1 class="article-title">' + esc(a.title) + '</h1>'
+    + (a.subtitle ? '<p class="article-standfirst">' + esc(a.subtitle) + '</p>' : '')
+    + meta
+    + facts
+    + '<div class="article-body">' + body + quote + '</div>'
+    + partners + tags + li
+    + '<a class="article-back" href="apex-insights.html">\u2190 Back to Apex Insights</a>'
+    + '</div>';
+})();
 
 // Footer socials
 (function() {
   const s = APEX.meta.social;
   const icons = [['instagram','assets/icons/instagram.svg'],['twitter','assets/icons/x.svg'],['youtube','assets/icons/youtube.svg'],['linkedin','assets/icons/linkedin.svg']];
-  document.getElementById('footer-socials').innerHTML = icons.map(([k,src]) =>
+  const el = document.getElementById('footer-socials');
+  if (el) el.innerHTML = icons.map(([k,src]) =>
     `<a href="${s[k]}" class="footer-social-link" target="_blank" rel="noopener"><img src="${src}" alt="${k}" style="width:16px;height:16px;filter:brightness(0) invert(1);opacity:0.6;"></a>`
   ).join('');
 })();
@@ -642,9 +685,7 @@ document.querySelectorAll('.has-dropdown > a').forEach(function(a) {
   a.addEventListener('click', handler);
   a.addEventListener('touchend', handler);
 });
-
-// Escape key closes modal
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 </script>
+
 </body>
 </html>

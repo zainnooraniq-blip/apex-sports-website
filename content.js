@@ -181,6 +181,51 @@ const APEX = {
   insights: [
 
     {
+      id: "abu-dhabi-t10-drm-partnership",
+      type: "news",
+      date: "16 September 2026",
+      title: "Abu Dhabi T10 Partners with Dot Republic Media for Year-Round YouTube Strategy",
+      subtitle: "Facilitated by Apex Sports \u2014 ADT10's Official Media Rights Advisor",
+      category: "News",
+      coverImage: "adt10-drm-hero.jpg",
+      heroImage: "adt10-drm-hero.jpg",
+      heroCaption: "Abu Dhabi T10 and Dot Republic Media confirm the partnership in Abu Dhabi.",
+      featured: true,
+      linkedin: {
+        url: "https://www.linkedin.com/posts/apexsportsconsulting_abudhabit10-cricket-media-activity-7505988949816037377-R2Iw",
+        embed: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7505988949816037377",
+      },
+      stats: [],
+      summary: "Abu Dhabi T10 has announced a strategic content partnership with Dot Republic Media, one of the world's largest cricket digital networks, to deliver a year-round YouTube strategy that keeps the league in front of fans well beyond the tournament window. The partnership was facilitated by Apex Sports Consulting, ADT10's official media rights advisor for distribution.",
+      body: [
+        {
+          heading: "The Announcement",
+          text: "Abu Dhabi T10 has entered a strategic content partnership with Dot Republic Media (DRM), a multi-channel network with over 190 million subscribers across more than 600 YouTube channels \u2014 one of the largest cricket digital footprints in the world. Under the agreement, DRM will deliver a year-round content strategy for ADT10 across its network, keeping the league in front of fans between seasons, growing viewership in key markets, and building deeper engagement with a new generation of cricket fans."
+        },
+        {
+          heading: "Beyond the Tournament Window",
+          text: "The 2026 edition of Abu Dhabi T10 runs from 7 to 20 November at Zayed Cricket Stadium \u2014 a fourteen-day window. The partnership is designed to extend the league's presence across the remaining fifty weeks of the year, with player features, on-field highlights and archive season replays programmed across DRM's network and targeted at cricket's largest digital audiences."
+        },
+        {
+          heading: "A Digital-First Distribution Model",
+          text: "The agreement reflects a wider shift in how short-format cricket reaches its audience \u2014 from a single broadcast window to always-on digital programming. \"ADT10 is one of the most exciting short-format properties in cricket,\" said Muhammad Adnan Butt, CEO of DRM. \"We look forward to bringing it to our creators and audiences and helping the league grow its global fanbase all year round.\""
+        },
+        {
+          heading: "Apex Sports' Role",
+          text: "Apex Sports Consulting facilitated the partnership in its capacity as ADT10's official media rights advisor for distribution \u2014 a mandate covering the league's global broadcast strategy across television and digital platforms. \"ADT10 is a property with real momentum,\" said Imran Khan, CEO of Apex Sports Consulting. \"We look forward to working with Matt and the Abu Dhabi Cricket & Sports Hub team to build the right distribution partnerships for the league's next chapter.\" Further distribution announcements are expected in the coming weeks."
+        },
+      ],
+      quote: {
+        text: "Our fans live on YouTube. DRM gives ADT10 the scale and the year-round presence to reach them wherever they are, and we could not have asked for a better partner for this next step.",
+        author: "Matt Boucher",
+        role: "CEO, Abu Dhabi Cricket & Sports Hub"
+      },
+      partners: ["Abu Dhabi T10", "Abu Dhabi Cricket & Sports Hub", "Dot Republic Media"],
+      tags: ["Media Rights", "Cricket", "UAE", "Digital Distribution", "YouTube"],
+    },
+
+
+    {
       id: "multan-sultans-cd-ventures",
       title: "Multan Sultans Acquisition by CD Ventures: Managed by Apex Sports",
       subtitle: "PKR 20 Billion PSL Franchise Transaction",

@@ -45,6 +45,29 @@
     .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:28px;font-size:12px;color:rgba(245,245,245,0.3);}
     @media(max-width:1024px){nav,.team-section,.page-hero,.cta-strip{padding-left:24px;padding-right:24px;}.team-grid{grid-template-columns:repeat(2,1fr);}.cta-strip{margin:0 24px 80px;flex-direction:column;align-items:flex-start;}.footer-top{grid-template-columns:1fr 1fr;}}
     @media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}.team-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
+
+    /* ── MOBILE HARDENING ──────────────────────────────── */
+    html { overflow-x: clip; }
+    body { overflow-x: clip; }
+    img, video, iframe { max-width: 100%; }
+    /* grid/flex children may not shrink below intrinsic width without this */
+    .newsletter-form input, .newsletter-inner > *, #newsletter > *,
+    .partner-logo, .partners-grid > *, .footer-top > * { min-width: 0; }
+    @media (max-width: 600px) {
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; border-radius: 2px 2px 0 0; }
+      .newsletter-form button { border-radius: 0 0 2px 2px; width: 100%; }
+      .newsletter-inner { padding: 36px 22px; }
+    }
+    @media (max-width: 520px) {
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-hamburger { padding: 12px; margin-right: -12px; }
+      .footer-links a { display: inline-block; padding: 5px 0; }
+      .filters-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .filters-wrap::-webkit-scrollbar { display: none; }
+    }
   </style>
 </head>
 <body>

@@ -1094,6 +1094,34 @@
       .newsletter-form button { border-radius: 0 0 2px 2px; }
       .footer-top { grid-template-columns: 1fr; }
     }
+
+    .insight-category.is-news { background: rgba(212,175,55,0.92); color: #04081A; }
+    .insight-cover.is-news { aspect-ratio: 16 / 10; }
+    .insight-cover.is-news img { object-position: center 35%; }
+    .insight-date { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(245,245,245,0.40); margin-bottom: 10px; }
+
+    /* ── MOBILE HARDENING ──────────────────────────────── */
+    html { overflow-x: clip; }
+    body { overflow-x: clip; }
+    img, video, iframe { max-width: 100%; }
+    /* grid/flex children may not shrink below intrinsic width without this */
+    .newsletter-form input, .newsletter-inner > *, #newsletter > *,
+    .partner-logo, .partners-grid > *, .footer-top > * { min-width: 0; }
+    @media (max-width: 600px) {
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; border-radius: 2px 2px 0 0; }
+      .newsletter-form button { border-radius: 0 0 2px 2px; width: 100%; }
+      .newsletter-inner { padding: 36px 22px; }
+    }
+    @media (max-width: 520px) {
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-hamburger { padding: 12px; margin-right: -12px; }
+      .footer-links a { display: inline-block; padding: 5px 0; }
+      .filters-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .filters-wrap::-webkit-scrollbar { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -1399,18 +1427,19 @@
   const grid = document.getElementById('insights-grid');
   const featured = APEX.insights.slice(0, 3);
   grid.innerHTML = featured.map(ins => `
-    <a href="apex-insights.html#${ins.id}" class="insight-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="insight-cover">
+    <a href="${ins.type === 'news' ? `article.html?id=${ins.id}` : `apex-insights.html#${ins.id}`}" class="insight-card" style="display:block;text-decoration:none;color:inherit;">
+      <div class="insight-cover${ins.type === 'news' ? ' is-news' : ''}">
         ${ins.coverImage ? `<img src="assets/${ins.coverImage}" alt="${ins.title}" />` : ''}
-        <span class="insight-category">${ins.category}</span>
+        <span class="insight-category${ins.type === 'news' ? ' is-news' : ''}">${ins.category}</span>
       </div>
       <div class="insight-body">
-        ${ins.stats.length ? `<div class="insight-stats">${ins.stats.map(s => `
+        ${ins.type === 'news' && ins.date ? `<div class="insight-date">${ins.date}</div>` : ''}
+        ${ins.stats && ins.stats.length ? `<div class="insight-stats">${ins.stats.map(s => `
           <div><div class="insight-stat-value">${s.value}</div><div class="insight-stat-label">${s.label}</div></div>
         `).join('')}</div>` : ''}
         <div class="insight-title">${ins.title}</div>
         <div class="insight-summary">${ins.summary}</div>
-        <div class="insight-read-more">Read Case Study →</div>
+        <div class="insight-read-more">${ins.type === 'news' ? 'Read Article' : 'Read Case Study'} →</div>
       </div>
     </a>
   `).join('');
