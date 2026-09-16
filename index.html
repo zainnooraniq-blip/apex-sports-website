@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="content.js"></script>
+  <script src="nav.js" defer></script>
   <script src="animations.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -908,6 +909,8 @@
     }
 
     /* ── NEWSLETTER ──────────────────────────────────────── */
+    .newsletter-wrap { padding: 0 48px 100px; max-width: 1296px; margin: 0 auto; }
+
     #newsletter {
       background: linear-gradient(135deg, rgba(30,58,138,0.3) 0%, rgba(4,8,26,0) 100%);
       border: 1px solid var(--border);
@@ -1069,6 +1072,7 @@
     @media (max-width: 1024px) {
       nav { padding: 0 24px; }
       section { padding: 72px 24px; }
+      .newsletter-wrap { padding: 0 24px 72px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .insights-grid { grid-template-columns: repeat(2, 1fr); }
       .partners-grid { grid-template-columns: repeat(4, 1fr); }
@@ -1080,19 +1084,73 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
-      .services-grid { grid-template-columns: 1fr; }
-      .expertise-grid { grid-template-columns: 1fr; }
-      .insights-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 20px; }
+      .nav-logo-img { height: 40px; }
+      section { padding: 64px 20px; }
+
+      /* hero: tighter type, buttons full width, decorative rings off the text */
+      #hero { min-height: 100svh; }
+      .hero-content { padding: 112px 20px 72px; }
+      .hero-eyebrow { font-size: 10px; letter-spacing: 2px; line-height: 1.6; margin-bottom: 20px; align-items: flex-start; }
+      .hero-eyebrow::before { width: 20px; flex: none; margin-top: 7px; }
+      .hero-headline { font-size: clamp(38px, 11.5vw, 48px); letter-spacing: -1.2px; line-height: 1.06; }
+      .hero-subhead { font-size: 18px; margin-top: 20px; }
+      .hero-support { font-size: 14px; }
+      .hero-ctas { flex-direction: column; gap: 12px; margin-top: 36px; }
+      .hero-ctas a { width: 100%; text-align: center; padding: 16px 24px; }
+      .hero-rings { width: 300px; height: 300px; right: -120px; top: 18%; transform: none; opacity: 0.55; }
+      .hero-ring-center { display: none; }
+      .hero-beam { display: none; }
+      .hero-overlay { background: linear-gradient(to bottom, rgba(4,8,26,0.2) 0%, rgba(4,8,26,0.55) 100%); }
+      .hero-scroll { display: none; }
+
+      .ticker-wrap { padding: 14px 0; }
+      .ticker-item { padding: 0 22px; }
+      .ticker-item img { max-height: 28px; max-width: 88px; }
+      .ticker-item.is-wide img { max-height: 26px; max-width: 128px; }
+
+      .section-heading { letter-spacing: -1px; margin-bottom: 18px; }
+      .section-body { font-size: 15px; }
+      .about-right { font-size: 14px; }
+      #about-globe-canvas { opacity: 0.12; width: 420px; height: 420px; }
+
+      .services-grid { grid-template-columns: 1fr; margin-top: 40px; }
+      .service-card { padding: 28px 22px; border-right: none; }
+      .service-card:last-child { border-bottom: none; }
+      .service-name { font-size: 17px; }
+
+      .expertise-grid { grid-template-columns: 1fr; margin-top: 40px; }
+      .expertise-card { padding: 26px 22px; border-right: none; }
+      .expertise-card:last-child { border-bottom: none; }
+
+      /* section headers with a "View all" link: stack instead of squeezing */
+      .insights-header, .partners-heading-row { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 32px; }
+      .insights-header .section-heading, .partners-heading-row .section-heading { margin-bottom: 8px; }
+      .insights-grid { grid-template-columns: 1fr; gap: 20px; }
+      .insight-cover { aspect-ratio: 16 / 11; }
+      .insight-cover.is-news { aspect-ratio: 16 / 10; }
+      .insight-body { padding: 20px; }
+      .insight-summary { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+
       .partners-grid { grid-template-columns: repeat(3, 1fr); }
       .partner-logo { min-height: 82px; padding: 20px 14px; }
       .partner-logo img { max-height: 40px; max-width: 96px; }
       .partner-logo.is-wide img { max-height: 36px; max-width: 120px; }
-      .hero-content { padding: 100px 24px 60px; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
+
+      .newsletter-wrap { padding: 0 20px 64px; }
+      #newsletter { padding: 36px 22px; gap: 24px; }
+      .newsletter-heading { font-size: 30px; }
       .newsletter-form { flex-direction: column; }
-      .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; border-radius: 2px 2px 0 0; }
-      .newsletter-form button { border-radius: 0 0 2px 2px; }
-      .footer-top { grid-template-columns: 1fr; }
+      .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; border-radius: 2px 2px 0 0; padding: 15px 16px; font-size: 16px; }
+      .newsletter-form button { border-radius: 0 0 2px 2px; padding: 15px; }
+
+      footer { padding: 48px 20px 28px; }
+      /* brand and contact span the row; the two link lists sit side by side */
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px 20px; padding-bottom: 32px; }
+      .footer-top > :first-child, .footer-top > .footer-contact { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 20px; }
+
+      .content-cta-btn { animation: none; box-shadow: 0 4px 24px rgba(212,175,55,0.3); width: 100%; text-align: center; }
     }
 
     .insight-category.is-news { background: rgba(212,175,55,0.92); color: #04081A; }
@@ -1107,17 +1165,10 @@
     /* grid/flex children may not shrink below intrinsic width without this */
     .newsletter-form input, .newsletter-inner > *, #newsletter > *,
     .partner-logo, .partners-grid > *, .footer-top > * { min-width: 0; }
-    @media (max-width: 600px) {
-      .newsletter-form { flex-direction: column; }
-      .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; border-radius: 2px 2px 0 0; }
-      .newsletter-form button { border-radius: 0 0 2px 2px; width: 100%; }
-      .newsletter-inner { padding: 36px 22px; }
-    }
     @media (max-width: 520px) {
       .partners-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
-      .nav-hamburger { padding: 12px; margin-right: -12px; }
       .footer-links a { display: inline-block; padding: 5px 0; }
       .filters-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .filters-wrap::-webkit-scrollbar { display: none; }
@@ -1310,7 +1361,7 @@
 </section>
 
 <!-- ── NEWSLETTER ─────────────────────────────────────────── -->
-<div style="padding: 0 48px 100px; max-width:1296px; margin:0 auto;">
+<div class="newsletter-wrap">
   <div id="newsletter">
     <div>
       <div class="section-eyebrow">Stay Informed</div>
@@ -1496,26 +1547,7 @@ function handleNewsletter(e) {
   }
 }
 
-// ── MOBILE MENU ──────────────────────────────────────────
-function toggleMenu() {
-  const links = document.getElementById('nav-links');
-  if (links.style.display === 'flex') {
-    links.style.display = '';
-  } else {
-    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#0D1833;padding:16px 24px;border-bottom:1px solid rgba(59,130,246,0.15);gap:4px;z-index:999;';
-  }
-}
-document.querySelectorAll('.has-dropdown > a').forEach(function(a) {
-  function handler(e) {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      e.stopPropagation();
-      this.parentElement.classList.toggle('open');
-    }
-  }
-  a.addEventListener('click', handler);
-  a.addEventListener('touchend', handler);
-});
+// Mobile menu (hamburger, Services group, scroll lock) lives in nav.js
 
 // ── SCROLL NAV ───────────────────────────────────────────
 window.addEventListener('scroll', () => {
