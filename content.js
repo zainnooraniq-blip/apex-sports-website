@@ -181,6 +181,46 @@ const APEX = {
   insights: [
 
     {
+      id: "abu-dhabi-t10-global-broadcast-rights-partner",
+      type: "news",
+      date: "21 September 2026",
+      title: "Abu Dhabi T10 Appoints Apex Sports as Official Global Broadcast Rights Partner",
+      subtitle: "Apex Sports to lead ADT10's global broadcast distribution strategy across television and digital",
+      category: "News",
+      coverImage: "adt10-global-broadcast-partner.jpg",
+      heroImage: "adt10-global-broadcast-partner.jpg",
+      heroCaption: "Abu Dhabi T10 announces Apex Sports as its Official Global Broadcast Rights Partner for Season X.",
+      featured: true,
+      linkedin: {
+        url: "https://www.linkedin.com/feed/update/urn:li:activity:7507777076167639040",
+        embed: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7507777076167639040",
+      },
+      stats: [],
+      summary: "Abu Dhabi T10 has appointed Apex Sports Consulting as its official partner for global broadcast rights distribution. Under the mandate, Apex Sports will lead the tournament's global broadcast strategy across television and digital platforms, taking ADT10 to more screens in more markets.",
+      body: [
+        {
+          heading: "The Announcement",
+          text: "Abu Dhabi T10 has appointed Apex Sports Consulting as its official partner for global broadcast rights distribution. The appointment was announced by the Abu Dhabi Cricket & Sports Hub ahead of the 2026 edition of the tournament, which runs from 7 to 20 November at Zayed Cricket Stadium, Abu Dhabi."
+        },
+        {
+          heading: "The Mandate",
+          text: "Under the mandate, Apex Sports will lead Abu Dhabi T10's global broadcast distribution strategy across television and digital platforms. The focus is on expanding the tournament's reach to more screens in more markets, growing its international audience, and building a stronger commercial foundation for the next phase of the league's growth."
+        },
+        {
+          heading: "Building on Momentum",
+          text: "The appointment follows ADT10's recent strategic content partnership with Dot Republic Media, the world's leading cricket digital network, which Apex Sports facilitated to give the league a year-round presence on YouTube. With the global broadcast mandate now in place, Apex Sports will bring together television and digital distribution under a single strategy for the league."
+        },
+        {
+          heading: "About Apex Sports",
+          text: "Apex Sports Consulting is a UAE-based sports advisory firm with a proven track record of delivering landmark media rights deals across cricket and global sport. Further distribution announcements for Abu Dhabi T10 are expected in the coming weeks."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Abu Dhabi T10", "Abu Dhabi Cricket & Sports Hub"],
+      tags: ["Media Rights", "Cricket", "UAE", "Broadcast Distribution"],
+    },
+
+    {
       id: "abu-dhabi-t10-drm-partnership",
       type: "news",
       date: "16 September 2026",
@@ -224,6 +264,41 @@ const APEX = {
       tags: ["Media Rights", "Cricket", "UAE", "Digital Distribution", "YouTube"],
     },
 
+
+    {
+      id: "sony-asia-cup-distribution",
+      title: "Apex Sports Named Official Strategic Advisor to Sony Entertainment",
+      subtitle: "Sports Media Strategy & Rights Distribution — Asia Cup Pakistan Rollout",
+      category: "Media Rights",
+      coverImage: "asia-cup.jpg",
+      featured: true,
+      stats: [
+        { value: "1+ Year", label: "Consulting Relationship" },
+        { value: "2 Platforms", label: "Pakistan Distribution" },
+      ],
+      summary: "Apex Sports Consulting is the official strategic advisor to Sony Entertainment on sports media strategy and rights distribution, supporting the Asia Cup's Pakistan rollout across PTV and Tamasha.",
+      body: [
+        {
+          heading: "The Brief",
+          text: "Apex Sports Consulting is the official strategic advisor to Sony Entertainment, assisting with sports media strategy, rights distribution, and market execution initiatives."
+        },
+        {
+          heading: "Asia Cup Execution",
+          text: "Working with Sony on the Asia Cup cricket tournament, Apex Sports developed distribution and syndication approaches for this commercially significant event. The Asia Cup commands substantial viewership throughout South Asia, making robust regional distribution essential for maximising audience reach and commercial potential."
+        },
+        {
+          heading: "Distribution Outcome",
+          text: "Apex Sports supported Sony's syndication efforts within Pakistan by structuring partnerships with major broadcast and digital platforms. The tournament was made available through PTV for cable broadcast and Tamasha for digital streaming, providing Pakistani fans access via both traditional television and digital channels."
+        },
+        {
+          heading: "Ongoing Relationship",
+          text: "Apex Sports has maintained its consulting relationship with Sony Entertainment for over one year, offering strategic guidance on media rights distribution, market engagement, and partnership development within the sports media sector."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Sony Entertainment", "PTV", "Tamasha"],
+      tags: ["Media Rights", "Cricket", "Sony", "Pakistan"],
+    },
 
     {
       id: "multan-sultans-cd-ventures",
@@ -331,41 +406,6 @@ const APEX = {
       quote: { text: "", author: "", role: "" },
       partners: ["SA20", "Geo Super", "Tamasha", "Myco", "Dot Republic Media"],
       tags: ["Media Rights", "Cricket", "South Africa", "Pakistan"],
-    },
-
-    {
-      id: "sony-asia-cup-distribution",
-      title: "Apex Supports Sony Entertainment's Asia Cup Distribution Strategy",
-      subtitle: "Strategic Media Consulting — Pakistan Market",
-      category: "Media Rights",
-      coverImage: "asia-cup.jpg",
-      featured: true,
-      stats: [
-        { value: "1+ Year", label: "Consulting Relationship" },
-        { value: "2 Platforms", label: "Pakistan Distribution" },
-      ],
-      summary: "Apex Sports Consulting serves as strategic advisor to Sony Entertainment on sports media strategy and rights distribution, supporting the Asia Cup's Pakistan rollout across PTV and Tamasha.",
-      body: [
-        {
-          heading: "The Brief",
-          text: "Apex Sports Consulting functions as a strategic advisor to Sony Entertainment, assisting with sports media strategy, rights distribution, and market execution initiatives."
-        },
-        {
-          heading: "Asia Cup Execution",
-          text: "Working with Sony on the Asia Cup cricket tournament, Apex Sports developed distribution and syndication approaches for this commercially significant event. The Asia Cup commands substantial viewership throughout South Asia, making robust regional distribution essential for maximising audience reach and commercial potential."
-        },
-        {
-          heading: "Distribution Outcome",
-          text: "Apex Sports supported Sony's syndication efforts within Pakistan by structuring partnerships with major broadcast and digital platforms. The tournament was made available through PTV for cable broadcast and Tamasha for digital streaming, providing Pakistani fans access via both traditional television and digital channels."
-        },
-        {
-          heading: "Ongoing Relationship",
-          text: "Apex Sports has maintained its consulting relationship with Sony Entertainment for over one year, offering strategic guidance on media rights distribution, market engagement, and partnership development within the sports media sector."
-        },
-      ],
-      quote: { text: "", author: "", role: "" },
-      partners: ["Sony Entertainment", "PTV", "Tamasha"],
-      tags: ["Media Rights", "Cricket", "Sony", "Pakistan"],
     },
 
     {
