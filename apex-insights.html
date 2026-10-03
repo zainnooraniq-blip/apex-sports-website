@@ -303,6 +303,14 @@
       background: #0B1228;
     }
     .li-embed iframe { display: block; width: 100%; height: 640px; border: none; }
+    /* campaign artwork, shown below the copy when the hero is taken by a film */
+    .modal-graphic {
+      margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border);
+    }
+    .modal-graphic img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: 4px;
+    }
     .li-link {
       display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
       padding: 11px 20px; border: 1px solid var(--border); border-radius: 2px;
@@ -571,6 +579,9 @@ function openModal(id) {
         <p>"${ins.quote.text}"</p>
         <cite>${ins.quote.author}${ins.quote.role ? `, ${ins.quote.role}` : ''}</cite>
       </div>
+    ` : ''}
+    ${ins.video && ins.coverImage ? `
+      <div class="modal-graphic"><img src="assets/${ins.coverImage}" alt="${ins.title}" loading="lazy" /></div>
     ` : ''}
     ${ins.partners.length ? `
       <div class="modal-partners">

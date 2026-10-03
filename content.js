@@ -310,7 +310,6 @@ const APEX = {
       featured: true,
       stats: [
         { value: "4", label: "PSL Franchises" },
-        { value: "1M+", label: "Views — Flagship Content Film" },
       ],
       summary: "Apex Sports structured and facilitated a first-of-its-kind partnership between Jazz 5G and four PSL franchises simultaneously — Islamabad United, Karachi Kings, Multan Sultans and Quetta Gladiators — delivering lead branding across every sideline in the tournament alongside a season-long digital content programme.",
       body: [
