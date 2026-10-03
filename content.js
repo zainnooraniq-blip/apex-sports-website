@@ -301,6 +301,42 @@ const APEX = {
     },
 
     {
+      id: "jazz-5g-psl-four-franchise",
+      title: "Apex Structures Jazz 5G's Four-Franchise PSL Takeover",
+      subtitle: "Lead Branding Across Four PSL Franchises — PSL 11, 2026",
+      category: "Commercial",
+      coverImage: "jazz-5g-psl-four-franchise.jpg",
+      video: "https://www.youtube.com/embed/scgUIPql5Gg",
+      featured: true,
+      stats: [
+        { value: "4", label: "PSL Franchises" },
+        { value: "1M+", label: "Views — Flagship Content Film" },
+      ],
+      summary: "Apex Sports structured and facilitated a first-of-its-kind partnership between Jazz 5G and four PSL franchises simultaneously — Islamabad United, Karachi Kings, Multan Sultans and Quetta Gladiators — delivering lead branding across every sideline in the tournament alongside a season-long digital content programme.",
+      body: [
+        {
+          heading: "The Brief",
+          text: "Jazz, Pakistan's largest digital operator, wanted its 5G proposition in front of the country's biggest cricket audience. A single-team sponsorship delivers one city and one fanbase. Apex structured something no brand had done in the PSL before: lead branding across four franchises in the same tournament, giving Jazz 5G presence in every market the league touches — Islamabad, Karachi, Multan and Quetta — and visibility in a far larger share of the season's matches, regardless of who was playing."
+        },
+        {
+          heading: "One Country, Every Sideline",
+          text: "Under the agreement Jazz 5G secured lead branding positions across all four franchises for PSL 11, appearing on playing kit and in-stadium inventory throughout the season. The structure turned a conventional team sponsorship into a national platform: wherever the tournament travelled, Jazz 5G was on the sideline, and in fixtures between any two of the four franchises the brand appeared on both teams at once."
+        },
+        {
+          heading: "World-Class Digital Content",
+          text: "Beyond the branding, the partnership delivered a season-long content programme built around the franchises' marquee players and the \"Jazz Meri Superpower\" campaign platform. The flagship film with Australian batter Steve Smith has passed one million views on Jazz's channel — content built for digital-first consumption rather than repurposed broadcast assets, and the kind of output that converts sponsorship inventory into genuine audience engagement."
+        },
+        {
+          heading: "Apex's Role",
+          text: "Apex Sports structured and facilitated the entire deal — negotiating with four franchises in parallel, aligning commercial terms across separate rights holders, and managing delivery of the branding and content programme across the season. Executing one coherent activation through four independent franchises in a single tournament required Apex to hold the brand's strategy together across every negotiation."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Jazz", "Islamabad United", "Karachi Kings", "Multan Sultans", "Quetta Gladiators"],
+      tags: ["Commercial", "Sponsorship", "Cricket", "Pakistan", "PSL"],
+    },
+
+    {
       id: "multan-sultans-cd-ventures",
       title: "Multan Sultans Acquisition by CD Ventures: Managed by Apex Sports",
       subtitle: "PKR 20 Billion PSL Franchise Transaction",
