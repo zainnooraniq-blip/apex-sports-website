@@ -1476,7 +1476,9 @@
 // ── APEX INSIGHTS PREVIEW ────────────────────────────────
 (function() {
   const grid = document.getElementById('insights-grid');
-  const featured = APEX.insights.slice(0, 3);
+  // homepageFeatured (content.js) pins the cards shown here; falls back to the newest six
+  const pinned = (APEX.homepageFeatured || []).map(id => APEX.insights.find(i => i.id === id)).filter(Boolean);
+  const featured = pinned.length ? pinned.slice(0, 6) : APEX.insights.slice(0, 6);
   grid.innerHTML = featured.map(ins => `
     <a href="${ins.type === 'news' ? `article.html?id=${ins.id}` : `apex-insights.html#${ins.id}`}" class="insight-card" style="display:block;text-decoration:none;color:inherit;">
       <div class="insight-cover${ins.type === 'news' ? ' is-news' : ''}">

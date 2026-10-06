@@ -178,7 +178,238 @@ const APEX = {
   // To add a new case study, copy one of the objects below and fill it in.
   // category options: "Production" | "Media Rights" | "Commercial" | "Events" | "Athlete Management"
   // coverImage: filename in assets/ folder. Leave "" for gradient placeholder.
+  // homepageFeatured: the cards shown in the homepage "Apex Insights" preview, in order
+  // (two rows of three). Leave empty to fall back to the newest entries.
+  homepageFeatured: [
+    "abu-dhabi-t10-global-broadcast-rights-partner",
+    "jazz-5g-psl-four-franchise",
+    "sony-asia-cup-distribution",
+    "ilt20-desert-vipers-naseem-shadab-2026",
+    "abu-dhabi-t10-draft-naseem-shadab-2026",
+    "canada-super-60-2026-global-media-rights",
+  ],
+
   insights: [
+
+    {
+      id: "ilt20-desert-vipers-naseem-shadab-2026",
+      type: "news",
+      date: "6 October 2026",
+      title: "Naseem Shah and Shadab Khan to Represent Desert Vipers in ILT20 2026-27",
+      subtitle: "Pakistan pair secured at the auction ahead of Season 5",
+      category: "News",
+      coverImage: "ilt20-vipers-naseem-shah.jpg",
+      gallery: ["ilt20-vipers-naseem-shah.jpg", "ilt20-vipers-shadab-khan.jpg"],
+      featured: true,
+      stats: [],
+      summary: "Apex Sports is proud to see Naseem Shah and Shadab Khan line up for the Desert Vipers in ILT20 Season 5. Naseem returns to the franchise after his 2025-26 debut season, and Shadab joins the Vipers for the first time. The tournament runs 21 November to 20 December 2026.",
+      body: [
+        {
+          heading: "A Strong Pakistan Core",
+          text: "Naseem Shah and Shadab Khan join Babar Azam and Fakhar Zaman in a Desert Vipers squad that carries one of the strongest Pakistan contingents in the league. With Season 5 running from 21 November to 20 December 2026, the Vipers head into the tournament with Pakistan quality through the top order, the middle overs and the new ball."
+        },
+        {
+          heading: "Naseem Returns",
+          text: "Naseem is back with the Vipers for a second season after a debut campaign that established him as a key part of the franchise's pace attack. His return gives the Vipers continuity at the top of the bowling card and one of the most exciting fast bowlers in white-ball cricket."
+        },
+        {
+          heading: "Shadab Arrives",
+          text: "Pakistan's T20 vice-captain joins the Vipers for the first time, adding a frontline leg-spinner for the middle overs and genuine hitting in the lower order. Shadab's experience across international and franchise cricket brings leadership and balance to the Vipers' line-up."
+        },
+        {
+          heading: "Proud to See Them Go Again",
+          text: "Apex Sports represents both players and is proud to see them taking the field in the UAE's premier T20 league this season. We will be following the Vipers' campaign closely from the first ball."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Desert Vipers", "ILT20"],
+      tags: ["Athlete Management", "Cricket", "ILT20", "Naseem Shah", "Shadab Khan", "UAE"],
+    },
+
+    {
+      id: "abu-dhabi-t10-draft-naseem-shadab-2026",
+      type: "news",
+      date: "1 October 2026",
+      title: "Naseem Shah and Shadab Khan Drafted into Abu Dhabi T10 Season X",
+      subtitle: "Apex Sports athletes head to Royal Desert Champions and UAE Bulls",
+      category: "News",
+      coverImage: "adt10-draft-naseem-shah.jpg",
+      gallery: ["adt10-draft-naseem-shah.jpg", "adt10-draft-shadab-khan.jpg"],
+      featured: true,
+      stats: [],
+      summary: "Apex Sports is proud to see two of its players selected at the 2026 Abu Dhabi T10 Player Draft. Naseem Shah joins new franchise Royal Desert Champions, and Shadab Khan heads to UAE Bulls, as both prepare for Season X at Zayed Cricket Stadium from 7 to 20 November.",
+      body: [
+        {
+          heading: "Naseem Shah — Royal Desert Champions",
+          text: "Naseem joins the Royal Desert Champions for the franchise's debut season, slotting into a pace attack alongside Dushmantha Chameera, Maheesh Theekshana, Chris Jordan and Luke Wood under captain Nicholas Pooran. The Champions have assembled a top order of Phil Salt, Sherfane Rutherford, Brandon King and Muhammad Waseem, and Naseem's new-ball pace gives the side its spearhead."
+        },
+        {
+          heading: "Shadab Khan — UAE Bulls",
+          text: "Shadab heads to UAE Bulls, bringing leg-spin and all-round depth to a squad built around Kieron Pollard, Sunil Narine, Romario Shepherd and Muhammad Amir. Alongside Khushdil Shah, Shadab gives the Bulls a Pakistan all-round axis through the middle of the innings."
+        },
+        {
+          heading: "Looking Ahead",
+          text: "Two of Pakistan's most recognisable white-ball cricketers will take the field in the UAE's showcase short-format tournament when Abu Dhabi T10 Season X gets under way at Zayed Cricket Stadium on 7 November. Apex Sports represents both players and is proud to see them selected among the headline picks of the draft. We will be following every ball."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Abu Dhabi T10", "Royal Desert Champions", "UAE Bulls"],
+      tags: ["Athlete Management", "Cricket", "Abu Dhabi T10", "Naseem Shah", "Shadab Khan", "UAE"],
+    },
+
+    {
+      id: "canada-super-60-2026-global-media-rights",
+      type: "news",
+      date: "6 October 2026",
+      title: "Apex Sports Distributes Global Media Rights for Canada Super 60 2026",
+      subtitle: "Sixteen broadcasters across nine territories for the BC Place tournament, 29 September – 4 October",
+      category: "News",
+      coverImage: "distribution-canada-super-60.jpg",
+      gallery: ["distribution-canada-super-60.jpg"],
+      featured: true,
+      stats: [
+        { value: "9", label: "Territories" },
+        { value: "16", label: "Broadcast Partners" },
+      ],
+      summary: "Apex Sports handled global media rights distribution for the second edition of Canada Super 60, placing the men's and women's tournament at BC Place, Vancouver with sixteen broadcasters and platforms across nine territories, and YouTube coverage everywhere else.",
+      body: [
+        {
+          heading: "The Distribution",
+          text: "Apex Sports secured broadcast partners for Canada Super 60 across every major cricket market: Fox Sports and Kayo in Australia; ARY Plus in the UK; Unite8 Sports and FanCode in India; TV Supreme and SandBrix in Sri Lanka; myco in MENA; Tamasha, A Sports and ARY Plus in Pakistan; myco and T Sports in Bangladesh; and Sporty TV in Africa. All other territories were served on YouTube through Sports Hub, STV and Sports Central."
+        },
+        {
+          heading: "The Tournament",
+          text: "The six-day event ran from 29 September to 4 October 2026 at BC Place in Vancouver, with men's and women's competitions played side by side in the Super 60 format. Toronto Sixers took the men's title in the league's second season."
+        },
+        {
+          heading: "Apex's Role",
+          text: "Apex Sports managed the global rights sales process end to end, packaging the tournament for each territory, negotiating with broadcasters and digital platforms, and coordinating delivery so that a young North American league reached established cricket audiences in Australia, the UK, South Asia, the Middle East and Africa."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Canada Super 60", "Fox Sports", "Kayo", "ARY Plus", "FanCode", "Unite8 Sports", "myco", "Tamasha", "A Sports", "T Sports", "TV Supreme", "SandBrix", "Sporty TV"],
+      tags: ["Media Rights", "Cricket", "Canada", "Global Distribution"],
+    },
+
+    {
+      id: "global-super-league-2026-media-rights",
+      type: "news",
+      date: "6 October 2026",
+      title: "Apex Sports Distributes Media Rights for Global Super League 2026",
+      subtitle: "MENA, UK and Pakistan coverage for the Guyana tournament, 23 July – 1 August",
+      category: "News",
+      coverImage: "distribution-global-super-league.jpg",
+      gallery: ["distribution-global-super-league.jpg"],
+      featured: false,
+      stats: [],
+      summary: "Apex Sports placed the ExxonMobil Guyana Global Super League 2026 with myco in MENA, ARY Plus in the UK, and Tamasha and A Sports in Pakistan, bringing the five-team franchise tournament to audiences across three key cricket markets.",
+      body: [
+        {
+          heading: "The Distribution",
+          text: "Apex Sports secured myco for MENA, ARY Plus for the UK, and Tamasha and A Sports for Pakistan, covering television and digital for each market across the tournament's ten-match schedule at Providence Stadium, Guyana."
+        },
+        {
+          heading: "The Tournament",
+          text: "The 2026 edition brought together Guyana Amazon Warriors, Lahore Qalandars, Desert Vipers, Perth Scorchers XI and San Francisco Unicorns — champion franchises from the Caribbean, Pakistan, the UAE, Australia and the USA — from 23 July to 1 August. Guyana Amazon Warriors won their second title, beating San Francisco Unicorns in the final."
+        },
+        {
+          heading: "Apex's Role",
+          text: "Apex Sports managed rights sales and partner coordination for the three territories, continuing its work connecting Caribbean cricket properties with broadcasters in the Middle East, the UK and Pakistan."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Global Super League", "myco", "ARY Plus", "Tamasha", "A Sports"],
+      tags: ["Media Rights", "Cricket", "Guyana", "Distribution"],
+    },
+
+    {
+      id: "top-end-t20-2026-media-rights",
+      type: "news",
+      date: "6 October 2026",
+      title: "Apex Sports Distributes Media Rights for the 2026 Study NT Top End T20 Series",
+      subtitle: "Darwin's 30-match tournament reaches MENA and Pakistan, with rest-of-world coverage on YouTube",
+      category: "News",
+      coverImage: "distribution-top-end-t20.jpg",
+      gallery: ["distribution-top-end-t20.jpg"],
+      featured: false,
+      stats: [],
+      summary: "Apex Sports secured myco in MENA and Tamasha in Pakistan for the 2026 Study NT Top End T20 Series in Darwin, with all other territories served on YouTube through Sports Hub, STV and Sports Central.",
+      body: [
+        {
+          heading: "The Distribution",
+          text: "Apex Sports placed the series with myco for MENA and Tamasha for Pakistan, and arranged rest-of-world coverage on YouTube through Sports Hub, STV and Sports Central, giving the tournament a global footprint across television, OTT and free digital."
+        },
+        {
+          heading: "The Tournament",
+          text: "The Study NT Top End T20 Series ran from 21 to 30 August 2026 across Darwin's cricket venues, with 30 matches in ten days. The field featured New Zealand A, the Nepal national team, the Bangladesh High Performance squad, Hyderabad Kingsmen Academy, and Australian sides including Adelaide Strikers, Hobart Hurricanes, Cricket Victoria, ACT Comets and NT Strike."
+        },
+        {
+          heading: "Apex's Role",
+          text: "Apex Sports managed the international rights sales for the series, taking a pre-season Australian tournament with strong Asian participation to the audiences in the Middle East and Pakistan that follow those players."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Top End T20", "NT Cricket", "myco", "Tamasha"],
+      tags: ["Media Rights", "Cricket", "Australia", "Distribution"],
+    },
+
+    {
+      id: "lpl-2026-pakistan-media-rights",
+      type: "news",
+      date: "6 October 2026",
+      title: "Apex Sports Distributes Lanka Premier League 2026 Rights in Pakistan",
+      subtitle: "myco and Tamasha carry LPL Season 6, 17 July – 8 August",
+      category: "News",
+      coverImage: "distribution-lpl-2026.jpg",
+      gallery: ["distribution-lpl-2026.jpg"],
+      featured: false,
+      stats: [],
+      summary: "Apex Sports placed the sixth Lanka Premier League with myco and Tamasha for Pakistan, bringing every match of the tournament to Pakistani audiences across both platforms.",
+      body: [
+        {
+          heading: "The Distribution",
+          text: "Apex Sports secured myco and Tamasha as the Pakistan broadcast partners for LPL 2026, with the full 24-match tournament available to Pakistani fans on both platforms."
+        },
+        {
+          heading: "The Tournament",
+          text: "LPL Season 6 ran from 17 July to 8 August 2026 across four venues in Sri Lanka, with five franchises contesting 24 matches. Galle Gallants won their first title, beating Jaffna Kings in the final."
+        },
+        {
+          heading: "Apex's Role",
+          text: "Apex Sports handled the Pakistan rights sale and partner coordination for the league, continuing its track record of placing South Asian franchise cricket with Pakistan's leading digital sports platforms."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Lanka Premier League", "myco", "Tamasha"],
+      tags: ["Media Rights", "Cricket", "Sri Lanka", "Pakistan", "Distribution"],
+    },
+
+    {
+      id: "sportel-monaco-2026",
+      type: "news",
+      date: "6 October 2026",
+      title: "Apex Sports Heads to SPORTEL Monaco 2026",
+      subtitle: "Meet the team in Monaco, 19–21 October",
+      category: "News",
+      coverImage: "sportel-monaco-2026.jpg",
+      gallery: ["sportel-monaco-2026.jpg"],
+      featured: false,
+      stats: [],
+      summary: "Apex Sports will be at SPORTEL Monaco from 19 to 21 October 2026, meeting rights holders, broadcasters and digital platforms from across the global sports media market.",
+      body: [
+        {
+          heading: "SPORTEL Monaco",
+          text: "SPORTEL is the leading international convention for the sports media and content industry, bringing together rights holders, broadcasters, streaming platforms and agencies for three days of meetings in Monaco. Apex Sports will be in attendance throughout."
+        },
+        {
+          heading: "Let's Meet",
+          text: "If you are attending and would like to discuss media rights distribution, commercial partnerships or content opportunities, get in touch at office@apex-sports.org to book a meeting with the team."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["SPORTEL Monaco"],
+      tags: ["Events", "Media Rights", "SPORTEL"],
+    },
 
     {
       id: "abu-dhabi-t10-global-broadcast-rights-partner",
