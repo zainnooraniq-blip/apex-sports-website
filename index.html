@@ -1481,7 +1481,7 @@
   const featured = pinned.length ? pinned.slice(0, 6) : APEX.insights.slice(0, 6);
   grid.innerHTML = featured.map(ins => `
     <a href="${ins.type === 'news' ? `article.html?id=${ins.id}` : `apex-insights.html#${ins.id}`}" class="insight-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="insight-cover${ins.type === 'news' ? ' is-news' : ''}">
+      <div class="insight-cover${ins.type === 'news' && !ins.gallery ? ' is-news' : ''}">
         ${ins.coverImage ? `<img src="assets/${ins.coverImage}" alt="${ins.title}" />` : ''}
         <span class="insight-category${ins.type === 'news' ? ' is-news' : ''}">${ins.category}</span>
       </div>

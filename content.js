@@ -419,7 +419,7 @@ const APEX = {
       subtitle: "Apex Sports to lead ADT10's global broadcast distribution strategy across television and digital",
       category: "News",
       coverImage: "adt10-global-broadcast-partner.jpg",
-      heroImage: "adt10-global-broadcast-partner.jpg",
+      gallery: ["adt10-global-broadcast-partner.jpg"],
       heroCaption: "Abu Dhabi T10 announces Apex Sports as its Official Global Broadcast Rights Partner for Season X.",
       featured: true,
       linkedin: {

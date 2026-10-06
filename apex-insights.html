@@ -509,7 +509,7 @@ function renderInsights(filter) {
 
   grid.innerHTML = data.map(ins => `
     <div class="insight-card${ins.featured ? ' featured' : ''}" onclick="${ins.type === 'news' ? `location.href='article.html?id=${ins.id}'` : `openModal('${ins.id}')`}">
-      <div class="insight-cover${ins.type === 'news' ? ' is-news' : ''}">
+      <div class="insight-cover${ins.type === 'news' && !ins.gallery ? ' is-news' : ''}">
         ${ins.coverImage ? `<img src="assets/${ins.coverImage}" alt="${ins.title}" />` : ''}
         <span class="insight-category${ins.type === 'news' ? ' is-news' : ''}">${ins.category}</span>
       </div>
