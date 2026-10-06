@@ -294,29 +294,6 @@
       padding: 120px 48px 80px;
     }
 
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 28px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s ease 0.2s forwards;
-    }
-
-    .hero-eyebrow::before {
-      content: "";
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-    }
-
     .hero-headline {
       font-size: clamp(44px, 6vw, 84px);
       font-weight: 800;
@@ -1091,8 +1068,6 @@
       /* hero: tighter type, buttons full width, decorative rings off the text */
       #hero { min-height: 100svh; }
       .hero-content { padding: 112px 20px 72px; }
-      .hero-eyebrow { font-size: 10px; letter-spacing: 2px; line-height: 1.6; margin-bottom: 20px; align-items: flex-start; }
-      .hero-eyebrow::before { width: 20px; flex: none; margin-top: 7px; }
       .hero-headline { font-size: clamp(38px, 11.5vw, 48px); letter-spacing: -1.2px; line-height: 1.06; }
       .hero-subhead { font-size: 18px; margin-top: 20px; }
       .hero-support { font-size: 14px; }
@@ -1230,7 +1205,6 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Dubai Based · Global Sport · Commercial Intelligence</div>
     <h1 class="hero-headline">Shaping <em>Champions</em><br>Beyond The Game</h1>
     <p class="hero-subhead">We do not just manage sport, we transform it.</p>
     <p class="hero-support">Through strategy, innovation, and execution, we create lasting global impact.</p>
