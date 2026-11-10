@@ -194,6 +194,49 @@ const APEX = {
   insights: [
 
     {
+      id: "cricexec-adt10-distribution-feature",
+      type: "news",
+      date: "10 November 2026",
+      title: "As Featured in Cricexec: Apex Sports and the Abu Dhabi T10 Distribution Build",
+      subtitle: "Cricexec's deep dive on the 2026 Abu Dhabi T10 highlights Apex Sports' global broadcast mandate and the JioStar deal for the Indian subcontinent",
+      category: "News",
+      coverImage: "cricexec-adt10-shop-window.jpg",
+      gallery: ["cricexec-adt10-shop-window.jpg"],
+      heroCaption: "Cricexec, “Building the shop window” — from its feature on the 2026 Abu Dhabi T10.",
+      featured: true,
+      instagram: {
+        label: "The full Cricexec feature on Instagram \u2014 Apex Sports appears on slide 10",
+        url: "https://www.instagram.com/p/DfjwKgvCCX2/",
+        embed: "https://www.instagram.com/p/DfjwKgvCCX2/embed/captioned/",
+      },
+      stats: [
+        { value: "32", label: "Matches on Star Sports & JioHotstar" },
+      ],
+      summary: "Cricket business publication Cricexec has profiled the 2026 Abu Dhabi T10's reset as a professional property, highlighting the league's distribution build under Apex Sports' global broadcast rights mandate and the anchor deal with JioStar for the Indian subcontinent.",
+      body: [
+        {
+          heading: "The Feature",
+          text: "Cricexec's feature on the 2026 Abu Dhabi T10 examines the league's structural reset — government-backed ownership, a 50-year licence from the Emirates Cricket Board and ten-year franchise licences — and makes the case that distribution is now the growth plan. Its “Building the shop window” section traces how that distribution has been assembled since September."
+        },
+        {
+          heading: "Apex Sports' Mandate",
+          text: "The feature recounts the league's appointment of Apex Sports in September to lead global broadcast rights distribution across television and digital, with Matt Boucher, CEO of the Abu Dhabi Cricket & Sports Hub, crediting Apex's understanding of both the cricket market and the broadcast business. Apex CEO Imran Ahmad Khan framed the mandate around the league's momentum: “Abu Dhabi T10 is a property with real momentum.”"
+        },
+        {
+          heading: "The JioStar Deal",
+          text: "The anchor deal of the distribution build arrived in October, with JioStar acquiring rights for the Indian subcontinent. Star Sports will televise all 32 matches and JioHotstar will stream them, putting the tournament in front of the league's biggest market. Cricexec notes that coverage now spans India, MENA, Pakistan, South Africa, North America, Australia and the Caribbean."
+        },
+        {
+          heading: "What's Next",
+          text: "Abu Dhabi T10 Season X runs at Zayed Cricket Stadium from 7 to 20 November. Apex Sports continues to build out the league's distribution across television and digital ahead of the tournament and beyond."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Abu Dhabi T10", "Abu Dhabi Cricket & Sports Hub", "JioStar", "Star Sports", "JioHotstar", "Cricexec"],
+      tags: ["Media Rights", "Cricket", "Abu Dhabi T10", "Press", "India"],
+    },
+
+    {
       id: "ilt20-desert-vipers-naseem-shadab-2026",
       type: "news",
       date: "6 October 2026",

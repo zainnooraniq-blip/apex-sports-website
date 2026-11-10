@@ -308,6 +308,9 @@
       background: #0B1228;
     }
     .li-embed iframe { display: block; width: 100%; height: 640px; border: none; }
+    /* Instagram's embed is a 4:5 carousel plus header and caption — needs more height */
+    .li-embed.ig-embed { max-width: 480px; background: #fff; }
+    .li-embed.ig-embed iframe { height: 760px; }
     .li-link {
       display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
       padding: 11px 20px; border: 1px solid var(--border); border-radius: 2px;
@@ -471,6 +474,9 @@
       border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: #0B1228;
     }
     .li-embed iframe { display: block; width: 100%; height: 640px; border: none; }
+    /* Instagram's embed is a 4:5 carousel plus header and caption — needs more height */
+    .li-embed.ig-embed { max-width: 480px; background: #fff; }
+    .li-embed.ig-embed iframe { height: 760px; }
     .li-link {
       display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
       padding: 11px 20px; border: 1px solid var(--border); border-radius: 2px;
@@ -658,6 +664,14 @@ function esc(t) { return String(t == null ? '' : t).replace(/&/g,'&amp;').replac
       + '</div>'
     : '';
 
+  // instagram: { url, embed, label } — embeds the post the same way as the LinkedIn block
+  const ig = a.instagram
+    ? '<div class="li-block"><div class="li-block-label">' + esc(a.instagram.label || 'As featured on Instagram') + '</div>'
+      + (a.instagram.embed ? '<div class="li-embed ig-embed"><iframe src="' + esc(a.instagram.embed) + '" title="Embedded Instagram post" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen loading="lazy"></iframe></div>' : '')
+      + (a.instagram.url ? '<a class="li-link" href="' + esc(a.instagram.url) + '" target="_blank" rel="noopener noreferrer">View on Instagram →</a>' : '')
+      + '</div>'
+    : '';
+
   const meta = '<div class="article-meta">'
     + (a.date ? '<span>' + esc(a.date) + '</span><span class="dot"></span>' : '')
     + '<span>Apex Sports Consulting</span>'
@@ -672,7 +686,7 @@ function esc(t) { return String(t == null ? '' : t).replace(/&/g,'&amp;').replac
     + meta
     + facts
     + '<div class="article-body">' + body + quote + '</div>'
-    + partners + tags + li
+    + partners + tags + ig + li
     + '<a class="article-back" href="apex-insights.html">\u2190 Back to Apex Insights</a>'
     + '</div>';
 })();
