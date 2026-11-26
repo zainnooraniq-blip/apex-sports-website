@@ -186,12 +186,47 @@ const APEX = {
     "abu-dhabi-t10-global-broadcast-rights-partner",
     "jazz-5g-psl-four-franchise",
     "sony-asia-cup-distribution",
+    "taptap-send-desert-vipers-remittance-partner",
     "ilt20-desert-vipers-naseem-shadab-2026",
     "abu-dhabi-t10-draft-naseem-shadab-2026",
-    "canada-super-60-2026-global-media-rights",
   ],
 
   insights: [
+
+    {
+      id: "taptap-send-desert-vipers-remittance-partner",
+      type: "news",
+      date: "23 November 2026",
+      title: "Apex Sports Leads Taptap Send's Entry into Cricket as Official Remittance Partner of Desert Vipers",
+      subtitle: "Deal managed by Apex Sports for the DP World ILT20",
+      category: "News",
+      coverImage: "taptap-send-desert-vipers-partner.jpg",
+      gallery: ["taptap-send-desert-vipers-partner.jpg", "taptap-send-desert-vipers-launch.jpg"],
+      featured: true,
+      linkedin: {
+        url: "https://www.linkedin.com/feed/update/urn:li:activity:7531673212313636864",
+        embed: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7531673212313636864",
+      },
+      stats: [],
+      summary: "Taptap Send has been announced as the Official Remittance Partner of Desert Vipers for the DP World ILT20. Apex Sports is proud to lead Taptap Send's entry into the cricket ecosystem and to deliver a partnership built for impact on and off the field.",
+      body: [
+        {
+          heading: "A Natural Fit",
+          text: "Cricket connects millions of fans across the UAE, South Asia and beyond, many of whom send money home to family. That makes the Desert Vipers a natural home for one of the world's leading remittance brands, and gives Taptap Send a direct line to the communities it serves."
+        },
+        {
+          heading: "Taptap Send's Entry into Cricket",
+          text: "Apex Sports managed the deal and led Taptap Send's entry into the cricket ecosystem, building a partnership designed for impact on and off the field. Taptap Send branding features on the Desert Vipers kit for the DP World ILT20 season."
+        },
+        {
+          heading: "Here's to a Great Season",
+          text: "Congratulations to both teams, and thank you to everyone involved in bringing this partnership to life. Apex Sports looks forward to a great season with the Desert Vipers and Taptap Send."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Taptap Send", "Desert Vipers", "DP World ILT20"],
+      tags: ["Sponsorship", "Cricket", "ILT20", "Desert Vipers", "Taptap Send", "UAE"],
+    },
 
     {
       id: "cricexec-adt10-distribution-feature",
