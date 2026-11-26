@@ -194,6 +194,42 @@ const APEX = {
   insights: [
 
     {
+      id: "abu-dhabi-t10-2026-global-broadcast-distribution",
+      type: "news",
+      date: "23 November 2026",
+      title: "Abu Dhabi T10 2026: Global Broadcast Distribution Managed by Apex Sports",
+      subtitle: "Broadcast partners across every major cricket market",
+      category: "News",
+      coverImage: "adt10-2026-global-broadcast-map.jpg",
+      gallery: ["adt10-2026-global-broadcast-map.jpg"],
+      featured: true,
+      instagram: {
+        label: "The Abu Dhabi T10 2026 broadcast map on Instagram",
+        url: "https://www.instagram.com/p/DgFD6WYIoVr/",
+        embed: "https://www.instagram.com/p/DgFD6WYIoVr/embed/captioned/",
+      },
+      stats: [],
+      summary: "Apex Sports is proud to have successfully managed the global broadcast distribution of the Abu Dhabi T10 2026, placing the tournament with broadcast and streaming partners across North America, the UK, MENA, South Asia, Africa, Australia, the Caribbean and Latin America.",
+      body: [
+        {
+          heading: "The 2026 Broadcast Map",
+          text: "As the league's official partner for global broadcast rights distribution, Apex Sports built the Abu Dhabi T10 2026 distribution footprint market by market. Partners included Star Sports and JioHotstar in India, A Sports, Tamasha and Myco in Pakistan, Premier Sports, ARY Digital and ARY Plus in the UK, Willow by Cricbuzz in North America, Cricbuzz and STARZPLAY across MENA, Fox Sports and Kayo in Australia, TV Supreme and SandBrix in Sri Lanka, Star Sports in Nepal, SportyTV in Africa and Rush in the Caribbean and Latin America, alongside a dedicated partner in Afghanistan."
+        },
+        {
+          heading: "Rest of the World",
+          text: "Outside the contracted territories, fans could follow the tournament on the official T10 League YouTube channel (@T10LeagueOfficial) and on Sports Central and STV."
+        },
+        {
+          heading: "Thank You",
+          text: "Thank you to the Abu Dhabi T10 and to every broadcast partner who brought the 2026 tournament to cricket fans around the world."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["Abu Dhabi T10"],
+      tags: ["Media Rights", "Broadcast Distribution", "Cricket", "Abu Dhabi T10", "UAE"],
+    },
+
+    {
       id: "taptap-send-desert-vipers-remittance-partner",
       type: "news",
       date: "23 November 2026",
@@ -271,6 +307,45 @@ const APEX = {
       tags: ["Media Rights", "Cricket", "Abu Dhabi T10", "Press", "India"],
     },
 
+    {
+      id: "dfb-pokal-drm-global-distribution",
+      type: "news",
+      date: "27 October 2026",
+      title: "Apex Sports and DRM Partner with DFB-Pokal for Global Distribution",
+      subtitle: "All 16 Round 2 matches streamed live across DRM's YouTube sports network",
+      category: "News",
+      coverImage: "dfb-pokal-drm-distribution.jpg",
+      gallery: ["dfb-pokal-drm-distribution.jpg"],
+      featured: true,
+      linkedin: {
+        url: "https://www.linkedin.com/feed/update/urn:li:activity:7520823321089994752",
+        embed: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7520823321089994752",
+      },
+      instagram: {
+        label: "The announcement on Instagram",
+        url: "https://www.instagram.com/p/De_3tKbolxB/",
+        embed: "https://www.instagram.com/p/De_3tKbolxB/embed/captioned/",
+      },
+      stats: [],
+      summary: "Apex Sports and DRM have partnered with the DFB-Pokal on the global distribution of Germany's national cup competition, bringing matches and match content to DRM's YouTube sports network in territories where the DFB has no exclusive media rights partner.",
+      body: [
+        {
+          heading: "The Partnership",
+          text: "DRM operates more than 600 YouTube channels with a combined audience of around 190 million subscribers across more than 150 territories. The agreement covers territories where the DFB has no exclusive media rights partner, with matches and match content published across DRM's network of sports channels on YouTube: Sports Central, Sports TV, Sports Hub, DRM Sports and Sports Insider Plus."
+        },
+        {
+          heading: "Starting with Round 2",
+          text: "The partnership begins with Round 2, played on 27 and 28 October. All 16 matches will be streamed live, including Borussia Dortmund v Werder Bremen, Bayern M\u00fcnchen v 1. FC Magdeburg and 1. FC K\u00f6ln v Union Berlin. Each match will be followed by same-day highlights, extended highlights, goal clips and Shorts, with selected matches replayed in full."
+        },
+        {
+          heading: "Thank You",
+          text: "Thank you to the DFB and DRM. The Apex team is proud to see this partnership go live."
+        },
+      ],
+      quote: { text: "", author: "", role: "" },
+      partners: ["DFB-Pokal", "Dot Republic Media"],
+      tags: ["Media Rights", "Football", "DFB-Pokal", "DRM", "YouTube", "Germany"],
+    },
     {
       id: "ilt20-desert-vipers-naseem-shadab-2026",
       type: "news",
